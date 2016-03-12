@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4387753-1362-4305-AC7A-0978EB0CC77B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LKLibrary</RootNamespace>
+    <AssemblyName>LKLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\LKLibrary.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.UnityObjects">
+      <HintPath>.\Interop.UnityObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Ayarlar.cs" />
+    <Compile Include="Classes\Bar.cs" />
+    <Compile Include="Classes\Boyahane.cs" />
+    <Compile Include="Classes\Enums.cs" />
+    <Compile Include="Classes\ExtensionMethods.cs" />
+    <Compile Include="Classes\FuarKumas.cs" />
+    <Compile Include="Classes\HamKumas.cs" />
+    <Compile Include="Classes\Iade.cs" />
+    <Compile Include="Classes\Iplik.cs" />
+    <Compile Include="Classes\KimyasalRecete.cs" />
+    <Compile Include="Classes\Laboratuvar.cs" />
+    <Compile Include="Classes\Levent.cs" />
+    <Compile Include="Classes\LogoEntegrasyon.cs" />
+    <Compile Include="Classes\Makina.cs" />
+    <Compile Include="Classes\Maliyet.cs" />
+    <Compile Include="Classes\MalzemeTalep.cs" />
+    <Compile Include="Classes\Mamul.cs" />
+    <Compile Include="Classes\Menu.cs" />
+    <Compile Include="Classes\PackList.cs" />
+    <Compile Include="Classes\Partileme.cs" />
+    <Compile Include="Classes\Planlama.cs" />
+    <Compile Include="Classes\Rapor.cs" />
+    <Compile Include="Classes\SatinAlma.cs" />
+    <Compile Include="Classes\Sayac.cs" />
+    <Compile Include="Classes\Sevkiyat.cs" />
+    <Compile Include="Classes\Siparis.cs" />
+    <Compile Include="Classes\Stok.cs" />
+    <Compile Include="Classes\TezgahHaberlesme.cs" />
+    <Compile Include="Classes\Transfer.cs" />
+    <Compile Include="Classes\Yetki.cs" />
+    <Compile Include="DbClasses\DBEvents.cs" />
+    <Compile Include="DbClasses\DBEventsLogo.cs" />
+    <Compile Include="DbClasses\Logo.cs" />
+    <Compile Include="DbClasses\ReportSources.cs" />
+    <Compile Include="DbClasses\Tables.cs" />
+    <Compile Include="DbClasses\Views.cs" />
+    <Compile Include="Interfaces\AbsInfoBar.cs" />
+    <Compile Include="Interfaces\AbsMakinaBakım.cs" />
+    <Compile Include="Interfaces\AbsMalzemeTalep.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DosyaServisi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\LKLibrary.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\LKLibrary.dll" />
+    <Content Include="obj\Debug\LKLibrary.pdb" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.DBEvents.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.DBEventsLogo.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.Logo.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.PredicateBuilder.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblAyarlar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBakimOnarim.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBakimOnarimAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBelgeNo.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBirimler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBoyahaneProcess.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBoyahaneUrunAgaci.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBoyahaneUrunAgaciAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblBukumDagitimAnahtari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblCozgu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblCozguIsEmri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblDurumlar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblExceptionLog.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFasonIplikMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFasonKumasMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFinish.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFirmalar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFiyatListeleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarBaskilar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarKombin.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarKombinKumaslar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarKumas.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarKumasKategori.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarKumasProsesleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblFuarProses.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblHamHatalari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblHamKumaslar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblHataTanim.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblIadeler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKaliteTanim.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKimyasalRecete.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKimyasalReceteAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKimyasalReceteActLog.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKimyasalRecetePartileri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKullanicilar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKumas.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKumasBelgeleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKumasRenk.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKumasRenkAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKumasResimleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblKumasSatisHakki.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblLeventHareket.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMakinalar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMaliyetBoyahaneDetay.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMaliyetBukumDetay.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMaliyetCozguDetay.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMaliyetDokumaDetay.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMaliyetIplikDetay.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMalzemeCikis.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMalzemeGiris.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMalzemeler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMamulHatalari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblMamulKumaslar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPackAliases.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPartiler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPartiProsesleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPersonelBolumleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPersoneller.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPlanlama.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblPlanRezerve.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblProses.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblProsesGrup.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblProsesGrupAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblRenkler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSayacBirimFiyatlari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSayacGirisleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSayaclar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSevk.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSiparisAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSiparisler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblSiparisTestleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTalepKarsilama.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTalepKarsilamaAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTalepKarsilamaBelgeleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTalepler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTezgahArizaGrupAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTezgahArizalari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTezgahAtkiGiris.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblTmpSiparisMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.tblYetkiler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vAnahtar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vAyarlar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBakimOnarim.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBakimOnarimAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyahaneHareketRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyahaneProcess.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyahaneProcessTotal.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyahaneUrunAgaci.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyahaneUrunAgaciAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyaPlani.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBoyaProgrami.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vBukumCozgumMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vCozgu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vCozguIsEmri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vDokumaTumMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vDovizKarsiliginiHesapla.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vDurumCount.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vFasonIplikMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vFasonKumasMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vFiyatListeleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vFuarKombinKumaslar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vFuarKumas.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vFuarKumasProsesleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vGrupProcess.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHamHataHaritasi.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHamHatalar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHamKumaslar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHamKumasSevkGrup.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHamRapor.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHamUretimRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHataDagilimHamTezgahRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHataDagilimHamTipRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHataDagilimMamulRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vHataTanim.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIadeler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikAtkiSarf.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikCiftKatGiris.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikCikis.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikCikisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikCozguSarf.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikGiris+NetKgEvent.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikGiris.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikGirisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikStok.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikTekKatSarf.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vIplikTumMaliyet.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKaliteDagilimMusteri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKaliteDagilimTezgah.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKaliteDagilimTip.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalCikisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalGirisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalRecete.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalReceteAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalReceteActLog.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalReceteMuadiller.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalRecetePartileri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalSarfFisi.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalSarfiyatTipBazli.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalSevkGrup.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKimyasalStokRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKonsolBoyaSiparisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKonsolDuruslarRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKonsolKumasRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKonsolSiparisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKullanicilar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKumas.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKumasRenkAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vKur.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vLaboratuvarTest.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vLeventHareket+BantSayisiEvent.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vLeventHareket.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vLeventIplik.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vLogoIplikGirisTest.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMakinaBakimTarihleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMaliyetTipBazinda.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMaliyetTumunuGoster.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMalzemeBirimleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMalzemeler+AramaKriteri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMalzemeler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMalzemeOrtFiyatlar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMalzemeStokDurum.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMamuleHazirPartiler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMamulHataHaritasi.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMamulKumaslar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMamulKumasUretimRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMamulOnay.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMamulSevkiyatRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vModulDurumlari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vMusteriTipSatisHakkı.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vOkutulanProcess.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPackList.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPackList1.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPackList2.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPaketListesi.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPartiler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPartiProcessleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPersonelBolumleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanlama.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanlananTipMiktarlari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanRapor.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanRezerveler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanRezerveUygunlar.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanSiparisleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vPlanSiparisleri2.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vProcessMaliyetleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vRenkler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vReProcessBarkodlari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vReProcessRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSatisSiparisRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSayacGiris.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSayacGirisleriDgaz.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSayacGirisleriElk.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSayacGirisleriSu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSayimHam.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSayimMamul.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSevk.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSevkGrup.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSevkiyatBarkodlari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisKaliteRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisMamulleri.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisParcaRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisSatirTerminRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiparisTerminRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vSiradakiProcessRaporu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTalepKarsilama.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTalepKarsilamaAct.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTalepMalzemeler.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTezgahArizalari.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTezgahAtkiGiris.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTezgahPlanlama.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTezgahRandimanRapor.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vTumMaliyetlerGrup.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vYetkiMenu.datasource" />
+    <None Include="Properties\DataSources\LKLibrary.DbClasses.vYetkiTanim.datasource" />
+    <None Include="Service References\DosyaServisi\FileOperationServices1.disco" />
+    <None Include="Service References\DosyaServisi\FileOperationServices2.wsdl" />
+    <None Include="Service References\DosyaServisi\FileOperationServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DosyaServisi\FileOperationServices21.wsdl" />
+    <None Include="Service References\DosyaServisi\FileOperationServices21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DosyaServisi\LKLibrary.DosyaServisi.SenfoniFiles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DosyaServisi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DosyaServisi\configuration.svcinfo" />
+    <None Include="Service References\DosyaServisi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\RprMamulEtiketSasmen.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketMimoza.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketEng.rdlc" />
+    <EmbeddedResource Include="Reports\RprBoyaProgrami.rdlc" />
+    <Content Include="Reports\RprRefakatKarti.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reports\RprBoyaRecetesi.rdlc" />
+    <EmbeddedResource Include="Reports\RprHamEtiket.rdlc" />
+    <EmbeddedResource Include="Reports\RprHamHataHaritasi.rdlc" />
+    <EmbeddedResource Include="Reports\RprInvoice.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiket.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketAttrezzo.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketBodrum.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketHimalaya.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketMilano.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketSultani.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketVenus.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketYeni.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulHataHaritasi.rdlc" />
+    <EmbeddedResource Include="Reports\RprPackingList.rdlc" />
+    <EmbeddedResource Include="Reports\RprProforma.rdlc" />
+    <EmbeddedResource Include="Reports\RprSatinAlma.rdlc" />
+    <EmbeddedResource Include="Reports\RprSevkEmriListesi.rdlc" />
+    <EmbeddedResource Include="Reports\RprSevkEtiket.rdlc" />
+    <EmbeddedResource Include="Reports\RprSozlesme.rdlc" />
+    <EmbeddedResource Include="Reports\RprTeklifFormu.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DosyaServisi\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <Costura.EmbedTask />
+  </Target>
+  <UsingTask TaskName="Costura.EmbedTask" AssemblyFile="$(SolutionDir)Tools\Costura.dll" />
+</Project>

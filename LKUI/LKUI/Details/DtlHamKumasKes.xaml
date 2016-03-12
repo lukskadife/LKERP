@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="LKUI.Details.DtlHamKumasKes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:cnt="clr-namespace:LKUI.Controls" Loaded="UserControl_Loaded"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="88" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="126*" />
+            <RowDefinition Height="137*" />
+        </Grid.RowDefinitions>
+        <Label Content="Barkod :" Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Center" FontFamily="Arial" FontSize="16" FontWeight="Bold"/>
+        <TextBox Name="TxtBarkod" Grid.Row="1" FontFamily="Arial" FontSize="16" FontWeight="Bold" Grid.Column="2" KeyUp="TxtBarkod_KeyUp" Margin="3"/>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="0,8" Name="GrdAna">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="Tip No :" Grid.Column="0" Grid.Row="2"/>
+            <Label Content="Metre :" Grid.Column="0" Grid.Row="4"/>
+            <Label Content="Kalite :" Grid.Column="0" Grid.Row="5"/>
+            <Label Content="Müşteri :" Grid.Column="0" Grid.Row="6"/>
+            <Label Content="{Binding TipNo}" Grid.Row="2" Grid.Column="1"/>
+            <Label Content="{Binding Metre}" Grid.Row="4" Grid.Column="1"/>
+            <Label Content="{Binding KaliteAdet}" Grid.Row="5" Grid.Column="1"/>
+            <Label Content="{Binding MusteriAdi}" Grid.Row="6" Grid.Column="1"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.ColumnSpan="2" Name="GrdParca">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27" />
+                <RowDefinition Height="27" />
+                <RowDefinition Height="27" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="Kesilen Metre :" Grid.Column="0" Grid.Row="0"/>
+            <Label Content="Kesilen Kg :" Grid.Column="0" Grid.Row="1"/>
+            <cnt:CntIsdTextBox x:Name="TxtKesilenMt" Text="{Binding Metre, UpdateSourceTrigger=PropertyChanged}" TxtTipi="Sayisal" Grid.Row="0" Grid.Column="1" Margin="0,2,10,0" GotMouseCapture="TxtKesilenMt_GotMouseCapture" LostFocus="TxtKesilenMt_LostFocus" />
+            <cnt:CntIsdTextBox x:Name="TxtKesilenKg" Text="{Binding Kg, UpdateSourceTrigger=PropertyChanged}" TxtTipi="Sayisal" Grid.Row="1" Grid.Column="1" Margin="0,2,10,0" GotMouseCapture="TxtKesilenKg_GotMouseCapture"/>
+            <Label Content="Etiket :" Grid.Column="0" Grid.Row="2"/>
+            <CheckBox x:Name="ChckYazdir" Grid.Column="3" Grid.Row="2" Margin="110,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" IsChecked="True" Content="Yazdır" HorizontalAlignment="Left" />
+            <ComboBox x:Name="CmbEtiket" Grid.Column="1" Grid.Row="2" Margin="0,1" Grid.ColumnSpan="2" DisplayMemberPath="Aciklama2" SelectedValuePath="Id" TabIndex="5" Background="White" HorizontalAlignment="Left" Width="100"/>
+            <Button Name="BtnKes" Content="Kes" Grid.Row="3" Grid.Column="1" Width="100" Height="35" FontSize="14" HorizontalAlignment="Right" Margin="0,5,10,0" Click="BtnKes_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>

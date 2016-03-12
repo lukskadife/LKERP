@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="LKUI.Pages.PageProsesGrup"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:cnt="clr-namespace:LKUI.Controls"
+      mc:Ignorable="d" Loaded="Page_Loaded"
+      d:DesignHeight="300" d:DesignWidth="623"
+	 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition Height="43" />
+        </Grid.RowDefinitions>
+        <telerik:RadGridView Name="DGridGrup" telerik:StyleManager.Theme="Summer" ShowGroupPanel="False" AutoGenerateColumns="False" Background="#FFF0F0F0" 
+            IsReadOnly="True" SelectionChanged="DGridGrup_SelectionChanged" Grid.RowSpan="2" RowIndicatorVisibility="Collapsed">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Adi}" Header="Finish" MinWidth="275"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <telerik:RadGridView Grid.Column="1" Name="DGridProses" telerik:StyleManager.Theme="Summer" ShowGroupPanel="False" AutoGenerateColumns="False" Background="#FFF0F0F0" RowIndicatorVisibility="Collapsed" Grid.RowSpan="2">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewColumn Header="Process">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Name="CmbProcessler" SelectedValue="{Binding ProcessId, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Id" DisplayMemberPath="Adi" ItemsSource="{Binding Processler}" Background="White" SelectionChanged="ComboBox_SelectionChanged"/>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
+                <telerik:GridViewDataColumn Header="Sıra" DataMemberBinding="{Binding Sira}"/>
+                <telerik:GridViewCheckBoxColumn Header="Fason" DataMemberBinding="{Binding FasonMu}"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.Column="1">
+            <Button Content="Ekle" Margin="1,0" Width="60" x:Name="BtnProsesEkle" Click="BtnProsesEkle_Click" />
+            <Button Content="Sil" Margin="1,0" Width="60" x:Name="BtnProsesSil" Click="BtnProsesSil_Click" />
+            <Button Content="Kaydet" Margin="1,0" Width="60" x:Name="BtnProsesKaydet" Click="BtnProsesKaydet_Click" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.Column="0">
+            <Button Content="Ekle" Margin="1,0" Width="60" x:Name="BtnFinishEkle" Click="BtnFinishEkle_Click" />
+            <Button Content="Düzelt" Margin="1,0" Width="60" x:Name="BtnFinishDuzelt" Click="BtnFinishDuzelt_Click" />            
+        </StackPanel>
+        <tkit:ChildWindow Grid.Column="0" Grid.Row="1" IsModal="True" Height="170" Width="290" Name="ChildFinish" WindowStartupLocation="Center">
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="69*" />
+                    <ColumnDefinition Width="235*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />                                        
+                </Grid.RowDefinitions>
+                <Button Content="Kaydet" Name="BtnKaydet" Click="BtnKaydet_Click" HorizontalAlignment="Right" Background="White" Width="75" Grid.Row="3" Grid.Column="1" />                
+                <Label Grid.Row="1" Grid.Column="0" Content="Finish :"/>                
+                <cnt:CntIsdTextBox x:Name="TxtAdi" Text="{Binding Adi}" Grid.Column="1" Grid.Row="1" TxtTipi="Gerekli" />                
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

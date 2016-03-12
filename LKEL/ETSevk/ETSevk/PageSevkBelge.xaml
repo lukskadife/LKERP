@@ -1,0 +1,47 @@
+﻿<Window x:Class="ETSevk.PageSevkBelge"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        MinHeight="314" MinWidth="234" Loaded="Window_Loaded" LocationChanged="Window_LocationChanged"
+      Height="314" Width="234" MaxHeight="314" MaxWidth="234" ResizeMode="NoResize" WindowStyle="ToolWindow" Topmost="True" Top="0" Left="0">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="0" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="Tarih :" FontWeight="Bold" Grid.Row="1" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Açıklama :" FontWeight="Bold" Grid.Row="2" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Belge No :" FontWeight="Bold" Grid.Row="3" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Sevk Eden :" FontWeight="Bold" Grid.Row="4" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Müşteri :" FontWeight="Bold" Grid.Row="5" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Sipariş No :" FontWeight="Bold" Grid.Row="6" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <DatePicker SelectedDate="{Binding Tarih}" Grid.Column="1" Grid.Row="1" Height="25" HorizontalAlignment="Left" Name="DpTarih" VerticalAlignment="Top" Width="115" />
+        <TextBox Text="{Binding Aciklama}" Grid.Column="1" Grid.Row="2" Height="23" Margin="0,3,5,0" Name="TxtAciklama" VerticalAlignment="Top" />
+        <TextBox Text="{Binding BelgeNo}" Grid.Column="1" Grid.Row="3" Height="23"  Margin="0,3,5,0" Name="TxtBelgeNo" VerticalAlignment="Top" />
+        <ComboBox SelectedValue="{Binding SevkEdenId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" SelectedValuePath="Id" Grid.Column="1" Grid.Row="4" Height="23" Margin="0,3,5,0" Name="CmbSevkEden" VerticalAlignment="Top" Background="LightBlue" />
+        <ComboBox SelectedValue="{Binding MusteriId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="FirmaAdi" SelectedValuePath="FirmaId" Background="LightBlue" Height="23" Margin="0,3,5,0" Name="CmbMusteri" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" SelectionChanged="CmbMusteri_SelectionChanged"/>
+        <ComboBox SelectedValue="{Binding SiparisId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="SozlesmeNo" SelectedValuePath="Id" Background="LightBlue" Height="23" Margin="0,3,5,0" Name="CmbSiparis" VerticalAlignment="Top" Grid.Column="1" Grid.Row="6" />
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="8" Orientation="Horizontal">
+            <Label Content="Farklı Siparişin Kumaşını sevk et" FontWeight="Bold"/>
+            <CheckBox Name="CheckFarkliSiparisKumasi" Margin="0,8, 0,0" IsChecked="{Binding FarkliSiparisOkut,UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="9" Orientation="Horizontal">
+            <Label Content="Tip/Renk No Kontrol devre dışı  " FontWeight="Bold"/>
+            <CheckBox Name="CheckTipRenkDevreDisi" Margin="0,6" IsChecked="{Binding TipRenkKontrolDevreDisi,UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        <Button Content="Kaydet" Grid.Row="10" Height="37" HorizontalAlignment="Right" Margin="0,8,97,0" Name="BtnKaydet" VerticalAlignment="Top" Width="75" Click="BtnKaydet_Click" Grid.ColumnSpan="2" />
+        <Button Content="Vazgeç" Height="37" HorizontalAlignment="Right" Margin="0,8,5,0" Name="BtnVazgec" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="10" Click="BtnVazgec_Click" />
+    </Grid>
+</Window>

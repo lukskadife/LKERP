@@ -1,0 +1,5 @@
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.exe
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.pdb

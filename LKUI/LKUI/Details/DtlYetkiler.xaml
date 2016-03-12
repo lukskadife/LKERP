@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="LKUI.Details.DtlYetkiler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             d:DesignHeight="300" d:DesignWidth="300" Height="500" Width="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter Property="IsSelected" Value="{Binding IsInitiallySelected, Mode=OneTime}" />
+                <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
+                <Setter Property="cnt:CntVirtualToggleButton.IsVirtualToggleButton" Value="True" />
+                <Setter Property="cnt:CntVirtualToggleButton.IsChecked" Value="{Binding IsChecked}" />
+            </Style>
+
+            <HierarchicalDataTemplate x:Key="CheckBoxItemTemplate" ItemsSource="{Binding AltYetkiler, Mode=OneTime}">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Focusable="False" IsChecked="{Binding YetkiliMi}" VerticalAlignment="Center"/>
+                    <ContentPresenter Content="{Binding Aciklama, Mode=OneTime}" Margin="2,0"/>
+                </StackPanel>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <RadioButton Name="RBtnBolum" Content="Bölüm" Grid.Row="1" VerticalAlignment="Center" Width="82" Margin="33,7,0,7" HorizontalAlignment="Left" IsChecked="False" Checked="RBtnBolum_Checked"/>
+        <RadioButton Name="RBtnKullanici" Content="Kullanıcı" Grid.Row="1" VerticalAlignment="Center" Width="100" Margin="121,7,0,7" HorizontalAlignment="Left" IsChecked="True" Checked="RBtnKullanici_Checked"/>
+        <ComboBox Name="CmbBolumler" Grid.Row="2" DisplayMemberPath="Adi" SelectedValuePath="Id" Height="25" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" Width="188" Margin="33,0,0,6" SelectionChanged="CmbBolumler_SelectionChanged"/>
+        <ComboBox Name="CmbPersonel" Grid.Row="2" DisplayMemberPath="Adi" SelectedValuePath="Id" Height="25" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" Width="188" Margin="33,0,0,6" Visibility="Hidden" SelectionChanged="CmbPersonel_SelectionChanged"/>
+        <TreeView x:Name="TViewYetkiler" ItemContainerStyle="{StaticResource TreeViewItemStyle}" ItemTemplate="{StaticResource CheckBoxItemTemplate}" Grid.Row="3"/>
+        <Button Name="BtnKaydet" Click="BtnKaydet_Click" Height="30"  Grid.Row="4" Width="80" HorizontalAlignment="Right" Content="Kaydet"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="LKUI.Pages.PageOrmeUrunAgaci"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:cnt="clr-namespace:LKUI.Controls" Loaded="Page_Loaded"
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      mc:Ignorable="d" FontSize="14"
+      d:DesignHeight="600" d:DesignWidth="800" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <toolkit:ChildWindow Name="ChildResimler" IsModal="True" WindowStartupLocation="Center" Width="800" Height="600">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4">
+                    <Button Content="Ekle" Width="70"  Grid.Row="1"  Name="BtnTipResimEkle" Click="BtnTipResimEkle_Click" />
+                    <Button Content="Sil" Width="70"  Grid.Row="1"  Name="BtnTipResimSil" Click="BtnTipResimSil_Click" />
+                </StackPanel>
+                <Border Grid.Row="0" VerticalAlignment="Bottom" BorderThickness="0.5" BorderBrush="Gray" />
+                <Grid Name="GrdImg" Grid.Row="1"/>
+            </Grid>
+        </toolkit:ChildWindow>
+        <toolkit:ChildWindow x:Name="ChildDokumaUrunAgaci" IsModal="True" WindowStartupLocation="Center" Closed="ChildDokumaUrunAgaci_Closed">
+        </toolkit:ChildWindow>
+        <toolkit:ChildWindow Name="ChildSatisHaklari" IsModal="True" WindowStartupLocation="Center" Width="800" Height="600" CaptionForeground="Brown">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <telerik:RadGridView Grid.Row="0" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridSatisHakki" IsReadOnly="False" ShowGroupFooters="True"
+                                     ShowColumnFooters="False" ShowGroupPanel="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" 
+                                     RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" SelectionMode="Extended">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding SatisHakkiVarMi}" Header="Satış Hakkı" Width="Auto" IsReadOnly="False" IsThreeState="False" AutoSelectOnEdit="True" EditTriggers="CellClick"/>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <Button Name="BtnKaydet" Grid.Row="1" HorizontalAlignment="Right" Content="Kaydet" Width="100" Background="White" Height="45" FontSize="14" Click="BtnKaydet_Click"/>
+            </Grid>
+        </toolkit:ChildWindow>
+        <toolkit:ChildWindow Name="ChildFinishHaklari" IsModal="True" WindowStartupLocation="Center" Width="800" Height="600" CaptionForeground="Brown">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <telerik:RadGridView Grid.Row="0" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridFinishHakki" IsReadOnly="False" ShowGroupFooters="True"
+                                     ShowColumnFooters="False" ShowGroupPanel="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" 
+                                     RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" SelectionMode="Extended">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessGrupAdi}" Header="Finish" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding FinishHakkiVarMi}" Header="Seç" Width="Auto" IsReadOnly="False" IsThreeState="False" AutoSelectOnEdit="True" EditTriggers="CellClick"/>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <Button Name="BtnKaydetFinishHakki" Grid.Row="1" HorizontalAlignment="Right" Content="Kaydet" Width="100" Background="White" Height="45" FontSize="14" Click="BtnKaydetFinishHakki_Click"/>
+            </Grid>
+        </toolkit:ChildWindow>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="109" />
+                <ColumnDefinition Width="581*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="33" />
+                <RowDefinition Height="495*" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="4">
+                <Button Content="Ekle" Width="70"  Grid.Row="1"  Name="BtnTipEkle" Click="BtnTipEkle_Click" />
+                <Button Content="Düzelt" Width="70"  Grid.Row="1"  Name="BtnTipDüzelt" Click="BtnTipDüzelt_Click" />
+                <Button Content="Sil" Width="70"  Grid.Row="1"  Name="BtnTipSil" Click="BtnTipSil_Click" />
+            </StackPanel>
+            <telerik:RadGridView Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="4" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridDokumaUrunAgaci" IsReadOnly="True" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" ShowGroupPanel="False"
+                                 MouseDoubleClick="DGridDokumaUrunAgaci_MouseDoubleClick" ShowGroupFooters="False" ShowColumnFooters="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" >
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding TipAdi}" Header="Tip Adı" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Varyant}" Header="Varyant" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewColumn>
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="BtnResimGoster" Content="Resim" Click="BtnResimGoster_Click" Background="White" Margin="1"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn>
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="BtnSatisHakki" Content="Satış Hakkı" Click="BtnSatisHakki_Click" Background="White" Margin="1"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn>
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="BtnTakdirName" Content="Takdir Name" Click="BtnTakdirName_Click" Background="White" Margin="1"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn>
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="BtnFinishHakki" Content="Finish" Click="BtnFinishHakki_Click" Background="White" Margin="1"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </Grid>
+
+        <toolkit:ChildWindow Name="ChildTakdirName" IsModal="True" WindowStartupLocation="Center" Width="400" Height="500" CaptionForeground="Brown" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridTakdirName" IsReadOnly="False" ShowGroupFooters="True"
+                                     ShowColumnFooters="False" ShowGroupPanel="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" 
+                                     RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" SelectionMode="Extended">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Adi}" Header="DosyaAdi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewColumn>
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="BtnTakdirNameGoster" Content=" Göster " Background="White" Click="BtnTakdirNameGoster_Click" Margin="1"/>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <Button Name="BtnTakdirNameEkle" Content="Dosya Ekle" Background="White" Grid.Row="0" HorizontalAlignment="Left" Margin="0,3,3,3" Padding="4" Click="BtnTakdirNameEkle_Click"/>
+            </Grid>
+        </toolkit:ChildWindow>
+    </Grid>
+</UserControl>

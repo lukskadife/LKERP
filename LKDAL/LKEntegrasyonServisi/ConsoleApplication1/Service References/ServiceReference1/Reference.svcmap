@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ea578597-59bd-49ea-8372-aa708aafcfbd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49157/EntegrasyonServisi.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EntegrasyonServisi.wsdl" MetadataType="Wsdl" ID="5f6fe29a-e87a-482b-8a35-8f2691a71953" SourceId="1" SourceUrl="http://localhost:49157/EntegrasyonServisi.svc?wsdl" />
+    <MetadataFile FileName="EntegrasyonServisi.disco" MetadataType="Disco" ID="7c73e3cc-6bc9-42c3-8059-3a611e8ad10b" SourceId="1" SourceUrl="http://localhost:49157/EntegrasyonServisi.svc?disco" />
+    <MetadataFile FileName="EntegrasyonServisi.xsd" MetadataType="Schema" ID="abc60071-2dfb-4df3-97b9-d627aa258359" SourceId="1" SourceUrl="http://localhost:49157/EntegrasyonServisi.svc?xsd=xsd1" />
+    <MetadataFile FileName="EntegrasyonServisi1.xsd" MetadataType="Schema" ID="ea18fe8c-e975-49d5-9e7c-da3cc6a32744" SourceId="1" SourceUrl="http://localhost:49157/EntegrasyonServisi.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

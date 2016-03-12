@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="LKUI.Details.DtlTezgahGunlukDokuma"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:tookit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="400" MinWidth="300" MaxWidth="550"
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid>
+        <Border BorderBrush="Black" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="198*" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="HeaderBorder" BorderBrush="Black" BorderThickness="0"  Padding="0,0" VerticalAlignment="Top" Margin="5,0,0,0" Height="35" Grid.ColumnSpan="2">
+                    <DockPanel x:Name="Header" Height="25.96" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap"  VerticalAlignment="Bottom"   HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run  Text="Tezgahlar"/></TextBlock>
+                    </DockPanel>
+                </Border>
+                <tookit:WatermarkTextBox x:Name="TxtTezgahAdi" Watermark="Tezgah Adına Göre Ara.." TextChanged="TxtTezgahAdi_TextChanged" Margin="5,5,28,5" Grid.Row="1" d:LayoutOverrides="HorizontalAlignment" />
+                <DataGrid x:Name="DGridDokumaPeriyot" AutoGenerateColumns="False" FontSize="14" Grid.Row="2" Grid.ColumnSpan="2" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Kodu" MinWidth="50" Binding="{Binding Kodu}"/>
+                        <DataGridTextColumn Header="Adı" MinWidth="100" Binding="{Binding Adi}"/>
+                        <DataGridTemplateColumn Header="Günlük Devir" MinWidth="80" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding DevirSayisi, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Maks.Devir" MinWidth="80" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding MaksDevir, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Tezgah Versiyonları" MinWidth="100">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate >
+                                    <ComboBox x:Name="ComboBoxTezgahVersiyon" ItemsSource="{Binding TezgahVersiyonlari}" SelectedIndex="0" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding TezgahVersiyonId,UpdateSourceTrigger=PropertyChanged}" Background="White" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="BtnKaydet" Content="Kaydet" Grid.Row="3" Margin="3" Click="BtnKaydet_Click" Grid.Column="1" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

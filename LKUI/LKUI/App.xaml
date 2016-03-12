@@ -1,0 +1,10 @@
+﻿<Application x:Class="LKUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:scheduling="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Scheduling.Core"
+             xmlns:gantt="clr-namespace:Telerik.Windows.Controls.GanttView;assembly=Telerik.Windows.Controls.GanttView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="PageMain.xaml">
+    <Application.Resources>
+        
+    </Application.Resources>
+</Application>
+<!--"PageMain.xaml"-->

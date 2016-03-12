@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="LKUI.Details.DtlKumasTipBilgileri"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+            d:DesignHeight="550" d:DesignWidth="750">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="204" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="23" />
+                <ColumnDefinition Width="119" />
+                <ColumnDefinition Width="84" />
+                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27" />
+                <RowDefinition Height="84" />
+                <RowDefinition Height="28" />
+                <RowDefinition Height="168" />
+                <RowDefinition Height="28" />
+                <RowDefinition Height="28" />
+                <RowDefinition Height="27" />
+                <RowDefinition Height="27" />
+                <RowDefinition Height="24" />
+                <RowDefinition Height="68" />
+                <RowDefinition Height="41" />
+                <RowDefinition Height="0*" />
+            </Grid.RowDefinitions>
+            <Border x:Name="HeaderBorder" BorderBrush="Black" BorderThickness="0,0,0,1"  Padding="10,0" VerticalAlignment="Top" Grid.ColumnSpan="40">
+                <DockPanel x:Name="Header" Height="26">
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Bottom"   HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16"><Run  Text="Kumaş Tip Bilgileri "/></TextBlock>
+                </DockPanel>
+            </Border>
+            <StackPanel Grid.Row="1" Orientation="Vertical" Grid.RowSpan="9">
+                <Label Content="Tip No:" Height="28"  />
+                <Label Content="Tip Adı:" Height="28"  />
+                <Label Content="Kumaş Eni(+-2):" Height="28"  />
+                <Label Content="Gramaj(gram/metre):" Height="28"  />
+                <Label Content="Hav Kompozisyonu:" Height="28"  />
+                <Label Content="Total Kompozisyon:" Height="28"  />
+                <Label Content="Kullanım Alanı:" Height="28"  />
+               
+                <Label Content="Yıkama Talimatı:" Height="28"/>
+                <Label Content="Yıkama Talimatı Not:" Height="28"  />
+                <Label Content="Martindale:" Height="28"  />
+                <Label Content="Mukavemet(Atkı):" Height="28"  />
+                <Label Content="Dikiş Sıyrılması(Atkı):" Height="28"  />
+                <Label Content="Renk Haslıkları:" Height="28"  />
+                <Label Content="Sürtme Haslıkları YAŞ:" Height="28"  />
+                <Label Content="Sürtme Haslıkları KURU:" Height="28"  />
+                 <Label Content="Fiyat:" Height="28"  />
+                <Label Content="Döviz:" Height="28"  />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="9">
+                <cnt:CntIsdTextBox x:Name="TxtTipNo" Height="28" Text="{Binding Path=TipNo}"/>
+                <cnt:CntIsdTextBox x:Name="TxtTipAdi" Height="28" Text="{Binding Path=TipAdi}"/>
+                <cnt:CntIsdTextBox x:Name="TxtKumasEni" Height="28" Text="{Binding Path=KumasEn}" TxtTipi="ZorunsuzSayisal" />
+                <cnt:CntIsdTextBox x:Name="TxtGramajgm" Height="28" Text="{Binding Path=KumasAgirlik}" TxtTipi="ZorunsuzSayisal" />
+                <cnt:CntIsdTextBox x:Name="TxtHavKomp" Height="28" Text="{Binding Path=HavKomp}"/>
+                <cnt:CntIsdTextBox x:Name="TxtTotalKomp" Height="28" Text="{Binding Path=TotalKomp}"/>
+                <StackPanel Grid.Column="1" Grid.Row="4" Height="28" Orientation="Horizontal">
+                    <CheckBox x:Name="ChckDosemelik" Content="Döşemelik" IsChecked="{Binding Path=Dosemelik}"/>
+                    <CheckBox x:Name="ChckPerdelik" Content="Perdelik" IsChecked="{Binding Path=Perdelik}"/>
+                    <CheckBox x:Name="ChckElbiselik" Content="Elbiselik" IsChecked="{Binding Path=Elbiselik}"/>
+                    <CheckBox x:Name="ChckLikraliElbiselik" Content="Likralı Elbiselik" IsChecked="{Binding Path=Likrali}"/>  
+                </StackPanel>
+               
+                <StackPanel Orientation="Horizontal" Height="28">
+                    <CheckBox x:Name="Chck1" IsChecked="{Binding Path=Yik1}">
+                        <Image Source="/LKUI;component/Resources/p.jpg"/>
+                    </CheckBox>
+                    <CheckBox x:Name="Chck2" IsChecked="{Binding Path=Yik2}">
+                        <Image Source="/LKUI;component/Resources/Ucgen.jpg"/>
+                    </CheckBox>
+                    <CheckBox x:Name="Chck3" IsChecked="{Binding Path=Yik3}">
+                        <Image Source="/LKUI;component/Resources/utu.jpg"/>
+                    </CheckBox>
+                    <CheckBox x:Name="Chck4" IsChecked="{Binding Path=Yik4}">
+                        <Image Source="/LKUI;component/Resources/yikanmaz.jpg"/>
+                    </CheckBox>
+                    <CheckBox x:Name="Chck5" IsChecked="{Binding Path=Yik5}">
+                        <Image Source="/LKUI;component/Resources/Yuvarlak.jpg"/>
+                    </CheckBox>
+                </StackPanel>
+                <cnt:CntIsdTextBox x:Name="TxtYıkamaTalimati" Height="28" Text="{Binding Path=YikamaTalNot}"/>
+                <cnt:CntIsdTextBox x:Name="TxtMartindale" Height="28" Text="{Binding Path=Martindale}"/>
+                <cnt:CntIsdTextBox x:Name="TxtMukavemetAtki" Height="28" Text="{Binding Path=MukavemetAtki}"/>
+                <cnt:CntIsdTextBox x:Name="TxtDikisSiyrilmasiAtki" Height="28" Text="{Binding Path=DikisSiyrikAtki}"/>
+                <StackPanel Height="28" Orientation="Horizontal">
+                    <Label Content="Açık"/>
+
+                    <TextBox x:Name="TxtRenkAcik" Width="50" Text="{Binding Path=RenkHaslikAcik}"/>
+                    <Label Content="Orta"/>
+                    <TextBox x:Name="TxtRenkOrta" Width="50" Text="{Binding Path=RenkHaslikOrta}"/>
+                    <Label Content="Koyu"/>
+                    <TextBox x:Name="TxtRenkKoyu" Width="50" Text="{Binding Path=RenkHaslikKoyu}"/>
+                </StackPanel>
+                <StackPanel Height="28" Orientation="Horizontal">
+                    <Label Content="Açık"/>
+                    <TextBox x:Name="TxtSürtmeYasAcik" Width="50"  Text="{Binding Path=SurtmeHaslikYasAcik}"  />
+                    <Label Content="Orta"/>
+                    <TextBox x:Name="TxtSürtmeYasOrta" Width="50" Text="{Binding Path=SurtmeHaslikYasOrta}"/>
+                    <Label Content="Koyu"/>
+                    <TextBox x:Name="TxtSürtmeYasKoyu" Width="50" Text="{Binding Path=SurtmeHaslikYasKoyu}"/>
+                </StackPanel>
+                <StackPanel Height="28" Orientation="Horizontal">
+                    <Label Content="Açık"/>
+                    <TextBox x:Name="TxtSürtmeKuruAcik" Width="50" Text="{Binding Path=SurtmeHaslikKuruAcik}"/>
+                    <Label Content="Orta"/>
+                    <TextBox x:Name="TxtSürtmeKuruOrta" Width="50" Text="{Binding Path=SurtmeHaslikKuruOrta}"/>
+                    <Label Content="Koyu"/>
+                    <TextBox x:Name="TxtSürtmeKuruKoyu" Width="50" Text="{Binding Path=SurtmeHaslikKuruKoyu}"/>
+                </StackPanel>
+                <cnt:CntIsdTextBox x:Name="TxtFiyat" Height="28" Text="{Binding Path=Fiyat}" TxtTipi="ZorunsuzSayisal"  />
+                <ComboBox x:Name="CmbDoviz" Height="27" Width="40" Background="White" HorizontalContentAlignment="Center" HorizontalAlignment="Left" ItemsSource="{Binding Dovizler}" DisplayMemberPath="Aciklama" SelectedValuePath="Id" SelectedValue="{Binding DovizId, Mode=TwoWay}"/>
+            </StackPanel>
+            <Button x:Name="BtnKaydet" Content="Kaydet" Grid.Row="10" Grid.Column="3" Width="92" Click="BtnKaydet_Click" Margin="105,0,6,6" Grid.ColumnSpan="2" />
+            <cnt:CntIsdTextBox x:Name="TxtGramajgm2" Height="28" Text="{Binding Path=KumasAgirlik2}" Grid.Column="3" Grid.Row="2" />
+            <cnt:CntIsdTextBox x:Name="TxtMukavemetCözgü" Height="28" Text="{Binding Path=MukavemetCözgü}" Grid.Column="3" Grid.Row="4" />
+            <cnt:CntIsdTextBox x:Name="TxtDikisSiyrilmasiCözgü" Height="28" Text="{Binding Path=DikSiyrikCozgu}" Grid.Column="3"  Grid.Row="5" />
+            <Label Content="-" Grid.Column="2"  Grid.Row="4"  FontSize="15" Margin="0,4,0,0" />
+            <Label Content="-" Grid.Column="2"  Grid.Row="5"  FontSize="16"   />
+            <Label Content="-" Grid.Column="2"  Grid.Row="2"  FontSize="15"   />
+            <Label Content="(gram/m2)" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left"  Name="label1"  />
+            <Label Content="(Çözgü)" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Left"  />
+            <Label Content="(Çözgü)" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Left"  />
+        </Grid>
+    </Grid>
+</UserControl>

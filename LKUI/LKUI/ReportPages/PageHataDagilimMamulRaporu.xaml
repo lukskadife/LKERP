@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="LKUI.ReportPages.PageHataDagilimMamulRaporu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" xmlns:pivot="http://schemas.telerik.com/2008/xaml/presentation/pivot"
+      d:DesignHeight="300" d:DesignWidth="300" Loaded="Page_Loaded"
+	 >
+
+    <UserControl.Resources>
+
+        <pivot:LocalDataSourceProvider x:Key="DataProvider">
+            <pivot:LocalDataSourceProvider.RowGroupDescriptions>
+                <pivot:PropertyGroupDescription PropertyName="HataYeri" />
+                <pivot:PropertyGroupDescription PropertyName="HataAdi" />
+            </pivot:LocalDataSourceProvider.RowGroupDescriptions>
+            <pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+                <pivot:PropertyGroupDescription PropertyName="TipNo" />
+            </pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+            <pivot:LocalDataSourceProvider.AggregateDescriptions>
+                <pivot:PropertyAggregateDescription PropertyName="Uzunluk" />
+            </pivot:LocalDataSourceProvider.AggregateDescriptions>
+        </pivot:LocalDataSourceProvider>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="10,1" >
+            <DatePicker Name="DateIlkTarih"/>
+            <DatePicker Name="DateSonTarih" Margin="10,0,0,0"/>
+            <Button Name="BtnRaporla" Background="White" Click="BtnRaporla_Click" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBlock Text="Rapor Getir" TextWrapping="Wrap" FontSize="14"/>
+            </Button>
+        </StackPanel>
+        <pivot:RadPivotGrid Grid.Row="1" Name="DGridRapor" Background="#FFF0F0F0" DataProvider="{StaticResource DataProvider}" />
+
+    </Grid>    
+</UserControl>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EntegrasyonServisi" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://server/LKEntegrasyon/EntegrasyonServisi.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://server/LKEntegrasyon/EntegrasyonServisi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEntegrasyon_MalzemeleriEntegreEt_InputMessage">
+    <wsdl:part name="parameters" element="tns:MalzemeleriEntegreEt" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_MalzemeleriEntegreEt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MalzemeleriEntegreEtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_MalzemeBirimleriEntegreEt_InputMessage">
+    <wsdl:part name="parameters" element="tns:MalzemeBirimleriEntegreEt" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_MalzemeBirimleriEntegreEt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MalzemeBirimleriEntegreEtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_FirmalariEntegreEt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FirmalariEntegreEt" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_FirmalariEntegreEt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FirmalariEntegreEtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_PersonelleriEntegreEt_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelleriEntegreEt" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_PersonelleriEntegreEt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelleriEntegreEtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_PersonelBolumleriEntegreEt_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelBolumleriEntegreEt" />
+  </wsdl:message>
+  <wsdl:message name="IEntegrasyon_PersonelBolumleriEntegreEt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelBolumleriEntegreEtResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEntegrasyon">
+    <wsdl:operation name="MalzemeleriEntegreEt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntegrasyon/MalzemeleriEntegreEt" message="tns:IEntegrasyon_MalzemeleriEntegreEt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntegrasyon/MalzemeleriEntegreEtResponse" message="tns:IEntegrasyon_MalzemeleriEntegreEt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MalzemeBirimleriEntegreEt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntegrasyon/MalzemeBirimleriEntegreEt" message="tns:IEntegrasyon_MalzemeBirimleriEntegreEt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntegrasyon/MalzemeBirimleriEntegreEtResponse" message="tns:IEntegrasyon_MalzemeBirimleriEntegreEt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FirmalariEntegreEt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntegrasyon/FirmalariEntegreEt" message="tns:IEntegrasyon_FirmalariEntegreEt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntegrasyon/FirmalariEntegreEtResponse" message="tns:IEntegrasyon_FirmalariEntegreEt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonelleriEntegreEt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntegrasyon/PersonelleriEntegreEt" message="tns:IEntegrasyon_PersonelleriEntegreEt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntegrasyon/PersonelleriEntegreEtResponse" message="tns:IEntegrasyon_PersonelleriEntegreEt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonelBolumleriEntegreEt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEntegrasyon/PersonelBolumleriEntegreEt" message="tns:IEntegrasyon_PersonelBolumleriEntegreEt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEntegrasyon/PersonelBolumleriEntegreEtResponse" message="tns:IEntegrasyon_PersonelBolumleriEntegreEt_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEntegrasyon" type="tns:IEntegrasyon">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MalzemeleriEntegreEt">
+      <soap:operation soapAction="http://tempuri.org/IEntegrasyon/MalzemeleriEntegreEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MalzemeBirimleriEntegreEt">
+      <soap:operation soapAction="http://tempuri.org/IEntegrasyon/MalzemeBirimleriEntegreEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmalariEntegreEt">
+      <soap:operation soapAction="http://tempuri.org/IEntegrasyon/FirmalariEntegreEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonelleriEntegreEt">
+      <soap:operation soapAction="http://tempuri.org/IEntegrasyon/PersonelleriEntegreEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonelBolumleriEntegreEt">
+      <soap:operation soapAction="http://tempuri.org/IEntegrasyon/PersonelBolumleriEntegreEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EntegrasyonServisi">
+    <wsdl:port name="BasicHttpBinding_IEntegrasyon" binding="tns:BasicHttpBinding_IEntegrasyon">
+      <soap:address location="http://server/LKEntegrasyon/EntegrasyonServisi.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

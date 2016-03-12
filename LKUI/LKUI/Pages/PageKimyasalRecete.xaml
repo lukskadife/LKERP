@@ -1,0 +1,630 @@
+﻿<UserControl xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  x:Class="LKUI.Pages.PageKimyasalRecete"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:pages="clr-namespace:LKUI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800" Loaded="Page_Loaded"
+      xmlns:cnt="clr-namespace:LKUI.Controls">
+    <UserControl.Resources>
+        <pages:ReceteMesajVisibilityConverter x:Key="ReceteMesajVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="126*" />
+            <ColumnDefinition Width="184*" />
+            <ColumnDefinition Width="96" />
+            <ColumnDefinition Width="34" />
+            <ColumnDefinition Width="43" />
+            <ColumnDefinition Width="42" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="129*" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="160*" />
+            <RowDefinition Height="0" />
+            <RowDefinition Height="0" />
+        </Grid.RowDefinitions>
+        <toolkit:ChildWindow x:Name="ChildKimyasallar" IsModal="True" WindowStartupLocation="Center" MinHeight="600" MinWidth="800" Grid.Row="0" Grid.Column="0" Grid.RowSpan="100" Grid.ColumnSpan="100" Closed="ChildKimyasallar_Closed" CaptionForeground="Brown" >
+            <Grid Name="GrdKimyasallar">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250*" />
+                    <ColumnDefinition Width="300*" />
+                    <ColumnDefinition Width="72*" />
+                    <ColumnDefinition Width="62*" />
+                    <ColumnDefinition Width="80*" />
+                    <ColumnDefinition Width="0*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="245*" />
+                    <RowDefinition Height="268*" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Border Grid.ColumnSpan="6" BorderBrush="Black" BorderThickness="1" Margin="2,0">
+                    <!--Buralara veri otomatik gelecek giriş yapılamayacak-->
+                    <Grid DataContext="{Binding Recete}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="60*" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70*" />
+                            <ColumnDefinition Width="77" />
+                            <ColumnDefinition Width="62*" />
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="61*" />
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="60*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Reçete No:" VerticalAlignment="Center" />
+                        <TextBlock x:Name="TxtReceteNoChild" Grid.Column="1" Text="{Binding ReceteNo}" VerticalAlignment="Center" />
+                        <Label Content="Tartılan Kg:" VerticalAlignment="Center" Grid.Column="2" />
+                        <TextBlock x:Name="TxtTartilanKg" Grid.Column="3" Margin="2" VerticalAlignment="Center" />
+                        <Label Content="Makina No:" VerticalAlignment="Center" Grid.Column="4" />
+                        <TextBlock x:Name="TxtMakinaNo" Grid.Column="5" Margin="2" Text="{Binding Makina}" VerticalAlignment="Center" />
+                        <Label Content="Program No:" VerticalAlignment="Center" Grid.Column="6" Visibility="Hidden"/>
+                        <TextBlock x:Name="TxtProgramNoChild" Grid.Column="7" Margin="2" Text="{Binding Program}" VerticalAlignment="Center" Visibility="Hidden"/>
+                        <Button Content="Temizle" Grid.Column="6" Name="BtnTumReceteyiTemizle" FontSize="14" Margin="2" Click="BtnTumReceteyiTemizle_Click" />
+                        <Label Content="Personel:" VerticalAlignment="Center" Grid.Column="8" />
+                        <TextBlock x:Name="TxtPersonel" Grid.Column="9" Margin="2" Text="{Binding PersonelAdi}" VerticalAlignment="Center" />
+                        <Label Content="Tarih:" VerticalAlignment="Center" Grid.Column="10" />
+                        <TextBlock x:Name="TxtTarih" Grid.Column="11" Margin="2" Text="{Binding Tarih, StringFormat='dd.MM.yyyy'}" VerticalAlignment="Center" />
+                    </Grid>
+                </Border>
+                <Border Grid.RowSpan="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="2,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="160*" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="160*" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Border Background="#FFC1CFE8">
+                            <Label Content="BOYA KASARI" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="102*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="FLOTE:" VerticalAlignment="Center" FontWeight="Bold" />
+                            <cnt:CntIsdTextBox VerticalAlignment="Center" x:Name="TxtFloteKasar" Margin="2" Grid.Column="1" TxtTipi="ZorunsuzSayisal" Text="{Binding KasarFlote, UpdateSourceTrigger=PropertyChanged}" />
+                            <Button Content="H" Grid.Column="2" Name="BtnHesaplaKasar" FontWeight="Bold" FontSize="14" Margin="5" Click="BtnHesaplaKasar_Click" />
+                        </Grid>
+                        <Border Background="#FFC1CFE8" Grid.Row="4">
+                            <Label Content="ÖN İŞLEM" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                        <ScrollViewer Grid.Row="2">
+                            <DataGrid AutoGenerateColumns="False" Name="DGridBoyaKasari" ItemsSource="{Binding Kasarlar, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Oran">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Oran,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="60" Header="Kimyasal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ListKimyasallar}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding KimyasalId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Gr/Lt-Oran(%)">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox x:Name="CmbGrLtOran" SelectedValue="{Binding GrLtOran,UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content">
+                                                    <ComboBoxItem Content="Gr/Lt" />
+                                                    <ComboBoxItem Content="Oran" />
+                                                </ComboBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Miktar">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Miktar,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <ScrollViewer Grid.Row="5">
+                            <DataGrid AutoGenerateColumns="False" Name="DGridOnIslem" ItemsSource="{Binding OnIslemler}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn MinWidth="60" Header="Kimyasal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ListKimyasallar}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding KimyasalId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Miktar">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Miktar,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <StackPanel Grid.Row="3" Orientation="Horizontal">
+                            <Button Content="+" Margin="1,0" Width="25" x:Name="BtnEkleKasar" Click="BtnEkleKasar_Click" FontSize="15" FontWeight="Bold" />
+                            <Button Content="-" Margin="1,0" Width="25" x:Name="BtnSilKasar" Click="BtnSilKasar_Click" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="6" Orientation="Horizontal">
+                            <Button Content="+" Margin="1,0" Width="25" x:Name="BtnEkleOnİslem" Click="BtnEkleOnİslem_Click" FontSize="15" FontWeight="Bold" />
+                            <Button Content="-" Margin="1,0" Width="25" x:Name="BtnSilOnİslem" Click="BtnSilOnİslem_Click" FontSize="15" FontWeight="Bold" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1" Margin="2,0" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="131*" />
+                            <RowDefinition Height="0" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="101*" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="101*" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Border Background="#FFC1CFE8">
+                            <Label Content="BOYA" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="31*" />
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="FLOTE:" VerticalAlignment="Center" FontWeight="Bold" />
+                            <cnt:CntIsdTextBox Grid.Column="1" VerticalAlignment="Center" TxtTipi="ZorunsuzSayisal" x:Name="TxtFloteBoya" Margin="2" Text="{Binding BoyaKimyasalFlote, UpdateSourceTrigger=PropertyChanged}" />
+                            <Button Content="H" Grid.Column="2" Name="BtnHesaplaBoya" FontWeight="Bold" FontSize="14" Margin="5" Click="BtnHesaplaBoya_Click" />
+                            <Button Content="Başka Reçete" Grid.Column="3" Name="BtnMuadilYukle" Margin="2" Click="BtnMuadilYukle_Click" />
+                            <Button Content="Lab Renk Kartı" Grid.Column="4" Name="BtnReceteYukle" Margin="2" Click="BtnReceteYukle_Click" />
+                        </Grid>
+                        <ScrollViewer Grid.Row="2">
+                            <DataGrid AutoGenerateColumns="False" Name="DGridBoya" ItemsSource="{Binding Boyalar}" IsReadOnly="False">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Oran">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Oran,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE" IsReadOnly="False"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="60" Header="Kimyasal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ListKimyasallar}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding KimyasalId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Gr/Lt-Oran(%)">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox x:Name="CmbGrLtOran" SelectedValue="{Binding GrLtOran,UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" IsReadOnly="True">
+                                                    <ComboBoxItem Content="Gr/Lt" />
+                                                    <ComboBoxItem Content="Oran" />
+                                                </ComboBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Miktar">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Miktar,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE" IsReadOnly="True"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <Border Background="#FFC1CFE8" Grid.Row="4" Margin="1,0,-1,0">
+                            <Label Content="KİMYASAL" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                        <ScrollViewer Grid.Row="5">
+                            <DataGrid AutoGenerateColumns="False" Name="DGridKimyasal" ItemsSource="{Binding Kimyasallar}" IsReadOnly="False">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Oran">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Oran,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE" IsReadOnly="False"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="60" Header="Kimyasal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ListKimyasallar}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding KimyasalId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Gr/Lt-Oran(%)">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox x:Name="CmbGrLtOran" SelectedValue="{Binding GrLtOran,UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" IsReadOnly="True">
+                                                    <ComboBoxItem Content="Gr/Lt" />
+                                                    <ComboBoxItem Content="Oran" />
+                                                </ComboBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Miktar">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Miktar,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE" IsReadOnly="True"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <StackPanel Grid.Row="6" Orientation="Horizontal">
+                            <Button Content="+" Margin="1,0" x:Name="BtnEkleKimyasal" Width="25" Click="BtnEkleKimyasal_Click" FontSize="15" FontWeight="Bold" />
+                            <Button Content="-" Margin="1,0" x:Name="BtnSilKimyasal" Width="25" Click="BtnSilKimyasal_Click" FontSize="15" FontWeight="Bold" />
+                        </StackPanel>
+                        <Grid Grid.Row="7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="51*" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <Border BorderThickness="1" BorderBrush="Black" Height="1" Grid.ColumnSpan="5" VerticalAlignment="Top"></Border>
+                            <Label Content="FLOTE:" VerticalAlignment="Center" FontWeight="Bold" />
+                            <cnt:CntIsdTextBox Grid.Column="1" VerticalAlignment="Center" TxtTipi="ZorunsuzSayisal" x:Name="TxtFloteApre" Margin="2" Text="{Binding ApreFlote, UpdateSourceTrigger=PropertyChanged}" />
+                            <Button Content="Apre Yükle" Grid.Column="4" Name="BtnApreYukle" FontSize="14" Margin="2" Click="BtnApreYukle_Click" />
+                            <Label Content="Apre No:" Grid.Column="2" />
+                            <ComboBox x:Name="CmbApreNo" Grid.Column="3" Margin="1,5" DisplayMemberPath="Kodu" SelectedValuePath="Id"></ComboBox>
+                        </Grid>
+                        <ScrollViewer Grid.Row="8">
+                            <DataGrid AutoGenerateColumns="False" Name="DGridApre" ItemsSource="{Binding Apreler}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Oran">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Oran,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="60" Header="Kimyasal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ListKimyasallar}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding KimyasalId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Gr/Lt-Oran(%)">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox x:Name="CmbGrLtOran" SelectedValue="{Binding GrLtOran,UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content">
+                                                    <ComboBoxItem Content="Gr/Lt" />
+                                                    <ComboBoxItem Content="Oran" />
+                                                </ComboBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Miktar">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Miktar,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <StackPanel Grid.Row="9" Orientation="Horizontal">
+                            <Button Content="+" Width="25" Margin="1,0" x:Name="BtnEkleApre" Click="BtnEkleApre_Click" FontSize="15" FontWeight="Bold" />
+                            <Button Content="-" Width="25" Margin="1,0" x:Name="BtnSilApre" Click="BtnSilApre_Click" FontSize="15" FontWeight="Bold" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2" Margin="3,0,2,0" Grid.RowSpan="2" Grid.ColumnSpan="4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="160*" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="160*" />
+                        </Grid.RowDefinitions>
+                        <Border Background="#FFC1CFE8">
+                            <Label Content="YIKAMA" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="102*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="FLOTE:" VerticalAlignment="Center" FontWeight="Bold" />
+                            <cnt:CntIsdTextBox Grid.Column="1" VerticalAlignment="Center" TxtTipi="ZorunsuzSayisal" x:Name="TxtFloteYikama" Margin="2" Text="{Binding YikamaFlote, UpdateSourceTrigger=PropertyChanged}" />
+                            <Button Content="H" Grid.Column="2" Name="BtnHesaplaYikama" FontWeight="Bold" FontSize="14" Margin="5" Click="BtnHesaplaYikama_Click" />
+                        </Grid>
+                        <ScrollViewer Grid.Row="2">
+                            <DataGrid AutoGenerateColumns="False" Name="DGridYikama" ItemsSource="{Binding Yikamalar}" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Oran">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Oran,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn MinWidth="60" Header="Kimyasal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ListKimyasallar}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding KimyasalId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Gr/Lt-Oran(%)">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox x:Name="CmbGrLtOran" SelectedValue="{Binding GrLtOran,UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content">
+                                                    <ComboBoxItem Content="Gr/Lt" />
+                                                    <ComboBoxItem Content="Oran" />
+                                                </ComboBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Miktar">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox Text="{Binding Miktar,UpdateSourceTrigger=PropertyChanged}" Background="#FFCECECE"></TextBox>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <Border Background="#FFC1CFE8" Grid.Row="4">
+                            <Label Content="AÇIKLAMALAR" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                        <ScrollViewer Grid.Row="5">
+                            <TextBox x:Name="TxtAciklama" TextWrapping="Wrap" />
+                        </ScrollViewer>
+                        <StackPanel Orientation="Horizontal" Grid.Row="3">
+                            <Button Content="+" Margin="1,0" Width="25" x:Name="BtnEkleYikama" Click="BtnEkleYikama_Click" FontSize="15" FontWeight="Bold" />
+                            <Button Content="-" Margin="1,0" Width="25" x:Name="BtnSilYikama" Click="BtnSilYikama_Click" FontSize="15" FontWeight="Bold" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <StackPanel Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Width="auto">
+                    <Button Content="Onayla" Grid.Column="3" Grid.Row="3" Width="60" Name="BtnOnayla" Click="BtnOnayla_Click" Visibility="Hidden"/>
+                    <Button Content="Güncelledim" Grid.Column="3" Grid.Row="3" Width="80" Name="BtnGuncelledim" Click="BtnGuncelledim_Click" />
+                    <Button Content="Kaydet Yazdır" Grid.Column="3" Grid.Row="3" Width="80" Name="BtnYazdir" Click="BtnYazdir_Click" />
+                    <Button Content="Kaydet Kapat" Grid.Column="4" Grid.Row="3" Width="80" Name="BtnKaydetGenel" Click="BtnKaydetGenel_Click" />
+                    <Button Content="Vazgeç" Grid.Column="5" Grid.Row="3" Width="60" Name="BtnVazgecGenel" Click="BtnVazgecGenel_Click" />
+                </StackPanel>
+            </Grid>
+        </toolkit:ChildWindow>
+        
+        
+        
+        <Button Grid.Row="0" Name="BtnReceteEkle"  Grid.RowSpan="2" Click="BtnReceteEkle_Click">
+            <TextBlock Text="Reçete Ekle" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="1" Name="BtnReceteDuzenle"  Grid.RowSpan="2" Click="BtnReceteDuzenle_Click" >
+            <TextBlock Text="Reçete Düzelt" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="2" Name="BtnReceteSil"  Grid.RowSpan="2" Click="BtnReceteSil_Click">
+            <TextBlock Text="Reçete Sil" TextWrapping="Wrap" TextAlignment="Center"/>            
+        </Button>
+        <Button Content="Yenile" Grid.Row="0" Grid.Column="3" Name="BtnYenile"  Grid.RowSpan="2" Click="BtnYenile_Click" />
+        <Button Content="Kimyasal" Grid.Row="0" Grid.Column="4"  Name="BtnKimyasalEkle"  Grid.RowSpan="2" Click="BtnKimyasalEkle_Click" />
+        <Label Content="Başlagıç T." Grid.Column="7" Grid.Row="0"  />
+        <Label Content="Bitiş T." Grid.Column="7" Grid.Row="1"  />
+        <DatePicker Grid.Column="8" Name="DPBaslangic" Grid.ColumnSpan="3" SelectedDateChanged="DPBaslangic_SelectedDateChanged"/>
+        <DatePicker Grid.Column="8" Grid.Row="1"  Name="DPBitis" Grid.ColumnSpan="3" SelectedDateChanged="DPBitis_SelectedDateChanged"/>
+        <telerik:RadGridView AutoGenerateColumns="False"  Name="DGridReceteDetaylari" SelectionChanged="DGridReceteDetaylari_SelectionChanged" Margin="0,1,0,0"
+                             IsReadOnly="True" ShowGroupPanel="False" telerik:StyleManager.Theme="Summer" Grid.ColumnSpan="7" Grid.Row="2" Grid.RowSpan="2" Background="#FFF0F0F0" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Reçete No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding ReceteNo}" />
+                <telerik:GridViewDataColumn Header="Reçete Tarih" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Tarih,StringFormat='dd.MMM.yyyy'}"  />
+                <telerik:GridViewDataColumn Header="Program No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Program}" />
+                <telerik:GridViewDataColumn Header="Makina Adı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Makina}" />
+                <telerik:GridViewDataColumn Header="Renk No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding RenkKodu}" />
+                <telerik:GridViewCheckBoxColumn Header="Reçete Oluşturuldu"/> <!--CheckBoxlarda Değişiklik yapılamayacak-->
+                <telerik:GridViewCheckBoxColumn Header="Aktif Mi" IsReadOnly="True" DataMemberBinding="{Binding AktifMi}"/>
+                <telerik:GridViewCheckBoxColumn Header="Stoktan Düştü" IsReadOnly="True" DataMemberBinding="{Binding StoktanDusulduMu}"/>
+                <telerik:GridViewCheckBoxColumn Header="Güncelledim" IsReadOnly="True" DataMemberBinding="{Binding NuanslariGuncelledim}"/>
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.ItemsSource>
+                        <CompositeCollection>
+                            <MenuItem x:Name="menuItemStokCikisiYap" Foreground="Black" Header="Stoktan Düş"  IsEnabled="True" Click="menuItemStokCikisiYap_Click"/>
+                            <MenuItem x:Name="menuItemLogoyaAktar" Foreground="Black" Header="Kimyasal Sarf Fişi Aktar"  IsEnabled="True" Click="menuItemLogoyaAktar_Click"/>
+                        </CompositeCollection>
+                    </ContextMenu.ItemsSource>
+                </ContextMenu>
+            </telerik:RadGridView.ContextMenu>
+        </telerik:RadGridView>
+        <Border  BorderThickness="1" BorderBrush="Black" Grid.ColumnSpan="7" Grid.Row="4">
+            <Label Content="PARTİ DETAYLARI" FontWeight="Bold" FontSize="10" Background="#FFC1CFE8" HorizontalContentAlignment="Center" />
+        </Border>
+        <Grid Grid.ColumnSpan="7" Grid.Row="5" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" Name="DGridPartiDetaylari" telerik:StyleManager.Theme="Summer" ShowGroupPanel="False" Background="#FFF0F0F0">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Tarih" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Tarih,StringFormat='dd.MMM.yyyy'}" />
+                    <telerik:GridViewDataColumn Header="Parti No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding PartiNo}" />
+                    <telerik:GridViewDataColumn Header="Renk No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding RenkNo}" />
+                    <telerik:GridViewDataColumn Header="Tip No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TipNo}"/>
+                    <telerik:GridViewDataColumn Header="Apre Kodu" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding ApreKodu}"/>
+                    <telerik:GridViewDataColumn Header="Sipariş No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding SozlesmeNo}" />
+                    <telerik:GridViewDataColumn Header="Müşteri Adı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding MusteriAdi}" />
+                    <telerik:GridViewDataColumn Header="Partilenecek Metre" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding PartiMetre}" />
+                    <telerik:GridViewDataColumn Header="Açılmış Metre" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding AcilmisMetre}" />
+                    <telerik:GridViewDataColumn Header="Tartılan Kg" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TartilanKg}" />
+                    <telerik:GridViewColumn>
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="BtnInfo" Content="Not" Click="BtnInfo_Click" Visibility="{Binding Converter={StaticResource ResourceKey=ReceteMesajVisibilityConverter}}" VerticalContentAlignment="Top" Background="Red"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewDataColumn Header="Açıklama" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Aciklama}" />
+                    <telerik:GridViewDataColumn Header="Finish Kodu" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding FinishKodu}"  />                                        
+                    <telerik:GridViewDataColumn Header="Boyahane Not" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding BoyahaneNot}"/>
+                    <telerik:GridViewDataColumn Header="Boyahane Onayı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding BoyahaneOnay}" />
+                    <telerik:GridViewDataColumn Header="Makina Cinsi" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Makina}" />
+                    <telerik:GridViewDataColumn Header="Diğer Tip No 1" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding DigerTipNo1}" />
+                    <telerik:GridViewDataColumn Header="Diğer Tip No 2" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding DigerTipNo2}" />
+                    <telerik:GridViewDataColumn Header="Diğer Tip No 3" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding DigerTipNo3}" />
+                </telerik:RadGridView.Columns>
+                <telerik:RadGridView.ContextMenu>
+                    <ContextMenu>
+                        <ContextMenu.ItemsSource>
+                            <CompositeCollection>
+                                <MenuItem x:Name="menuItemEklePartiDetay" Foreground="Black" Header="Ekle"  IsEnabled="True" Click="menuItemEklePartiDetay_Click"/>
+                            </CompositeCollection>
+                        </ContextMenu.ItemsSource>
+                    </ContextMenu>
+                </telerik:RadGridView.ContextMenu>
+            </telerik:RadGridView>          
+        </Grid>
+        <Grid Grid.ColumnSpan="7" Grid.Row="7">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>            
+        </Grid>
+        <Border  BorderThickness="1" BorderBrush="Black" Grid.Column="7" Grid.ColumnSpan="4" Grid.Row="2" Background="#FFC1CFE8"  Margin="3,0,0,0">
+            <Label Content="PARTİ SEÇ" HorizontalAlignment="Center" FontWeight="Bold" FontSize="10" />
+        </Border>
+        <Grid Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="4" Margin="3,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128*" />
+                <ColumnDefinition Width="41*" />
+                <ColumnDefinition Width="43*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="116*" />
+                <RowDefinition Height="33" />
+            </Grid.RowDefinitions>
+            <ScrollViewer Grid.ColumnSpan="3">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding ReceteninPartileri}" Name="DGridRecetePartileri" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Parti No" Width="Auto" IsReadOnly="True" Binding="{Binding PartiNo}"/>
+                        <DataGridTemplateColumn Header="Tartılan Kg">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBox x:Name="TxtTartilanKg" Text="{Binding TartilanKg, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Açılan Metre" Width="Auto" IsReadOnly="True" Binding="{Binding AcilmisMetre}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+            <Button Content="Kaydet" Grid.Column="1"  Grid.Row="1"  Name="BtnPartiKaydet" Click="BtnPartiKaydet_Click" />
+            <Button Content="Sil" Grid.Column="2"  Grid.Row="1"  Name="BtnPartiSil" Click="BtnPartiSil_Click" />
+        </Grid>
+        <Border  BorderThickness="1" BorderBrush="Black" Grid.Column="7" Grid.ColumnSpan="4" Grid.Row="4" Background="#FFC1CFE8"  Margin="3,0,0,0">
+            <Label Content="AÇIKLAMALAR" HorizontalAlignment="Center" FontWeight="Bold" FontSize="10" />
+        </Border>
+        <ScrollViewer Grid.Column="7" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="4">
+            <TextBox Name="TxtRenkAciklama" Text="{Binding RenkAciklama}" FontWeight="Bold" Foreground="Red" TextWrapping="Wrap" IsReadOnly="True"/>
+        </ScrollViewer>
+        <toolkit:ChildWindow x:Name="ChildMuadilReceteler" IsModal="True" WindowStartupLocation="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="100" Grid.RowSpan="100">
+            <Grid Width="700" Height="400">
+                <telerik:RadGridView AutoGenerateColumns="False"  Name="DGridMuadilReceteler" Margin="0,1,0,0"
+                             IsReadOnly="False" ShowGroupPanel="False" telerik:StyleManager.Theme="Summer"  Grid.Row="0" Background="#FFF0F0F0">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn Header="Reçete No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding ReceteNo}" />
+                        <telerik:GridViewDataColumn Header="Tarih" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Tarih,StringFormat='dd.MMM.yyyy'}"  />                        
+                        <telerik:GridViewDataColumn Header="Makine" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Makine}" />
+                        <telerik:GridViewDataColumn Header="Onaylı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding AktifMi}" />
+                        <telerik:GridViewDataColumn Header="Güncel" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding NuanslariGuncelledim}" />
+                        <telerik:GridViewDataColumn Header="Müşteri" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Musteri}" MaxWidth="100" />
+                        <telerik:GridViewDataColumn Header="Tip No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TipNo}" />
+                        <telerik:GridViewDataColumn Header="Parti No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding PartiNo}" />
+                        <telerik:GridViewDataColumn Header="Renk No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding RenkNo}"/>
+                        <telerik:GridViewDataColumn Header="Renk Adi" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding RenkAdi}"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem x:Name="menuItemMuadilSec" Foreground="Black" Header="Seç"  IsEnabled="True" Click="menuItemMuadilSec_Click"/>                                    
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </Grid>
+        </toolkit:ChildWindow>
+        <toolkit:ChildWindow x:Name="ChildReceteEkle" IsModal="True" WindowStartupLocation="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="100" Grid.RowSpan="100">
+            <Grid Width="235" Height="230" DataContext="{Binding Recete}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="92*" />
+                    <ColumnDefinition Width="35*" />
+                    <ColumnDefinition Width="54*" />
+                    <ColumnDefinition Width="54*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="118*" />
+                </Grid.RowDefinitions>
+                <Label Content="Reçete No:" />
+                <Label Content="Makine No:" Grid.Row="1" />
+                <Label Content="Program No:" Grid.Row="2" Visibility="Hidden"/>
+                <Label Content="Personel:" Grid.Row="3" Visibility="Hidden"/>
+                <Label Content="Tarih :" Grid.Row="3" />
+                <Label Content="Toplu Reçete :" Grid.Row="4" />
+                <Label Content="Renk No:" Grid.Row="2" />
+                <TextBox Grid.Column="1" Name="TxtReceteNo" IsEnabled="False" Background="#FFB7D3FF" Margin="2" Grid.ColumnSpan="3" />
+                <ComboBox x:Name="CmbMakinaNo" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="2" DisplayMemberPath="Adi" SelectedValuePath="Id" ></ComboBox>
+                <TextBox Grid.Column="1" Name="TxtProgramNo" Grid.Row="2" Margin="2" Grid.ColumnSpan="3" Text="{Binding Program}" Visibility="Hidden"  />
+                <ComboBox x:Name="CmbPersonel" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="2" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding PersonelId, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"></ComboBox>
+                <ComboBox x:Name="CmbRenkNo" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="2" DisplayMemberPath="Kodu" SelectedValuePath="Id" SelectedValue="{Binding RenkId, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                <DatePicker x:Name="DPTarih" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="2" SelectedDate="{Binding Tarih}" />
+                <CheckBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Name="ChckDurum" VerticalAlignment="Center" Height="18" Width="26" Margin="0,8" IsChecked="{Binding TopluRecete}" />
+                <Button Content="Kaydet" Grid.Column="2" Grid.Row="6" Name="BtnKaydet" Margin="2" Click="BtnKaydet_Click" />
+                <Button Content="Vazgeç" Grid.Column="3" Grid.Row="6" Name="BtnVazgec" Margin="2" Click="BtnVazgec_Click" />
+            </Grid>
+        </toolkit:ChildWindow>
+        <toolkit:ChildWindow x:Name="ChildGenel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="100" Grid.RowSpan="100" Closed="ChildGenel_Closed" IsModal="True" WindowStartupLocation="Manual"/>
+    </Grid>
+</UserControl>

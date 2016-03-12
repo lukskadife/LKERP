@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="LKUI.ReportPages.PageKaliteDagilimiWithMusteri"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" xmlns:local="clr-namespace:LKUI.ReportPages"
+      d:DesignHeight="300" d:DesignWidth="300" Loaded="Page_Loaded"
+	 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="10,1" >
+            <DatePicker Name="DateIlkTarih"/>
+            <DatePicker Name="DateSonTarih" Margin="10,0,0,0"/>
+            <Button Name="BtnRaporla" Background="White" Click="BtnRaporla_Click" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBlock Text="Rapor Getir" TextWrapping="Wrap" FontSize="14"/>
+            </Button>
+        </StackPanel>
+        <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridRapor" IsReadOnly="True" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" Grid.Row="1">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding MUSTERI_ADI}" Header="Müşteri"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding RENK_NO}" Header="Renk No" Width="Auto" IsReadOnly="True" Name="DClmRenkNo"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding URETIM}" Header="Üretim" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding BIRKALITE}" Header="1.Kalite" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ORAN1}" Header="% 1.Kalite" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <local:BirKaliteOranHesabiMusteri ResultFormatString="{}{0:0.00 %}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding IKIKALITE}" Header="2.Kalite" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ORAN2}" Header="% 2.(IA)Kalite" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <local:IkiKaliteOranHesabiMusteri ResultFormatString="{}{0:0.00 %}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding HATALI}" Header="Hatalı" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ORANHATALI}" Header="% Hatalı" Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <local:HataliOranHesabiMusteri ResultFormatString="{}{0:0.00 %}"/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.ItemsSource>
+                        <CompositeCollection>
+                            <MenuItem Name="MIExcel" Header="Excel'e Aktar" Click="MIExcel_Click" Height="25" FontSize="15"/>
+                        </CompositeCollection>
+                    </ContextMenu.ItemsSource>
+                </ContextMenu>
+            </telerik:RadGridView.ContextMenu>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

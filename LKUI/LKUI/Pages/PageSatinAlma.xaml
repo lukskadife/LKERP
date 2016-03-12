@@ -1,0 +1,287 @@
+﻿<UserControl x:Class="LKUI.Pages.PageSatinAlma"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls" Loaded="UserControl_Loaded"
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="90"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <Button Content="Ekle" Height="65" Name="BtnEkle" Width="60" Click="BtnEkle_Click" Margin="5,3,3,3" FontSize="14" />
+            <Button Content="Düzelt" Height="65" Name="BtnDüzenle" Width="60" Click="BtnDüzenle_Click"  Margin="3" FontSize="14" />
+            <Button Content="Sil" Height="65" Name="BtnSil" Width="60" Click="BtnSil_Click" Margin="3" FontSize="14" />
+            <Button Content="Yenile" Height="65" Name="BtnYenile" Width="60" Margin="3" Click="BtnYenile_Click" FontSize="14" />
+        </StackPanel>
+        <Label Content="  Grubu :" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" FontWeight="Bold" />
+        <ComboBox x:Name="CmbGrup" Grid.Column="1" Grid.Row="0" Margin="70,0,0,0" HorizontalAlignment="Left" Width="140" Height="27" VerticalAlignment="Center" 
+                  SelectedValuePath="Id" DisplayMemberPath="Adi" SelectionChanged="CmbGrup_SelectionChanged"/>
+
+        <StackPanel Grid.Row="0" Grid.Column="2"  >
+            <RadioButton Content="Amir Onayı"  Height="16" HorizontalAlignment="Left"  Name="RadioAmirOnay" VerticalAlignment="Top" Checked="RadioAmirOnay_Checked"/>
+            <RadioButton Content="Satın Al"  Height="16" HorizontalAlignment="Left"  Name="RadioSatinAl" VerticalAlignment="Top" Checked="RadioSatinAl_Checked"/>
+            <RadioButton Content="Onay"  Height="16" HorizontalAlignment="Left"  Name="RadioOnay" VerticalAlignment="Top" Checked="RadioOnay_Checked"/>
+            <RadioButton Content="Tedarik Et"  Height="16" HorizontalAlignment="Left"  Name="RadioTedarikEt" VerticalAlignment="Top" Checked="RadioTedarikEt_Checked"/>
+            <RadioButton Content="Depo"  Height="16" HorizontalAlignment="Left"  Name="RadioDepo" VerticalAlignment="Top" Checked="RadioDepo_Checked"/>
+            <RadioButton Content="Tamamlandı"  Height="16" HorizontalAlignment="Left"  Name="RadioTamamlandi" VerticalAlignment="Top" Checked="RadioTamamlandi_Checked"/>
+            <!--<RadioButton Content="İptal"  Height="16" HorizontalAlignment="Left"  Name="RadioIptal" VerticalAlignment="Top" Checked="RadioIptal_Checked"/>-->
+        </StackPanel>
+
+        <telerik:RadGridView Grid.Row="1" Grid.ColumnSpan="100" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBelgeler" IsReadOnly="True" 
+                             ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" 
+                             DataLoadMode="Asynchronous" MouseDoubleClick="DGridBelgeler_MouseDoubleClick">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding No}" Header="Talep No">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction Caption="Adet : " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TedarikciAdi}" Header="Tedarikçi" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Tarih}" Header="Tarih" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding OdemeSekli}" Header="Ödeme Şekli" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Grubu}" Header="Grubu" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding IlkOnay}" Header="I.Onay" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding IkinciOnay}" Header="II.Onay" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Nakliye}" Header="Nakliye" Width="Auto" IsReadOnly="True"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <tkit:ChildWindow Name="ChildTalepler" IsModal="True" Width="900" MinHeight="600" WindowStartupLocation="Center" CaptionForeground="Brown" Grid.Row="0" Grid.Column="0" Grid.RowSpan="100" Grid.ColumnSpan="100" KeyUp="ChildTalepler_KeyUp" Closed="ChildTalepler_Closed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180" />
+                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <tkit:ChildWindow Name="ChildDijitalBelgeler" IsModal="True" Width="300" Height="400" WindowStartupLocation="Center" CaptionForeground="Brown" Grid.Row="0" Grid.Column="0" Grid.RowSpan="100" Grid.ColumnSpan="100">
+                    <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridDijitalBelge" IsReadOnly="True" ShowGroupPanel="False" ShowGroupFooters="True" ShowColumnFooters="True" Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Turu}" Header="Belge" Width="70" IsReadOnly="True" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih, StringFormat='dd.MM.yyyy'}" Header="Tarih" Width="Auto" IsReadOnly="True" />
+                            <telerik:GridViewColumn>
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnDijitalAc" Width="50" Click="BtnDijitalAc_Click">Aç</Button>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </tkit:ChildWindow>
+                <Grid Name="GrdBelge">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Talep No : " Grid.Column="0" Grid.Row="0" />
+                    <Label Content="Tedarikçi : " Grid.Column="0" Grid.Row="1" />
+                    <Label Content="Ödeme : " Grid.Column="0" Grid.Row="2" />
+                    <Label Content="Nakliye : " Grid.Column="0" Grid.Row="3" />
+                    <Label Content="Cezai Şart : " Grid.Column="0" Grid.Row="4" />
+                    <TextBox Grid.Column="1" Grid.Row="4" Margin="0,1,10,1" Text="{Binding CezaiSart, UpdateSourceTrigger=PropertyChanged}" MaxLength="250" Grid.RowSpan="2" TextWrapping="Wrap" TabIndex="5" />
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="0,1,10,1" IsReadOnly="True" Text="{Binding No, UpdateSourceTrigger=PropertyChanged}" TabIndex="1" />
+                    <ComboBox Name="CmbTedarikciler" Grid.Column="1" Grid.Row="1" Margin="0,1,10,1" SelectedValuePath="Id" DisplayMemberPath="Adi" SelectedValue="{Binding TedarikciId, UpdateSourceTrigger=PropertyChanged}" Background="White" TabIndex="2" />
+                    <ComboBox Name="CmbOdeme" Grid.Column="1" Grid.Row="2" Margin="0,1,10,1" Background="White" DisplayMemberPath="OdemeSekli" SelectedValuePath="LogoId" SelectedValue="{Binding OdemeLogoId, UpdateSourceTrigger=PropertyChanged}" Text="{Binding OdemeSekli, UpdateSourceTrigger=PropertyChanged}" TabIndex="3" />
+                    <ComboBox Grid.Column="1" Grid.Row="3" Margin="0,1,10,1" Text="{Binding Nakliye, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" Background="White" IsEditable="True" TabIndex="4">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="Bize Ait" />
+                            <ComboBoxItem Content="Tedarikçiye Ait" />
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <Label Content="Durum : " Grid.Column="2" Grid.Row="0" />
+                    <ComboBox Grid.Column="3" Grid.Row="0" Name="CmbDurum" Background="White" Margin="0,1,10,1" SelectedValuePath="Content" SelectedValue="{Binding Durum, UpdateSourceTrigger=PropertyChanged}" IsEditable="True" IsReadOnly="True" TabIndex="6">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="Amir Onayı" />
+                            <ComboBoxItem Content="Satın Al" />
+                            <ComboBoxItem Content="Onay" />
+                            <ComboBoxItem Content="Tedarik Et" />
+                            <ComboBoxItem Content="Depo" />
+                            <ComboBoxItem Content="Tamamlandı" />
+                            <!--<ComboBoxItem Content="İptal"/>-->
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <Label Content="I. Onay : " Grid.Column="2" Grid.Row="1" />
+                    <ComboBox Grid.Column="3" Grid.Row="1" Name="CmbIlkOnay" Background="White" Margin="0,1,10,1" SelectedValuePath="Content" SelectedValue="{Binding IlkOnay, UpdateSourceTrigger=PropertyChanged}" IsEditable="True" TabIndex="7">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="Feramin Çeliktaş" />
+                            <ComboBoxItem Content="Ömer Erdoğan" />
+                            <ComboBoxItem Content="Mehmet Mülayim" />
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <Label Content="II. Onay : " Grid.Column="2" Grid.Row="2" />
+                    <ComboBox Grid.Column="3" Grid.Row="2" Name="CmbIkinciOnay" Background="White" Margin="0,1,10,1" SelectedValuePath="Content" SelectedValue="{Binding IkinciOnay, UpdateSourceTrigger=PropertyChanged}" IsEditable="True" TabIndex="8">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="Feramin Çeliktaş" />
+                            <ComboBoxItem Content="Ömer Erdoğan" />
+                            <ComboBoxItem Content="Mehmet Mülayim" />
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <Label Content="İrsaliye No/Tarihi : " Grid.Column="2" Grid.Row="3" />
+                    <TextBox Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Width="138" Margin="0,1,0,1" Text="{Binding IrsaliyeNo}" MaxLength="50" TabIndex="9" />
+                    <DatePicker Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Width="140" Margin="144,1,0,1" SelectedDate="{Binding IrsaliyeTarihi}" TabIndex="10" />
+                    <Label Content="Fatura No/Tarihi : " Grid.Column="2" Grid.Row="4" />
+                    <TextBox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" Width="138" Margin="0,1,0,1" Text="{Binding FaturaNo}" MaxLength="50" TabIndex="11" />
+                    <DatePicker Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" Width="140" Margin="144,1,0,1" SelectedDate="{Binding FaturaTarihi}" TabIndex="12" />
+                    <Button Content="İrsaliye Ekle" Name="BtnIrsaliyeEkle" Grid.Row="5" Grid.Column="2" Click="BtnIrsaliyeEkle_Click" Background="White" HorizontalAlignment="Left" Width="75" Margin="60,2,0,0" Grid.ColumnSpan="2" TabIndex="13" />
+                    <Button Content="Fatura Ekle" Name="BtnFaturaEkle" Grid.Row="5" Grid.Column="2" Click="BtnFaturaEkle_Click" Background="White" HorizontalAlignment="Left" Width="75" Margin="150,2,0,0" Grid.ColumnSpan="2" TabIndex="14" />
+                    <Button Content="Göster" Name="BtnGoster" Grid.Row="5" Grid.Column="2" Click="BtnGoster_Click" Background="White" HorizontalAlignment="Left" Width="75" Margin="240,2,0,0" Grid.ColumnSpan="2" TabIndex="15" />
+                </Grid>
+                <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridTalepler" IsReadOnly="True" ShowGroupPanel="False" ShowGroupFooters="True" ShowColumnFooters="True" Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=MalzemeKodu}" Header="Kodu" Width="70" IsReadOnly="True" />
+                        <telerik:GridViewColumn Header="Adı" Width="200">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <telerik:RadComboBox ItemsSource="{Binding Path=Malzemeler}" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding MalzemeId, Mode=TwoWay}" IsEditable="True" IsReadOnly="True" SelectionChanged="RadComboBox_SelectionChanged" TextSearchMode="Contains" />
+                                    <!--<cnt:CntSelectBox ItemsSource="{Binding Path=Malzemeler}" Height="25" DisplayMember="Adi" BindIdPath="MalzemeId" SelectedValuePath="Id" Columns="Kodu,Kodu;Adı,Adi" FiltreAdi="Adi" x:Name="CntMalzemeSecim" SelectedItemChanged="CntMalzemeSecim_SelectedItemChanged" ItemNotSelected="CntMalzemeSecim_ItemNotSelected"/>-->
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Renk" Width="Auto" IsReadOnly="True" x:Name="DClmRenk">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox SelectedValue="{Binding RenkId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" SelectedValuePath="Id" ItemsSource="{Binding IplikRenkleri}" Background="White"/>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Lot No" x:Name="DClmLotNo">
+                            <telerik:GridViewColumn.CellTemplate >
+                                <DataTemplate >
+                                    <TextBox x:Name="TxtLotNo" Text="{Binding LotNo, Mode=TwoWay}" Background="White" MaxLength="75"/>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Ambalaj" x:Name="DClmAmbalaj" >
+                            <telerik:GridViewColumn.CellTemplate >
+                                <DataTemplate >
+                                    <ComboBox x:Name="CmbAmbalaj" Grid.Column="3" Margin="0,2" Grid.Row="4" SelectedValue="{Binding Path= Ambalaj, Mode=TwoWay}" SelectedValuePath="Content" Background="White">
+                                        <ComboBoxItem Content="KOLİ" />
+                                        <ComboBoxItem Content="ÇUVAL" />
+                                        <ComboBoxItem Content="PALET" />
+                                    </ComboBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Bobin" x:Name="DClmBobin">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding BobinSayisi, Mode=TwoWay}" Background="White"/>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewDataColumn x:Name="DClmMevcut" DataMemberBinding="{Binding Path=MevcutStok}" Header="Mevcut" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn x:Name="DClmGelecek" DataMemberBinding="{Binding Path=GelecekStok}" Header="Gelecek" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewColumn Header="Miktar" x:Name="DClmMiktar">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox x:Name="TxtMiktar" Text="{Binding Miktar, Mode=TwoWay}" Background="White"></TextBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Birimi" MinWidth="60">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding MalzemeBirimleri}" DisplayMemberPath="BirimAdi" SelectedValuePath="Id" SelectedValue="{Binding BirimId, Mode=TwoWay}" IsReadOnly="True" Background="White" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="B.Fiyat" x:Name="DClmBFiyat">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding Fiyat, Mode=TwoWay}" Background="White"></TextBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Kur" x:Name="DClmKur">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding Dovizler}" DisplayMemberPath="Aciklama" SelectedValuePath="Id" SelectedValue="{Binding DovizId, Mode=TwoWay}" IsReadOnly="True" Background="White" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Onay Miktarı">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox x:Name="TxtOnayMiktar" Text="{Binding OnayMiktar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="White"></TextBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Depo Girişi" x:Name="DClmDepo">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox x:Name="TxtDepoMiktar" Text="{Binding DepoGirisMiktar, Mode=TwoWay}" Background="White"></TextBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="T.Tarihi" MinWidth="60">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DatePicker SelectedDate="{Binding Path=TerminTarihi, Mode=TwoWay}" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="SKT" MinWidth="60">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DatePicker SelectedDate="{Binding Path=SonKullanmaTarihi, Mode=TwoWay}" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Bölümü" MinWidth="60">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding Path=Bolumler}" SelectedValuePath="Id" DisplayMemberPath="Adi" SelectedValue="{Binding BolumId, Mode=TwoWay}" Background="White" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Detay" MinWidth="60">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="White" Text="{Binding Detay, Mode=TwoWay}" ></TextBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Onay Notu" MinWidth="60">
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="White" Text="{Binding OnayNotu, Mode=TwoWay}"></TextBox>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewColumn>
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="BtnSatirSil" Width="50" Click="BtnSatirSil_Click">Sil</Button>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <Button Content="Satır Ekle(F3)" Grid.Column="0" Grid.Row="3" Height="25" HorizontalAlignment="Left" Name="BtnSatirEkle" Click="BtnSatirEkle_Click" VerticalAlignment="Top" Width="85" />
+                <Button Content="Yazdır" Grid.Column="7" Grid.Row="3" Height="40" Width="70" FontSize="13" Name="BtnSatinAlmaYazdir" Click="BtnSatinAlmaYazdir_Click" HorizontalAlignment="Right" Margin="80,0" Visibility="Hidden" />
+                <Button Content="Yazdır" Grid.Column="7" Grid.Row="3" Height="40" Width="70" FontSize="13" Name="BtnTeklifYazdir" Click="BtnTeklifYazdir_Click" HorizontalAlignment="Right" Margin="80,0" Visibility="Hidden" />
+                <Button Content="Kaydet" Grid.Column="7" Grid.Row="3" Height="40" Width="70" FontSize="13" Name="BtnKaydet" Click="BtnKaydet_Click" HorizontalAlignment="Right" />
+                <tkit:ChildWindow Name="ChildGenel" IsModal="True" Width="Auto" Height="Auto" WindowStartupLocation="Manual" Grid.RowSpan="100" Grid.ColumnSpan="100" Closed="ChildGenel_Closed"/>
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

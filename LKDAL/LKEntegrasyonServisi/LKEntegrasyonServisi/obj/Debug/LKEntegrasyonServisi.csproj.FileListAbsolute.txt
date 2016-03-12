@@ -1,0 +1,14 @@
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Debug\ResolveAssemblyReference.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKEntegrasyonServisi.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKEntegrasyonServisi.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Debug\LKEntegrasyonServisi.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Debug\LKEntegrasyonServisi.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKLibrary.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKEntegrasyonServisi.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKEntegrasyonServisi.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Debug\LKEntegrasyonServisi.csprojResolveAssemblyReference.cache
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Debug\LKEntegrasyonServisi.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Debug\LKEntegrasyonServisi.pdb

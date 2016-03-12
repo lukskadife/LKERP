@@ -1,0 +1,9 @@
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\obj\Debug\ResolveAssemblyReference.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\bin\WcfService1.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\bin\WcfService1.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\obj\Debug\WcfService1.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\obj\Debug\WcfService1.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\bin\WcfService1.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\bin\WcfService1.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\obj\Debug\WcfService1.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\WcfService1\WcfService1\obj\Debug\WcfService1.pdb

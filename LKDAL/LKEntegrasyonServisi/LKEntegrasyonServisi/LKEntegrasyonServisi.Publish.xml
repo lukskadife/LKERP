@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Projelerim\Published\LK" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site/LKEntegrasyon" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="Luks\isd.yazilim" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/LKLibrary.pdb" publishTime="07/25/2015 10:01:30" />
+    <file relUrl="bin/LKEntegrasyonServisi.dll" publishTime="07/25/2015 11:00:29" />
+    <file relUrl="bin/LKLibrary.dll" publishTime="07/25/2015 10:01:30" />
+    <file relUrl="Web.config" publishTime="07/25/2015 11:00:30" />
+    <file relUrl="bin/LKEntegrasyonServisi.pdb" publishTime="07/25/2015 11:00:29" />
+    <file relUrl="EntegrasyonServisi.svc" publishTime="07/13/2012 17:05:10" />
+  </publishProfile>
+</publishData>

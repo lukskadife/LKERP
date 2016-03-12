@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="LKUI.ReportPages.PageOnayliRecetelerRaporu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="UserControl_Loaded"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"> 
+
+    <Grid>
+        <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridOnayliRecetelerRaporu" IsReadOnly="True" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Reçete No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding ReceteNo}" >
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction Caption="Adet : "/>
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Reçete Tarih" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Tarih,StringFormat='dd.MMM.yyyy'}"  />
+                <telerik:GridViewDataColumn Header="Makina Adı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Makina}" />
+                <telerik:GridViewDataColumn Header="Renk No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding RenkKodu}" />
+            </telerik:RadGridView.Columns>
+        <telerik:RadGridView.ContextMenu>
+            <ContextMenu>
+                <ContextMenu.ItemsSource>
+                    <CompositeCollection>
+                        <MenuItem x:Name="menuItemRaporuGoster" Foreground="Black" Header="Kimyasalları Göster"  IsEnabled="True" Click="menuItemRaporuGoster_Click"/>
+                    </CompositeCollection>
+                </ContextMenu.ItemsSource>
+            </ContextMenu>
+        </telerik:RadGridView.ContextMenu>
+        </telerik:RadGridView>
+        <toolkit:ChildWindow x:Name="ChildGenel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="100" Grid.RowSpan="100" IsModal="True" WindowStartupLocation="Center"/>
+    </Grid>
+</UserControl>

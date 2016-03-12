@@ -1,0 +1,6 @@
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKEntegrasyonServisi.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKEntegrasyonServisi.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\bin\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Release\LKEntegrasyonServisi.dll
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\LKEntegrasyonServisi\obj\Release\LKEntegrasyonServisi.pdb

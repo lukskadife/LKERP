@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="LKUI.ReportPages.PageOnayliReceteDegisiklikleriRaporu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="UserControl_Loaded"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridOnayliReceteDegisiklikleriRapor" IsReadOnly="True" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="True" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" FrozenColumnCount="5">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding logTuruAdi}" Header="Log Turu"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding ReceteNo}" Header="Reçete No"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding Kodu}" Header="Reçete Renk Kodu"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding KumasRenkKodu}" Header="Renk Kartı Kodu"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding Islem}" Header="İşlem"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding PersonelY}" Header="Personel"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding Tarih, StringFormat='dd.MM.yyyy'}" Header="Tarih"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding Saat, StringFormat='HH:mm:ss'}" Header="Saat"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding OnayBirPersonelAdi}" Header="Onay1"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding OnayIkiPersonelAdi}" Header="Onay2"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding OranE}" Header="E.Oran"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding OranY}" Header="Y.Oran"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding KimyasalE}" Header="E.Kimyasal"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding KimyasalY}" Header="Y.Kimyasal"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding GrLtOranE}" Header="E.Gr/Lt Oran"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding GrLtOranY}" Header="Y.Gr/Lt Oran"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding MiktarE}" Header="E.Miktar"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding MiktarY}" Header="Y.Miktar"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding TipY}" Header="Y.Tip"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding RBoyaKimyaE}" Header="E.BoyaKimya"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding RBoyaKimyaY}" Header="Y.BoyaKimya"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding RAciklamaE}" Header="E.AciklamaRK"/>
+                <telerik:GridViewDataColumn Width="Auto"  DataMemberBinding="{Binding RAciklamaY}" Header="Y.AciklamaRK"/>
+                
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

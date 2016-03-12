@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="LKUI.Controls.CntPagingElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="25" Width="90" Height="30">
+    <UserControl.Resources>
+        <Storyboard x:Key="expandStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+       		 To="1.1" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
+     		   To="1.1" Duration="0:0:0.1" />
+        </Storyboard>
+        <Storyboard x:Key="shrinkStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+       		 To="1" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
+     	    To="1" Duration="0:0:0.1" />
+        </Storyboard>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal" Name="Stack">
+        <Image Name="ImgPrevious" Margin="10,0,0,0" Grid.Row="1" Height="Auto" Grid.ColumnSpan="3" Source="/LKUI;component/Resources/previous.png" MouseLeftButtonDown="ImgPrevious_MouseLeftButtonDown" Opacity="0.2" IsEnabled="False">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource expandStoryboard}" />
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard Storyboard="{StaticResource shrinkStoryboard}" />
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image Name="ImgNext" Margin="10,0,0,0" Height="Auto" Grid.Row="1" Grid.ColumnSpan="3" Source="/LKUI;component/Resources/next.png" MouseLeftButtonDown="ImgNext_MouseLeftButtonDown" Opacity="0.2" IsEnabled="False">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource expandStoryboard}" />
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard Storyboard="{StaticResource shrinkStoryboard}" />
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+    </StackPanel>
+    
+</UserControl>

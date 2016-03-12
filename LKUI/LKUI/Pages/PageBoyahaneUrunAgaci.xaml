@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="LKUI.Pages.PageBoyahaneUrunAgaci"             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="42" />
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+        <tkit:ChildWindow x:Name="ChildUst" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="100" Grid.RowSpan="100" IsModal="True" WindowStartupLocation="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="36" />
+                </Grid.RowDefinitions>
+                <Label Content="Tip No :" Grid.Row="1" />
+                <Label Content="Finish :" Grid.Row="2" />
+                <Label Content="Kumaş Tipi :" Grid.Row="3" />
+                <Button Name="BtnUstKaydet" Grid.Row="4" Grid.Column="1" Content=" Kaydet " Background="White" Width="100" HorizontalAlignment="Right" Margin="3" Click="BtnUstKaydet_Click" />
+                <cnt:CntIsdCombo x:Name="CmbTip" Grid.Row="1" Grid.Column="1" SelectedValuePath="Id" DisplayMemberPath="TipNo" SelectedValue="{Binding TipId, UpdateSourceTrigger=PropertyChanged}" Background="White" Margin="0,1,3,1" />
+                <cnt:CntIsdCombo x:Name="CmbFinish" Grid.Row="2" Grid.Column="1" SelectedValuePath="Id" DisplayMemberPath="Adi" SelectedValue="{Binding ProsesGrupId, UpdateSourceTrigger=PropertyChanged}" Background="White" Margin="0,1,3,1" />
+                <cnt:CntIsdCombo x:Name="CmbKumasTipi" Grid.Row="3" Grid.Column="1" SelectedValuePath="Id" DisplayMemberPath="Adi" SelectedValue="{Binding KumasTipiAyarId, UpdateSourceTrigger=PropertyChanged}" Background="White" Margin="0,1,3,1" />
+            </Grid>
+        </tkit:ChildWindow>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Width="50" Content="Ekle" Name="BtnUstEkle" Click="BtnUstEkle_Click"/>
+            <Button Width="50" Content="Düzelt" Name="BtnUstDuzelt" Click="BtnUstDuzelt_Click"/>
+            <Button Width="50" Content="Sil" Name="BtnUstSil" Click="BtnUstSil_Click"/>
+            <Button Width="50" Content="Yenile" Name="BtnUstYenile" Click="BtnUstYenile_Click"/>
+        </StackPanel>
+        <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridUst" IsReadOnly="True" ShowGroupFooters="True" SelectionChanged="DGridUst_SelectionChanged"
+                             ShowColumnFooters="False" Background="#FFF0F0F0" ShowGroupPanel="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProsesGrupAdi}" Header="Finish" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasTipi}" Header="Kumaş Tipi" Width="Auto" IsReadOnly="True"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Width="50" Content="Ekle" Name="BtnProcessEkle" Click="BtnProcessEkle_Click"/>
+            <Button Width="50" Content="Düzelt" Name="BtnProcessDuzelt" Click="BtnProcessDuzelt_Click"/>
+            <Button Width="50" Content="Sil" Name="BtnProcessSil" Click="BtnProcessSil_Click"/>
+            <Button Width="50" Content="Yenile" Name="BtnProcessYenile" Click="BtnProcessYenile_Click"/>
+        </StackPanel>
+        <telerik:RadGridView Grid.Row="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridAlt" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="False" Background="#FFF0F0F0" ShowGroupPanel="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Sira}" Header="Sıra" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProsesAdi}" Header="Proses" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding IslemSayisi}" Header="İşlem Sayısı" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding MakinaDevri}" Header="Makina Devri" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding MakinaSicaklik}" Header="Makina Sıcaklık" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding GirisEni}" Header="Giriş Eni" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding CikisEni}" Header="Çıkış Eni" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding MakinadaKalmaSuresi}" Header="Makinadaki Süresi" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ApreKodu}" Header="Apre Kodu" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Aciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <tkit:ChildWindow x:Name="ChildProses" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="100" Grid.RowSpan="100" IsModal="True" WindowStartupLocation="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="36"/>
+                </Grid.RowDefinitions>
+                <Label Content="Process :" Grid.Row="1"/>
+                <cnt:CntIsdCombo x:Name="CmbProcess" Grid.Row="1" Grid.Column="1" SelectedValuePath="Id" DisplayMemberPath="Adi" SelectedValue="{Binding ProcessId, UpdateSourceTrigger=PropertyChanged}" Background="White" Margin="0,1,3,1" />
+                <Label Content="İşlem Sayısı :" Grid.Row="2"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding IslemSayisi}" Margin="0,1,3,1"/>
+                <Label Content="Makina Devri :" Grid.Row="3"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MakinaDevri}" Margin="0,1,3,1"/>
+                <Label Content="Makina Sicakliğı :" Grid.Row="4"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding MakinaSicaklik}" Margin="0,1,3,1"/>
+                <Label Content="Giriş Eni :" Grid.Row="5"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding GirisEni}" Margin="0,1,3,1"/>
+                <Label Content="Cikiş Eni" Grid.Row="6"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CikisEni}" Margin="0,1,3,1"/>
+                <Label Content="Makinada Kalma Süresi :" Grid.Row="7"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding MakinadaKalmaSuresi}" Margin="0,1,3,1"/>
+                <Label Content="Apre Kodu :" Grid.Row="8"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding ApreKodu}" Margin="0,1,3,1"/>
+                <Label Content="Açıklama :" Grid.Row="9"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Aciklama}" Margin="0,1,3,1"/>
+                <Label Content="Sıra : " Grid.Row="10"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Sira}" Margin="0,1,3,1"/>
+                <Button Name="BtnProcessKaydet" Grid.Row="11" Grid.Column="1" Margin="3" Background="White" Content=" Kaydet " HorizontalAlignment="Right" Width="100" Click="BtnProcessKaydet_Click"/>
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

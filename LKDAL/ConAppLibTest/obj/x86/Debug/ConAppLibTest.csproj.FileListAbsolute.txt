@@ -1,0 +1,43 @@
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\Reports\RprRefakatKarti.rdlc
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe.config
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.pdb
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.dll
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.pdb
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.xml
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.csprojResolveAssemblyReference.cache
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.exe
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe.config
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.xml
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.exe
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\app.config
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\app.config
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe.config
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.pdb
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.dll
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.pdb
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.xml
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.csprojResolveAssemblyReference.cache
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.exe
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.pdb
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\app.config
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe.config
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.pdb
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.dll
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.pdb
+D:\Github\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.xml
+D:\Github\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.csprojResolveAssemblyReference.cache
+D:\Github\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.exe
+D:\Github\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.pdb

@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LKLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:LKLibrary.Classes.ExtensionMethods.Evaluate(System.String)">
+            <summary>
+            Verilen string fonksiyonunu execute eder.
+            </summary>
+            <param name="expr">Fonksiyon</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.ExtensionMethods.GetDirectorySize(System.IO.DirectoryInfo)">
+            <summary>
+            Verilen dizinin boyutunu mb cinsinden hesaplar
+            </summary>
+            <param name="directory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.ExtensionMethods.ByteArrayToFile(System.String,System.Byte[])">
+            <summary>
+            ByteArray türünden bir veriyi dosyaya çeviren fonksiyon
+            </summary>
+            <param name="_FileName">Dosyanın tam ismi (d:\newDocument.txt gibi)</param>
+            <param name="_ByteArray">Byte array türünden veri</param>
+            <returns>dosya kaydetme başarılı ise return true, değilse return false</returns>
+        </member>
+        <member name="M:LKLibrary.Classes.ExtensionMethods.FileToByteArray(System.String)">
+            <summary>
+            Verilen dosya byte array 'e çevirir
+            </summary>
+            <param name="_FileName">Byte array 'e çevrilecek dosyanın tam adı (d:\newDocument.txt gibi)</param>
+            <returns>Byte Array</returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Mamul.BarkodBirlestir">
+            <summary>
+            Partisi, tipi, eni ve kalitesi aynı olan mamül kumaşları tek bir kayıt olarak kaydeder. Birleştirilenleri siler.
+            </summary>
+            <param name="kumaslar">Birleştirilecek kumaslar</param>
+            <returns></returns>
+        </member>
+        <member name="P:LKLibrary.Classes.Mamul.PartiHamKumaslari">
+            <summary>
+            Okutulan parti barkoduna uygun ham kumaşlar
+            </summary>
+        </member>
+        <member name="P:LKLibrary.Classes.Mamul.MamulKumaslar">
+            <summary>
+            Okutulan parti barkodundaki mamüller
+            </summary>
+        </member>
+        <member name="P:LKLibrary.Classes.Mamul.Hatalar">
+            <summary>
+            Mamule girilen mamul hataları
+            </summary>
+        </member>
+        <member name="M:LKLibrary.Classes.Iplik.IplikKaydet(System.Object,System.String)">
+            <summary>
+            Verilen iplik yeni bir kayıtsa ekleme yapar, eski kayıtsa o kaydı düzeltir.
+            </summary>
+            <param name="iplik"></param>
+            <param name="tip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Levent.#ctor(LKLibrary.DbClasses.vLeventHareket,System.Collections.Generic.List{LKLibrary.DbClasses.vIplikStok},System.Collections.Generic.List{LKLibrary.DbClasses.vLeventHareket})">
+            <summary>
+            
+            </summary>
+            <param name="iplikler"></param>
+            <param name="leventler"></param>
+            <param name="levent">null'dan farklı ise düzenleme modunda açılır. Yani leventler, iplikler de yüklenmiş olur. </param>
+        </member>
+        <member name="M:LKLibrary.Classes.Levent.LeventEkle(LKLibrary.DbClasses.vLeventHareket)">
+            <summary>
+            verilen leventi this.Leventler list'i içerisine ekler. Ekleme başarılı ise true; levent kullanımda ise 1, tezgah kullanımda ise 2 dönderir.
+            </summary>
+            <param name="levent"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LKLibrary.Classes.vLogoMalzemeBirimleri.MalzemeId">
+            <summary>
+            LKDB'deki malzemeId si
+            </summary>
+        </member>
+        <member name="M:LKLibrary.Classes.Makina.BakimKaydet(LKLibrary.DbClasses.vBakimOnarim,System.Collections.Generic.List{LKLibrary.DbClasses.vBakimOnarimAct})">
+            <summary>
+            Makina bakım kaydını kaydeder
+            </summary>
+            <param name="form">Bakım kayıt formu</param>
+            <param name="kullanilanMalzemeler">Bakım esnasında kullanılan malzemelerin listesi</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.TalepAra(System.Int32)">
+            <summary>
+            Durumuna göre talepleri getirir.
+            </summary>
+            <param name="durumId">tblDurumlar id'si</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.TalepAra(System.Int32,System.String)">
+            <summary>
+            İlgili durumda içinde geçen harflere göre talepleri arar
+            </summary>
+            <param name="durumId">ilgili durumun idsi</param>
+            <param name="malzemeFiltre">malzemenin içinde geçen harfler</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.MalzemeFirmaFiyatlariGetir(System.Int32)">
+            <summary>
+            İlgili malzemenin firmalardaki ortalama fiyatlarını getirir.
+            </summary>
+            <param name="malzemeId">Ortalama fiyatları istenen malzemenin malzemeId 'si</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.MalzemeFirmaFiyatlariGetir(System.Int32,System.Int32)">
+            <summary>
+            İlgili malzemenin firmalardaki ortalama fiyatlarını sayfalayarak getirir.
+            </summary>
+            <param name="malzemeId">Ortalama fiyatları istenen malzemenin malzemeId 'si</param>
+            <param name="sonFirmaId">Daha önce çekilen son firmanın id'si</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.TalepDurumlariGuncelle(System.Collections.Generic.List{LKLibrary.DbClasses.vTalepMalzemeler},System.Int32)">
+            <summary>
+            Verilen taleblerin durumunu günceller.
+            </summary>
+            <param name="listvTalepler">Durumları güncellenecek olan taleplerin listesi</param>
+            <param name="mevcutDurum">İlgili taleplerin mevcut durumu</param>
+            <returns>Durum güncelleme başarılı ise yeni durumun id'sini döner. Aksi durumda dönüş değeri -1'dir</returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.KarsilamaKaydet(LKLibrary.DbClasses.tblTalepKarsilama,System.Collections.Generic.List{LKLibrary.DbClasses.tblTalepKarsilamaAct})">
+            <summary>
+            Karşılanan talepleri kaydeder.
+            </summary>
+            <param name="ustForm">Karşılanacak taleplerin formu</param>
+            <param name="listKarsilananlar">Karşılanacak taleplerin listesi</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.MalzemeTalep.KarsilamaBelgesiEkle(System.String,System.Int32,LKLibrary.Classes.MalzemeTalep.Belge)">
+            <summary>
+            Satın alma belgeleri için dosya ekler
+            </summary>
+            <param name="dosyaTamYolu">dosyanın local'deki tam yolu</param>
+            <param name="satinAlmaId">dosyanın ekleneceği satınalma id'si</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Partileme.ProcessleriKaydet(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="listeYenilensinMi">processler kaydedildikten sonra id'lerini almış olarak yenilensin mi ?</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Planlama.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ay">Planı yapılacak ay. 0 verilirse planlama verilerini default'da yüklemez. Aksi halde girilen ayın verileri default olarak yüklenir</param>
+            <param name="yil">Planı yapılacak yıl. Değeri 0 verilirse içinde bulunulan yıl default'dur</param>
+        </member>
+        <member name="M:LKLibrary.Classes.Planlama.TezgahPlanOtele(System.Int32,System.DateTime,System.Int32,System.Boolean)">
+            <summary>
+            Tezgah planlarını öteler/geri çeker. Return; 1 ise başarılı bir öteleme/geri çekme, 0 ise öteleme/geri çekme yapılamamış, -1 ise geri çekilecek bir önceki gün müsait olmadığından geri çekme yapılamamıştır.
+            </summary>
+            <param name="tezgahId">öteleme/geri çekme yapılacak tezgahın id'si</param>
+            <param name="tarih">verilen tarihten sonraki planlar ötelenecek/geri çekilecek</param>
+            <param name="gunSayisi">Pozitif ise öteleme, negatif ise geri çekme yapılacaktır.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Planlama.TezgahPlanOtele(LKLibrary.DbClasses.tblTezgahAtkiGiris)">
+            <summary>
+            Atkı girişleri tezgah planlarını öteler.
+            </summary>
+            <param name="atkiGiris">Atkı girişi, ilgili tarihteki plan metresinin yarısının %20 fazlasından az ise tezgahtaki planlar 1 gün ötelenir.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Planlama.PlanlamaKaydet(LKLibrary.DbClasses.vPlanlama,System.Int32)">
+            <summary>
+            Yeni bir planlama kaydedilecekse plan.Id 'si 0'dır. Sistem buna göre yeni kaydı açar. Bunun için de girilen plan.Tarih ve  plan.Tarih + gunSayisi arasındaki günlerde herhangi bir plan olmamalıdır.
+            Eğer bu günler arasında bir plan varsa plan kaydedilmez ve fonksiyon -1 dönderir. 
+            
+            Eski bir planlama üzerinde update yapılacaksa plan.Id'si 0'dan farklıdır ve buna göre verilen plan update edilir.
+            </summary>
+            <param name="plan">vPlanlama türünde veridir.</param>
+            <param name="gunSayisi">plan.Tarih'inden itibaren kaç güne plan atılacağını belirler. Her bir güne dokunacak olan bilgi plan.Miktar içerisinde saklıdır.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Planlama.CozguyeAt(System.Int32,System.Double,System.Int32)">
+            <summary>
+            Çözgü sepetini doldurur. Eğer verilen sipariş daha önce çözgü sepetine atılmış ise Exception verir.
+            </summary>
+        </member>
+        <member name="M:LKLibrary.Classes.SatinAlma.DijitalBelgeEkle(System.String,LKLibrary.Classes.SatinAlma.BelgeEnumu)">
+            <summary>
+            Satın alma belgeleri için dosya ekler
+            </summary>
+            <param name="dosyaTamYolu">dosyanın local'deki tam yolu</param>
+            <param name="belgeTuru">irsaliye, fatura, vb.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Stok.StokMiktariGetir(System.Int32)">
+            <summary>
+            Malzemenin stoktaki mevcut miktarını ana biriminden dönderir.
+            </summary>
+            <param name="malzemeId">Stok durumu sorulan malzemenin id'si</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Stok.StokGelecekMiktariGetir(System.Int32)">
+            <summary>
+            Malzemenin satın alması yapılmış, depoya girmesi beklenen miktarını ana biriminden hesaplayarak dönderir.
+            </summary>
+            <param name="malzemeId">stok gelecek miktarı hesaplanacak malzemenin id'si</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.Classes.Stok.IplikStoklariGetir(System.Boolean)">
+            <summary>
+            İplik stoğunu getirir.
+            </summary>
+            <param name="hepsiMiGelsin">true ise bütün iplik stoğunu(net kg'ı 0 dan büyük olanlar) getirir. false ise sadece leventte görülecekleri getirir</param>
+            <returns></returns>
+        </member>
+        <member name="M:LKLibrary.DbClasses.vMalzemeler.MalzemeKaydet(System.Collections.Generic.List{LKLibrary.DbClasses.tblMalzemeler})">
+            <summary>
+            Verilen list'deki malzemeleri kaydeder. Listenin içinde id'si 0 olan kayıtlar insert edilirken id'si 0'dan farklı olan kayıtlar update edilir.
+            Dönüş true ise kaydetme başarılıdır. false ise kaydetme başarısızdır.
+            </summary>
+            <param name="malzemeler"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LKLibrary.DbClasses.vMamulKumaslar.SecilenBarkod">
+            <summary>
+            Ham kumaş barkodu da olabilir,reprocess barkodu da
+            </summary>
+        </member>
+        <member name="F:LKLibrary.DbClasses.vPlanSiparisleri.KalanMetre">
+            <summary>
+            Sipariş planlama esnasında kalan miktarın hesaplanmasında kullanılıyor.
+            </summary>
+        </member>
+    </members>
+</doc>

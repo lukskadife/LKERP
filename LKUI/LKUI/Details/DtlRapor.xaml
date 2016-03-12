@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="LKUI.Details.DtlRapor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewer="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+             mc:Ignorable="d" Height="500" Width="700"
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid>
+        <WindowsFormsHost Margin="0" Name="FrmHost" Width="700" Height="500">
+            <viewer:ReportViewer x:Name="viewerInstance" AutoScroll="True" Width="700" Height="500" PrintingBegin="viewerInstance_PrintingBegin"></viewer:ReportViewer>
+        </WindowsFormsHost>
+    </Grid>
+</UserControl>

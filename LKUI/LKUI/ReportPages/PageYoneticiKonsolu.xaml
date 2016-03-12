@@ -1,0 +1,587 @@
+﻿<UserControl x:Class="LKUI.ReportPages.PageYoneticiKonsolu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dtl="clr-namespace:LKUI.Details"
+             mc:Ignorable="d" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="500" d:DesignWidth="1200">
+    <Grid>
+        <TabControl SelectionChanged="TabControl_SelectionChanged" Name="TabCntKonsol">
+            <TabItem Header="Günlük Mamul Üretim" Name="TabGunlukMamulUretim">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridGunlukMamulUretim" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIGunlukMamulUretim" Header="Excel'e Aktar" Click="MIGunlukMamulUretim_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Ö.Gün Mamul Üretimi" Name="TabOGunMamulUretim">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridOGunMamulUretim" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIOGunlukMamulUretim" Header="Excel'e Aktar" Click="MIOGunlukMamulUretim_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Günlük Ham Üretim" Name="TabGunlukHamUretim">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridGunlukHamUretim" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>                        
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIGunlukHamUretim" Header="Excel'e Aktar" Click="MIGunlukHamUretim_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>            
+            <TabItem Header="Ö.Gün Ham Üretimi" Name="TabOGunHamUretim">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridOGunHamUretim" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>                        
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIOGunlukHamUretim" Header="Excel'e Aktar" Click="MIOGunlukHamUretim_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Ham Stok" Name="TabHamStok">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridHamStok" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding BeklemeGunu}" Header="Beklediği Gün" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Depo}" Header="Depo" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIHamStokToExcel" Header="Excel'e Aktar" Click="MIHamStokToExcel_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Mamul Stok" Name="TabMamulStok">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridMamulStok" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding BeklemeGunu}" Header="Beklediği Gün" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIMamulStokToExcel" Header="Excel'e Aktar" Click="MIMamulStokToExcel_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Günlük Sevkiyat(Mamul)" Name="TabGunlukSevkiyat">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridGunlukSevkiyat" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIGunlukSevkiyat" Header="Excel'e Aktar" Click="MIGunlukSevkiyat_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Günlük Sevkiyat(Fason)" Name="TabFasonSevkiyat">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridFasonSevkiyat" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIFasonSevkiyat" Header="Excel'e Aktar" Click="MIFasonSevkiyat_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Ö.Gün Sevkiyatı" Name="TabOGunSevkiyat">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridOGunSevkiyat" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIOGunlukSevkiyat" Header="Excel'e Aktar" Click="MIOGunlukSevkiyat_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Tezgah Randıman" Name="TabTezgahRandiman">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridTezgahRandiman" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <!--<telerik:GridViewDataColumn DataMemberBinding="{Binding }" Header="" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding }" Header="" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>-->
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MITezgahRandiman" Header="Excel'e Aktar" Click="MITezgahRandiman_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Tezgah Tip Planları" Name="TabTezgahPlan">
+                <dtl:DtlPlanGanntChart x:Name="DtlChart"></dtl:DtlPlanGanntChart>
+            </TabItem>
+            <TabItem Header="Tezgah Sipariş Planları" Name="TabTezgahSiparisPlan">
+                <dtl:DtlPlanGanttChartSiparis x:Name="DtlSiparisChart"></dtl:DtlPlanGanttChartSiparis>
+            </TabItem>
+            <TabItem Header="Boyahane Randıman" Name="TabBoyahaneRandiman">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBoyahaneRandiman" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <!--<telerik:GridViewDataColumn DataMemberBinding="{Binding }" Header="" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding }" Header="" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>-->
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIBoyahaneRandiman" Header="Excel'e Aktar" Click="MIBoyahaneRandiman_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Yeni Siparişler" Name="TabYeniSiparisler">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridYeniSiparisler" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisMetre}" Header="Sipariş Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TerminTarihi, StringFormat='dd.MM.yyyy'}" Header="Termini" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIYeniSiparisler" Header="Excel'e Aktar" Click="MIYeniSiparisler_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Ö.Gün Siparişleri" Name="TabOYeniSiparisler">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridOYeniSiparisler" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisMetre}" Header="Sipariş Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TerminTarihi, StringFormat='dd.MM.yyyy'}" Header="Termini" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIOYeniSiparisler" Header="Excel'e Aktar" Click="MIOYeniSiparisler_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Kalan Siparişler" Name="TabKalanSiparisler">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridKalanSiparisler" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisMetre}" Header="Sipariş Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SevkMetre}" Header="Sevk Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Kalan}" Header="Kalan" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIKalanSiparislerToExcel" Header="Excel'e Aktar" Click="MIKalanSiparislerToExcel_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Termini Gecikenler" Name="TabTerminGecikenler">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridTerminGecikenler" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisMetre}" Header="Sipariş Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SevkMetre}" Header="Sevk Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Kalan}" Header="Kalan" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TerminTarihi, StringFormat='dd.MM.yyyy'}" Header="Termini" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MITerminGecikenlerToExcel" Header="Excel'e Aktar" Click="MITerminGecikenlerToExcel_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Dokuma Siparişleri" Name="TabDokumaSiparisleri">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridDokumaSiparisler" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Musteri}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SonPlanTarihi, StringFormat='dd.MM.yyyy'}" Header="Plan Tarihi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Planlanan}" Header="Plan Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DokunanMetre}" Header="Dokunan" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DokunacakMetre}" Header="Dokunması Gereken" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIDokumaSiparislerToExcel" Header="Excel'e Aktar" Click="MIDokumaSiparislerToExcel_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Boyahane Siparişleri" Name="TabBoyahaneSiparisler">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBoyahaneSiparisler" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Makina}" Header="Makina" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiMetre}" Header="Partilenen Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIBoyahaneSiparisleriToExcel" Header="Excel'e Aktar" Click="MIBoyahaneSiparisleriToExcel_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Dokuma Duruş" Name="TabDokumaDurus">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridDokumaDurus" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahAdi}" Header="Tezgah" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ArizaAdi}" Header="Duruş Nedeni" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Aciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Fark}" Header="Duruş Süresi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FarkDakika}" Header="Duruş Süresi(dk)" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIDokumaDurus" Header="Excel'e Aktar" Click="MIDokumaDurus_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Boyahane Duruş" Name="TabBoyahaneDurus">
+                <telerik:RadGridView Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBoyahaneDurus" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahAdi}" Header="Makina" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ArizaAdi}" Header="Duruş Nedeni" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Aciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Fark}" Header="Duruş Süresi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FarkDakika}" Header="Duruş Süresi(dk)" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <MenuItem Name="MIBoyahaneDurus" Header="Excel'e Aktar" Click="MIBoyahaneDurus_Click" Height="25" FontSize="15"/>
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

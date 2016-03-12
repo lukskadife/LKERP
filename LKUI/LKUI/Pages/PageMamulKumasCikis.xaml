@@ -1,0 +1,154 @@
+﻿<Page x:Class="LKUI.Pages.PageMamulKumasCikis"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="PageMamulKumasCikis">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="57" />
+                <ColumnDefinition Width="57" />
+                <ColumnDefinition Width="57" />
+                <ColumnDefinition Width="57" />
+                <ColumnDefinition Width="57" />
+                <ColumnDefinition Width="351*" />
+                <ColumnDefinition Width="62*" />
+                <ColumnDefinition Width="102*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="160*" />
+                <RowDefinition Height="136*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="146*" />
+            </Grid.RowDefinitions>
+            <Border x:Name="HeaderBorder" BorderBrush="Black" BorderThickness="0" Padding="10,0" VerticalAlignment="Top" Margin="2,0,0,0" Height="31.96" Grid.ColumnSpan="8">
+                <DockPanel x:Name="Header" Height="25.96">
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run Text="Mamül Kumaş Çıkış" /></TextBlock>
+                </DockPanel>
+            </Border>
+            <Button Content="Ekle" Grid.Row="1" Name="BtnEkle" Margin="3" Click="BtnEkle_Click" Grid.RowSpan="2" />
+            <Button Content="Düzenle" Grid.Row="1" Grid.Column="1" Margin="3" Name="BtnDüzenle" Grid.RowSpan="2" />
+            <Button Content="Sil" Grid.Row="1" Name="BtnSil" Grid.Column="2" Margin="3" Grid.RowSpan="2" />
+            <Button Content="Yenile" Grid.Row="1" Name="BtnYenile" Margin="3" Grid.Column="3" Grid.RowSpan="2" />
+            <DataGrid Grid.Row="3" Name="DGridSevkiyat" Grid.ColumnSpan="8">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tarih" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Açıklama" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Personel " Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Belge No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Müşteri" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Sipariş No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTemplateColumn Header="Farklı Siparişin Kumaşını Sevk Et">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="ChckFSKSE" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Logoya Gönder">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="ChckLogoyaGonder" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Müşteri Kodu" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Satır No" Width="Auto" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Grid.Row="4" Name="DGridSevkiyatTipleri" Grid.ColumnSpan="8">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tip No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Renk No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Sıra " Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Satır No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Sevk Metre" Width="Auto" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Grid.Row="6" Name="DGridBarkot" Grid.ColumnSpan="8">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Barkot " Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Tip No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Brüt Metre " Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Renk No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Tür " Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Parça Metre" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Parça Sayısı" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Tam Parça" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Net Metre" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Dye Batch No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Kumaş Eni" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Desen No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Finish Kodu" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Kalite" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Parti No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Stok Kodu" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Satır No" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Renk" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Tip Varyant" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Finish Kodu" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Barkot Açıklaması" Width="Auto" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Sil" Grid.Row="5" Name="BtnSilBarkot" Margin="3" />
+            <Button Content="Yenile" Grid.Row="5" Grid.Column="1" Name="BtnYenileBarkot" Margin="3" />
+            <Label Content="Barkot:" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="5" Height="33" HorizontalAlignment="Right" VerticalAlignment="Center" Width="70" FontWeight="Bold" FontSize="18" />
+            <TextBox Grid.Column="5" Grid.Row="5" Height="32" HorizontalAlignment="Left" Name="TxtBarkot" VerticalAlignment="Center" Width="166" />
+            <Label Content="Başlangıç T." Grid.Column="6" Grid.Row="1" />
+            <DatePicker x:Name="DPBaslangic" Grid.Column="7" Grid.Row="1" />
+            <Label Content="Bitiş T." Grid.Column="6" Grid.Row="2" />
+            <DatePicker x:Name="DPBitis" Grid.Column="7" Grid.Row="2" />
+        </Grid>
+        <toolkit:ChildWindow x:Name="ChildEkle" IsModal="True" WindowStartupLocation="Center">
+            <Grid Height="290" Width="400">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="91*" />
+                    <ColumnDefinition Width="109*" />
+                    <ColumnDefinition Width="64*" />
+                    <ColumnDefinition Width="68*" />
+                    <ColumnDefinition Width="68*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Black" BorderThickness="0"  VerticalAlignment="Top"  Height="31.96" Grid.ColumnSpan="5">
+                    <DockPanel Height="25.96">
+                        <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run Text="Mamül Sevkiyat" /></TextBlock>
+                    </DockPanel>
+                </Border>
+                <Label Content="Tarih:" Grid.Row="1" />
+                <Label Content="Açıklama:" Grid.Row="2" />
+                <Label Content="Belge No:" Grid.Row="3" />
+                <Label Content="Sevk Eden:" Grid.Row="4" />
+                <Label Content="Müşteri" Grid.Row="5" />
+                <Label Content="Sipariş No:" Grid.Row="6" />
+                <Label Content="Farklı Siparişin Kumaşını Sevk Et:" Grid.Row="7" Grid.ColumnSpan="2" />
+                <DatePicker Grid.Column="1" Grid.Row="1" Name="DPTarih" />
+                <TextBox Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2" Name="TxtAciklama" Margin="2" />
+                <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Name="TxtBelgeNo" Margin="2" />
+                <ComboBox Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" Name="CmbSevkEden" Margin="2" />
+                <ComboBox Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="5" Name="CmbMusteri" Margin="2" />
+                <ComboBox Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="6" Name="CmbSiparisNo" Margin="2" />
+                <CheckBox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left" Name="ChckFSKSE" VerticalAlignment="Center" Height="18" Width="26" Margin="0,7,0,5" />
+                <Button Content="Kaydet" Grid.Column="3" Grid.Row="8" Name="BtnKaydet" Margin="3" />
+                <Button Content="Vazgeç" Grid.Column="4" Grid.Row="8" Name="BtnVazgec" Margin="3" />
+            </Grid>
+        </toolkit:ChildWindow>
+    </Grid>
+</Page>

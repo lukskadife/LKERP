@@ -1,0 +1,1418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89F855F2-034C-4F4B-8E28-BAA1C80CA82D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LKUI</RootNamespace>
+    <AssemblyName>LKUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <EnableSecurityDebugging>true</EnableSecurityDebugging>
+    <StartAction>URL</StartAction>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Projeler\Şirket\ISD\LuksKadifeERP\Published\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>tr-TR</TargetCulture>
+    <ProductName>LK ERP</ProductName>
+    <PublisherName>ISD</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>191</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>.\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Pivot.Core, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Pivot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GanttView, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.GanttView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Pivot, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Controls.Pivot.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Scheduling.Core, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Scheduling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Summer">
+      <HintPath>C:\Program Files\Telerik\UI for WPF Q1 2014\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Summer.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>.\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\PrintReportViewer.cs" />
+    <Compile Include="Controls\CntImageViewer.xaml.cs">
+      <DependentUpon>CntImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntIsdCombo.cs" />
+    <Compile Include="Details\DtlBekle.xaml.cs">
+      <DependentUpon>DtlBekle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlBoyahaneGunlukMetraj.xaml.cs">
+      <DependentUpon>DtlBoyahaneGunlukMetraj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlBukumDagitimAnahtari.xaml.cs">
+      <DependentUpon>DtlBukumDagitimAnahtari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlDokumaUrunAgaci.xaml.cs">
+      <DependentUpon>DtlDokumaUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlEtiket.xaml.cs">
+      <DependentUpon>DtlEtiket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlHamKumasKes.xaml.cs">
+      <DependentUpon>DtlHamKumasKes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlHamSorgula.xaml.cs">
+      <DependentUpon>DtlHamSorgula.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlMamulAciklama.xaml.cs">
+      <DependentUpon>DtlMamulAciklama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlMamulKesim.xaml.cs">
+      <DependentUpon>DtlMamulKesim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlMamulSorgula.xaml.cs">
+      <DependentUpon>DtlMamulSorgula.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlOrmeUrunAgaci.xaml.cs">
+      <DependentUpon>DtlOrmeUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlPackList.xaml.cs">
+      <DependentUpon>DtlPackList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlPlanGanntChart.xaml.cs">
+      <DependentUpon>DtlPlanGanntChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlPlanGanttChartSiparis.xaml.cs">
+      <DependentUpon>DtlPlanGanttChartSiparis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAmbarTransfer.xaml.cs">
+      <DependentUpon>PageAmbarTransfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBaskiDesenUrunAgaci.xaml.cs">
+      <DependentUpon>PageBaskiDesenUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBoyahaneSepeti.xaml.cs">
+      <DependentUpon>PageBoyahaneSepeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBoyahaneUrunAgaci.xaml.cs">
+      <DependentUpon>PageBoyahaneUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBoyaProgrami.xaml.cs">
+      <DependentUpon>PageBoyaProgrami.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageFasonIplikMaliyet.xaml.cs">
+      <DependentUpon>PageFasonIplikMaliyet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageFasonKumasMaliyet.xaml.cs">
+      <DependentUpon>PageFasonKumasMaliyet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageFuarKumas.xaml.cs">
+      <DependentUpon>PageFuarKumas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageFuarProses.xaml.cs">
+      <DependentUpon>PageFuarProses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageKafesKartlari.xaml.cs">
+      <DependentUpon>PageKafesKartlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageOrguKumasGirisi.xaml.cs">
+      <DependentUpon>PageOrguKumasGirisi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageOrmeUrunAgaci.xaml.cs">
+      <DependentUpon>PageOrmeUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePartilemeOkut.xaml.cs">
+      <DependentUpon>PagePartilemeOkut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSiparisMaliyet.xaml.cs">
+      <DependentUpon>PageSiparisMaliyet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSiparisTumMaliyet.xaml.cs">
+      <DependentUpon>PageSiparisTumMaliyet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTipBazindaSiparisMaliyeti.xaml.cs">
+      <DependentUpon>PageTipBazindaSiparisMaliyeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageFasonSepeti.xaml.cs">
+      <DependentUpon>PageFasonSepeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageHamMaliyetHesap.xaml.cs">
+      <DependentUpon>PageHamMaliyetHesap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageIadeAlim.xaml.cs">
+      <DependentUpon>PageIadeAlim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageKullanici.xaml.cs">
+      <DependentUpon>PageKullanici.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMamulOnay.xaml.cs">
+      <DependentUpon>PageMamulOnay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageProsesGrup.xaml.cs">
+      <DependentUpon>PageProsesGrup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageProsesler.xaml.cs">
+      <DependentUpon>PageProsesler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlRapor.xaml.cs">
+      <DependentUpon>DtlRapor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlSiparisInfo.xaml.cs">
+      <DependentUpon>DtlSiparisInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlTezgahGunlukDokuma.xaml.cs">
+      <DependentUpon>DtlTezgahGunlukDokuma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSatinAlma.xaml.cs">
+      <DependentUpon>PageSatinAlma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSayim.xaml.cs">
+      <DependentUpon>PageSayim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTezgahArizalari.xaml.cs">
+      <DependentUpon>PageTezgahArizalari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTezgahAtkiGiris.xaml.cs">
+      <DependentUpon>PageTezgahAtkiGiris.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTicariMal.xaml.cs">
+      <DependentUpon>PageTicariMal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageBoyahaneHareketRaporu.xaml.cs">
+      <DependentUpon>PageBoyahaneHareketRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageFasonaGidecekMamulRaporu.xaml.cs">
+      <DependentUpon>PageFasonaGidecekMamulRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageFasonSevkiyatRaporu.xaml.cs">
+      <DependentUpon>PageFasonSevkiyatRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageHamRapor.xaml.cs">
+      <DependentUpon>PageHamRapor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageHamUretimRapor.xaml.cs">
+      <DependentUpon>PageHamUretimRapor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageHataDagilimHamTezgahRaporu.xaml.cs">
+      <DependentUpon>PageHataDagilimHamTezgahRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageHataDagilimHamTipRaporu.xaml.cs">
+      <DependentUpon>PageHataDagilimHamTipRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageHataDagilimMamulRaporu.xaml.cs">
+      <DependentUpon>PageHataDagilimMamulRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageIplikCikisRaporu.xaml.cs">
+      <DependentUpon>PageIplikCikisRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageIplikGirisRaporu.xaml.cs">
+      <DependentUpon>PageIplikGirisRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageIplikStokRapor.xaml.cs">
+      <DependentUpon>PageIplikStokRapor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKaliteDagilimiWithTezgah.xaml.cs">
+      <DependentUpon>PageKaliteDagilimiWithTezgah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKaliteDagilimiWithTip.xaml.cs">
+      <DependentUpon>PageKaliteDagilimiWithTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKaliteDagilimWithMusteri.xaml.cs">
+      <DependentUpon>PageKaliteDagilimWithMusteri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKimyasalCikisRaporu.xaml.cs">
+      <DependentUpon>PageKimyasalCikisRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKimyasalGirisRaporu.xaml.cs">
+      <DependentUpon>PageKimyasalGirisRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKimyasalSarfiyatTipBazli.xaml.cs">
+      <DependentUpon>PageKimyasalSarfiyatTipBazli.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageKimyasalStokRaporu.xaml.cs">
+      <DependentUpon>PageKimyasalStokRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageMamulRapor.xaml.cs">
+      <DependentUpon>PageMamulRapor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageMamulSevkiyatRaporu.xaml.cs">
+      <DependentUpon>PageMamulSevkiyatRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageMamulUretimRaporu.xaml.cs">
+      <DependentUpon>PageMamulUretimRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageOnayliReceteDegisiklikleriRaporu.xaml.cs">
+      <DependentUpon>PageOnayliReceteDegisiklikleriRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageOnayliRecetelerRaporu.xaml.cs">
+      <DependentUpon>PageOnayliRecetelerRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageReceteDegisiklikleriniOnaylama.xaml.cs">
+      <DependentUpon>PageReceteDegisiklikleriniOnaylama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageReProcessRaporu.xaml.cs">
+      <DependentUpon>PageReProcessRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageSatisSiparisRaporu.xaml.cs">
+      <DependentUpon>PageSatisSiparisRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageSiradakiProcessRaporu.xaml.cs">
+      <DependentUpon>PageSiradakiProcessRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageTerminYonetimRaporu.xaml.cs">
+      <DependentUpon>PageTerminYonetimRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageTezgahPlanRaporu.xaml.cs">
+      <DependentUpon>PageTezgahPlanRaporu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageTezgahRandimanRapor.xaml.cs">
+      <DependentUpon>PageTezgahRandimanRapor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageYaslandirmaHam.xaml.cs">
+      <DependentUpon>PageYaslandirmaHam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageYaslandirmaMamul.xaml.cs">
+      <DependentUpon>PageYaslandirmaMamul.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPages\PageYoneticiKonsolu.xaml.cs">
+      <DependentUpon>PageYoneticiKonsolu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\EntegrasyonServisi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Operations.cs" />
+    <Compile Include="Controls\CntBükümMakinalarıKesit.xaml.cs">
+      <DependentUpon>CntBükümMakinalarıKesit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntInfoBarItem.xaml.cs">
+      <DependentUpon>CntInfoBarItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntIsdDataGrid.cs" />
+    <Compile Include="Controls\CntKumasTipSepeti.xaml.cs">
+      <DependentUpon>CntKumasTipSepeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntLogin.xaml.cs">
+      <DependentUpon>CntLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntMakinaAdi.xaml.cs">
+      <DependentUpon>CntMakinaAdi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntMakinaAnlikKesit.xaml.cs">
+      <DependentUpon>CntMakinaAnlikKesit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntMenuModul.xaml.cs">
+      <DependentUpon>CntMenuModul.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntMenuModulItem.xaml.cs">
+      <DependentUpon>CntMenuModulItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntInfoBar.xaml.cs">
+      <DependentUpon>CntInfoBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntSecilenFirma.xaml.cs">
+      <DependentUpon>CntSecilenFirma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntSelectBox.xaml.cs">
+      <DependentUpon>CntSelectBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntSpinnerPiston.xaml.cs">
+      <DependentUpon>CntSpinnerPiston.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntPagingElement.xaml.cs">
+      <DependentUpon>CntPagingElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntIsdTextBox.cs" />
+    <Compile Include="Controls\CntTakvimOlustur.xaml.cs">
+      <DependentUpon>CntTakvimOlustur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntTezgahDetay.xaml.cs">
+      <DependentUpon>CntTezgahDetay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntVirtualToggleButton.cs" />
+    <Compile Include="Details\DtlAciklama.xaml.cs">
+      <DependentUpon>DtlAciklama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlAyarGiris.xaml.cs">
+      <DependentUpon>DtlAyarGiris.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlEnerjiAylikFiyat.xaml.cs">
+      <DependentUpon>DtlEnerjiAylikFiyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlEntegrasyon.xaml.cs">
+      <DependentUpon>DtlEntegrasyon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlGunlukSayacGoster.xaml.cs">
+      <DependentUpon>DtlGunlukSayacGoster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlKumasTipBilgileri.xaml.cs">
+      <DependentUpon>DtlKumasTipBilgileri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlMalzemeOrtFiyatlar.xaml.cs">
+      <DependentUpon>DtlMalzemeOrtFiyatlar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlMinStoklar.xaml.cs">
+      <DependentUpon>DtlMinStoklar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlRenkKartlari.xaml.cs">
+      <DependentUpon>DtlRenkKartlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlSiparisEkleDuzenle.xaml.cs">
+      <DependentUpon>DtlSiparisEkleDuzenle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlTestSonuclari.xaml.cs">
+      <DependentUpon>DtlTestSonuclari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlYetkiler.xaml.cs">
+      <DependentUpon>DtlYetkiler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlİplikListesi.xaml.cs">
+      <DependentUpon>DtlİplikListesi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageLaboratuvarTestleri.xaml.cs">
+      <DependentUpon>PageLaboratuvarTestleri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBoyahane.xaml.cs">
+      <DependentUpon>PageBoyahane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageCozgu.xaml.cs">
+      <DependentUpon>PageCozgu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageCozguİsEmri.xaml.cs">
+      <DependentUpon>PageCozguİsEmri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageDokumaUrunAgaci.xaml.cs">
+      <DependentUpon>PageDokumaUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageHamKumasGirisi.xaml.cs">
+      <DependentUpon>PageHamKumasGirisi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageHataKartlari.xaml.cs">
+      <DependentUpon>PageHataKartlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageIplikCikis.xaml.cs">
+      <DependentUpon>PageIplikCikis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageIplikGiris.xaml.cs">
+      <DependentUpon>PageIplikGiris.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageKaliteKartlari.xaml.cs">
+      <DependentUpon>PageKaliteKartlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageKimyasalRecete.xaml.cs">
+      <DependentUpon>PageKimyasalRecete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageKombinler.xaml.cs">
+      <DependentUpon>PageKombinler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageKumaslar.xaml.cs">
+      <DependentUpon>PageKumaslar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageLevent.xaml.cs">
+      <DependentUpon>PageLevent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageLeventDurum.xaml.cs">
+      <DependentUpon>PageLeventDurum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMamulKumasGirisi.xaml.cs">
+      <DependentUpon>PageMamulKumasGirisi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMusteriFiyatlari.xaml.cs">
+      <DependentUpon>PageMusteriFiyatlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMüsteriProsesFiyat.xaml.cs">
+      <DependentUpon>PageMüsteriProsesFiyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePartileme.xaml.cs">
+      <DependentUpon>PagePartileme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSabitProsesFiyatlari.xaml.cs">
+      <DependentUpon>PageSabitProsesFiyatlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSabitSatisFiyatListesi.xaml.cs">
+      <DependentUpon>PageSabitSatisFiyatListesi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlTalepKarsilama.xaml.cs">
+      <DependentUpon>DtlTalepKarsilama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlTalepMalzemeler.xaml.cs">
+      <DependentUpon>DtlTalepMalzemeler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain.xaml.cs">
+      <DependentUpon>PageMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBakimOnarim.xaml.cs">
+      <DependentUpon>PageBakimOnarim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageBakımPeriyot.xaml.cs">
+      <DependentUpon>PageBakımPeriyot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageDepoGiris.xaml.cs">
+      <DependentUpon>PageDepoGiris.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageGunlukSayacDegerleri.xaml.cs">
+      <DependentUpon>PageGunlukSayacDegerleri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMakinaBakimArsiv.xaml.cs">
+      <DependentUpon>PageMakinaBakimArsiv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMakinaBakım.xaml.cs">
+      <DependentUpon>PageMakinaBakım.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMalzemeIhtiyac.xaml.cs">
+      <DependentUpon>PageMalzemeIhtiyac.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSatinAlOnay.xaml.cs">
+      <DependentUpon>PageSatinAlOnay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSatisSiparisleri.xaml.cs">
+      <DependentUpon>PageSatisSiparisleri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSatınAlma.xaml.cs">
+      <DependentUpon>PageSatınAlma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Details\DtlSayacAyarlar.xaml.cs">
+      <DependentUpon>DtlSayacAyarlar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSevkiyat.xaml.cs">
+      <DependentUpon>PageSevkiyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSiparisPlanlama.xaml.cs">
+      <DependentUpon>PageSiparisPlanlama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageStokAlarm.xaml.cs">
+      <DependentUpon>PageStokAlarm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageProcessFiyatListesi.xaml.cs">
+      <DependentUpon>PageProcessFiyatListesi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTezgahDurusGir.xaml.cs">
+      <DependentUpon>PageTezgahDurusGir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTezgahDurusTanimi.xaml.cs">
+      <DependentUpon>PageTezgahDurusTanimi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTezgahPlan.xaml.cs">
+      <DependentUpon>PageTezgahPlan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageIplikUrunAgaci.xaml.cs">
+      <DependentUpon>PageIplikUrunAgaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LKUI_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\EntegrasyonServisi\EntegrasyonServisi.wsdl" />
+    <None Include="Service References\EntegrasyonServisi\EntegrasyonServisi.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EntegrasyonServisi\EntegrasyonServisi1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\CntBükümMakinalarıKesit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CntInfoBarItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CntKumasTipSepeti.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CntMakinaAdi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntMakinaAnlikKesit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntMenuModul.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntMenuModulItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntInfoBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CntSecilenFirma.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntSelectBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CntSpinnerPiston.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntPagingElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntTakvimOlustur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntTezgahDetay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlAciklama.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlAyarGiris.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlBekle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlBoyahaneGunlukMetraj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlBukumDagitimAnahtari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlDokumaUrunAgaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlEnerjiAylikFiyat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlEntegrasyon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlEtiket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlGunlukSayacGoster.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlHamKumasKes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlHamSorgula.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlKumasTipBilgileri.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlMalzemeOrtFiyatlar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlMamulAciklama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlMamulKesim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlMamulSorgula.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlMinStoklar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlOrmeUrunAgaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlPackList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlPlanGanntChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlPlanGanttChartSiparis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAmbarTransfer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageBaskiDesenUrunAgaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageBoyahaneSepeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageBoyahaneUrunAgaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageBoyaProgrami.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFasonIplikMaliyet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFasonKumasMaliyet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFuarKumas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFuarProses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageKafesKartlari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageOrguKumasGirisi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageOrmeUrunAgaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PagePartilemeOkut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSiparisMaliyet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSiparisTumMaliyet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageTipBazindaSiparisMaliyeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageFasonSepeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageHamMaliyetHesap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageIadeAlim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageKullanici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMamulOnay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageProsesGrup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageProsesler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlRapor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlRenkKartlari.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlSiparisEkleDuzenle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlSiparisInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlTestSonuclari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlTezgahGunlukDokuma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlYetkiler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlİplikListesi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageLaboratuvarTestleri.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageBoyahane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageCozgu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageCozguİsEmri.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageDokumaUrunAgaci.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageHamKumasGirisi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageSatinAlma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSayim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageTezgahArizalari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageTezgahAtkiGiris.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageTicariMal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageBoyahaneHareketRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageFasonaGidecekMamulRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageFasonSevkiyatRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageHamRapor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportPages\PageHamUretimRapor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageHataKartlari.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageIplikCikis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageIplikGiris.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageKaliteKartlari.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageKimyasalRecete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageKombinler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageKumaslar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageLevent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageLeventDurum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageMamulKumasGirisi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportPages\PageHataDagilimHamTezgahRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageHataDagilimHamTipRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageHataDagilimMamulRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageIplikCikisRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageIplikGirisRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageIplikStokRapor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKaliteDagilimiWithTezgah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKaliteDagilimiWithTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKaliteDagilimWithMusteri.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKimyasalCikisRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKimyasalGirisRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKimyasalSarfiyatTipBazli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageKimyasalStokRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageMamulRapor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMusteriFiyatlari.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageMüsteriProsesFiyat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagePartileme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageSabitProsesFiyatlari.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageSabitSatisFiyatListesi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlTalepKarsilama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Details\DtlTalepMalzemeler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageBakimOnarim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageBakımPeriyot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageDepoGiris.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageGunlukSayacDegerleri.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageMakinaBakimArsiv.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageMakinaBakım.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageMalzemeIhtiyac.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSatinAlOnay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSatisSiparisleri.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageSatınAlma.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Details\DtlSayacAyarlar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageSevkiyat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSiparisPlanlama.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageStokAlarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageProcessFiyatListesi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageTezgahDurusGir.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageTezgahDurusTanimi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageTezgahPlan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageIplikUrunAgaci.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportPages\PageMamulSevkiyatRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageMamulUretimRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageOnayliReceteDegisiklikleriRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageOnayliRecetelerRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageReceteDegisiklikleriniOnaylama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageReProcessRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageSatisSiparisRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageSiradakiProcessRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageTerminYonetimRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageTezgahPlanRaporu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageTezgahRandimanRapor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageYaslandirmaHam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageYaslandirmaMamul.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPages\PageYoneticiKonsolu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\p.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Ucgen.jpg" />
+    <Resource Include="Resources\utu.jpg" />
+    <Resource Include="Resources\yikanmaz.jpg" />
+    <Resource Include="Resources\Yuvarlak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EntegrasyonServisi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EntegrasyonServisi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EntegrasyonServisi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EntegrasyonServisi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ISD yazı.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LKDAL\LKLibrary\LKLibrary.csproj">
+      <Project>{F4387753-1362-4305-AC7A-0978EB0CC77B}</Project>
+      <Name>LKLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Costura.dll" />
+    <Content Include="Tools\Costura.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <StartArguments />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LKUI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A8BD3E57A8B151100EEDC410AFF54460AFE5F179</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ISD yazı.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <Costura.EmbedTask />
+  </Target>
+  <UsingTask TaskName="Costura.EmbedTask" AssemblyFile="$(SolutionDir)Tools\Costura.dll" />
+</Project>

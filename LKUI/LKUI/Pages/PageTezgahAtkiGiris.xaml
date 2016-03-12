@@ -1,0 +1,123 @@
+﻿<UserControl xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  x:Class="LKUI.Pages.PageTezgahAtkiGiris"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+             d:DesignHeight="600" d:DesignWidth="900" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition Width="143" />
+                <ColumnDefinition Width="19" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="116" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="35*" />
+                <RowDefinition Height="201*" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="39*" />
+                <RowDefinition Height="238*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="1" Name="BtnEkle" Grid.RowSpan="2" Click="BtnEkle_Click" Margin="0,5">
+                <TextBlock TextWrapping="Wrap" Text="Ekle" />
+            </Button>
+            <Button Content="Sil" Grid.Column="1" Grid.Row="1" Name="BtnSil" Grid.RowSpan="2" Margin="0,5" Click="BtnSil_Click" />
+            <Button Content="Yenile" Grid.Column="2" Grid.Row="1" Name="BtnYenile" Grid.RowSpan="2" Margin="0,5" Click="BtnYenile_Click" />
+            <Label Content="Başlangıç Tarihi:" Grid.Column="8" Grid.Row="1" />
+            <Label Content="Bitiş Tarihi:" Grid.Column="8" Grid.Row="2" />
+            <DatePicker Grid.Column="9" Grid.Row="1" Name="DPBaslangic" SelectedDateChanged="DPBaslangic_SelectedDateChanged"/>
+            <DatePicker Grid.Column="9" Grid.Row="2" Name="DPBitis" SelectedDateChanged="DPBitis_SelectedDateChanged" />
+            <telerik:RadGridView AutoGenerateColumns="False" Grid.Row="3" Grid.RowSpan="10" Name="DGridAtki" Grid.ColumnSpan="98" IsReadOnly="True" telerik:StyleManager.Theme="Summer" ShowGroupFooters="True" ShowColumnFooters="True" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" ShowGroupPanel="False" Background="#FFF0F0F0">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Tarih" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Tarih,StringFormat='dd.MM.yyyy'}" />
+                    <telerik:GridViewDataColumn Header="Tezgah" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TezgahKodu}" >
+                        <telerik:GridViewDataColumn.AggregateFunctions>
+                            <telerik:CountFunction/>
+                        </telerik:GridViewDataColumn.AggregateFunctions>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="Tip No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TipNo}" />
+                    <telerik:GridViewDataColumn Header="Postası" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Postasi}" />
+                    <telerik:GridViewDataColumn Header="Dokumacı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Dokumaci}" />
+                    <telerik:GridViewDataColumn Header="Başlangıç" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding AtkiBaslangic}" />
+                    <telerik:GridViewDataColumn Header="Bitiş" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding AtkiBitis}" />
+                    <telerik:GridViewDataColumn Header="Fark" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Fark}">
+                        <telerik:GridViewDataColumn.AggregateFunctions>
+                            <telerik:SumFunction/>
+                        </telerik:GridViewDataColumn.AggregateFunctions>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="Açıklama" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Aciklama}" />                    
+                </telerik:RadGridView.Columns>
+                <telerik:RadGridView.ContextMenu>
+                    <ContextMenu>
+                        <ContextMenu.ItemsSource>
+                            <CompositeCollection>
+                                <MenuItem Name="MIExcel" Header="Excel'e Aktar" Click="MIExcel_Click" Height="25" FontSize="15"/>
+                            </CompositeCollection>
+                        </ContextMenu.ItemsSource>
+                    </ContextMenu>
+                </telerik:RadGridView.ContextMenu>
+            </telerik:RadGridView>
+        </Grid>
+      
+        <toolkit:ChildWindow x:Name="ChildAtkiEkle" IsModal="True" WindowStartupLocation="Center" Closed="ChildAtkiEkle_Closed">
+            <Grid Width="300">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="126*" />
+                        <ColumnDefinition Width="84*" />
+                        <ColumnDefinition Width="90*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="51" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Tarih :" Grid.Row="1" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <DatePicker Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,2,5,2" SelectedDate="{Binding Tarih, StringFormat='dd.MM.yyyy'}" TabIndex="2" />
+                    <Label Content="Dokumacı :" Grid.Row="2" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <ComboBox Grid.ColumnSpan="3"  Name="CmbDokumaci" Grid.Row="2"  Grid.Column="1" Margin="2" SelectedValuePath="Id" DisplayMemberPath="Adi" SelectedValue="{Binding DokumaciId, UpdateSourceTrigger=PropertyChanged}" TabIndex="2" />
+
+                    <Label Content="Tezgah :" Grid.Row="3" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <cnt:CntIsdCombo Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,2,5,2" x:Name="CmbTezgah" DisplayMemberPath="KodAd" SelectionChanged="CmbTezgah_SelectionChanged"
+                              SelectedValuePath="Id" SelectedValue="{Binding TezgahId, UpdateSourceTrigger=PropertyChanged}" TabIndex="3" />
+                    <Label Content="Tip No :" Grid.Row="4" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <cnt:CntIsdCombo Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,2,5,2" x:Name="CmbTip" DisplayMemberPath="TipNo" SelectedValuePath="Id" SelectedValue="{Binding TipId, UpdateSourceTrigger=PropertyChanged}" TabIndex="4" />
+                    <Label Content="Başlangıç :" Grid.Row="5" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13"/>
+                    <cnt:CntIsdTextBox TxtTipi="Sayisal" Text="{Binding AtkiBaslangic, UpdateSourceTrigger=PropertyChanged}" Margin="0,2,5,2" Grid.Row="5" Grid.Column="1" x:Name="TxtBaslangic" GotMouseCapture="TxtBaslangic_GotMouseCapture" TextChanged="TxtBaslangic_TextChanged" GotFocus="TxtBaslangic_GotFocus" TabIndex="5" />
+                    <Label Content="Bitiş :" Grid.Row="6" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <cnt:CntIsdTextBox TxtTipi="Sayisal" Text="{Binding AtkiBitis}" Margin="0,2,5,2" Grid.Row="6" Grid.Column="1" x:Name="TxtBitis" GotMouseCapture="TxtBitis_GotMouseCapture" TextChanged="TxtBitis_TextChanged" TabIndex="6" GotFocus="TxtBitis_GotFocus"/>
+                    <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" Name="LblFark"/>
+                    <Label Content="Postası :" Grid.Row="0" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <cnt:CntIsdCombo Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,2,5,2" SelectedValuePath="Content" SelectedValue="{Binding Postasi}" x:Name="CmbPosta" SelectionChanged="CmbPosta_SelectionChanged" TabIndex="1">
+                        <ComboBoxItem Content="A" />
+                        <ComboBoxItem Content="B" />
+                        <ComboBoxItem Content="C" />
+                    </cnt:CntIsdCombo>
+                    <Label Content="Açıklama :" Grid.Row="7" HorizontalAlignment="Left" Margin="6,0,0,0" FontWeight="Bold" FontSize="13" />
+                    <TextBox Grid.Row="7" Margin="0,2,5,2" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Aciklama, Mode=TwoWay}" TabIndex="7" />
+                    <Button Content="Kaydet" Margin="5" Name="BtnKaydet" Grid.Column="1" Grid.Row="9" Click="BtnKaydet_Click" />
+                    <Button Content="Vazgeç" Margin="5" Name="BtnVazgec" Grid.Column="2" Grid.Row="9" Click="BtnVazgec_Click" />
+                </Grid>
+            </Grid>
+        </toolkit:ChildWindow>
+    </Grid>
+</UserControl>

@@ -1,0 +1,233 @@
+﻿<UserControl x:Class="LKUI.Pages.PageLevent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:cnt="clr-namespace:LKUI.Controls"
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      mc:Ignorable="d" Loaded="Page_Loaded" MinWidth="800" MinHeight="600" FontSize="14"
+	 >
+    <Grid>
+        <toolkit:ChildWindow x:Name="ChildİplikSec" IsModal="True" WindowStartupLocation="Center" Closed="ChildİplikSec_Closed">
+            <Grid Width="800" Height="600">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="127*" />
+                    <RowDefinition Height="146*" />
+                    <RowDefinition Height="0*" />
+                    <RowDefinition Height="129*" />
+                    <RowDefinition Height="153*" />
+                    <RowDefinition Height="35*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="142*" />
+                    <ColumnDefinition Width="178*" />
+                </Grid.ColumnDefinitions>
+                <toolkit:WatermarkTextBox x:Name="TxtIplikTipFiltre" Grid.Row="0" Watermark="İplik Tipine Göre Ara.." VerticalContentAlignment="Center" TextChanged="TxtIplikTipFiltre_TextChanged" />
+                <toolkit:WatermarkTextBox x:Name="TxtIplikAdFiltre" Grid.Row="0" Grid.Column="1" Watermark="İplik Adına Göre Ara.." VerticalContentAlignment="Center" TextChanged="TxtIplikAdFiltre_TextChanged" />
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="1" Name="DGridIplikKartlari" HeadersVisibility="None" SelectionChanged="DGridIplikKartlari_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=Kodu}" Header="Kodu" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Binding="{Binding Path=Adi}" Header="Adı" Width="Auto" IsReadOnly="True" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Grid.ColumnSpan="2" Grid.Row="2" Name="DGridIplik" MouseDoubleClick="DGridIplik_MouseDoubleClick">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Lot No" Binding="{Binding LotNo}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Renk" Width="Auto" Binding="{Binding RenkAdi}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Kalan Net Kg" Binding="{Binding NetKg}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Kalan Bobin" Binding="{Binding BobinSayisi}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Satıcı" Width="Auto" IsReadOnly="True" Binding="{Binding Satici}" />
+                        <DataGridTextColumn Header="Ambalaj" Width="Auto" IsReadOnly="True" Binding="{Binding Ambalaj}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Border Grid.ColumnSpan="2" Grid.Row="4">
+                    <Grid Name="GridIplikEkle">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35*" />
+                            <RowDefinition Height="35*" />
+                            <RowDefinition Height="35*" />
+                            <RowDefinition Height="35*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="93*" />
+                            <ColumnDefinition Width="80*" />
+                            <ColumnDefinition Width="72*" />
+                            <ColumnDefinition Width="60*" />
+                            <ColumnDefinition Width="57*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="İplik Kodu" Grid.Column="0" />
+                        <TextBox x:Name="TxtİplikKodu" Grid.Column="1" Text="{Binding Kodu}" IsEnabled="False" Margin="2" />
+                        <Label Content="İplik Adı" Grid.Row="1" Grid.Column="0" />
+                        <TextBox x:Name="TxtİplikAdi" Grid.Column="1" Grid.Row="1" Text="{Binding Adi}" IsEnabled="False" Margin="2" />
+                        <Label Content="Lot Numarası" Grid.Row="2" Grid.Column="0" />
+                        <TextBox x:Name="TxtLotNumarasi" Grid.Column="1" Grid.Row="2" Text="{Binding LotNo}" IsEnabled="False" Margin="2" />
+                        <Label Content="Renk Numarası" Grid.Row="3" Grid.Column="0" />
+                        <TextBox x:Name="TxtRenkNo" Grid.Column="1" Grid.Row="4" Text="{Binding RenkAdi}" IsEnabled="False" Margin="2" />
+                        <Label Content="Satıcı" Grid.Row="0" Grid.Column="2" />
+                        <TextBox x:Name="TxtSatici" Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Satici}" IsEnabled="False" Margin="2" />
+                        <Label Content="Ambalaj" Grid.Row="1" Grid.Column="2" />
+                        <TextBox x:Name="TxtAmbalaj" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Ambalaj}" IsEnabled="False" Margin="2" />
+                        <Label Content="Bobin" Grid.Row="2" Grid.Column="2" />
+                        <cnt:CntIsdTextBox x:Name="TxtBobin" Grid.Column="3" Grid.Row="2" TxtTipi="Sayisal" Margin="2" />
+                        <Label Content="Net Kg" Grid.Row="3" Grid.Column="2" />
+                        <cnt:CntIsdTextBox x:Name="TxtNetKg" Grid.Column="3" Grid.Row="3" TxtTipi="Sayisal" Margin="2" />
+                        <Button Content="Ekle" Grid.Column="4" Grid.Row="2" Grid.RowSpan="2" Name="BtnEkle" Click="BtnEkle_Click" />
+                    </Grid>
+                </Border>
+                <Button Content="Tamamla" Grid.Column="1" Grid.Row="6" Name="BtnTamam" Click="BtnTamam_Click" HorizontalAlignment="Right" Width="126" />
+                <DataGrid AutoGenerateColumns="False" Grid.ColumnSpan="2" Grid.Row="5" Name="DGridSecilenIplikler" Margin="0,0,0,2" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Kod" Binding="{Binding Kodu}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Adı" Binding="{Binding Adi}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Lot No" Binding="{Binding LotNo}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Renk" Width="Auto" Binding="{Binding RenkAdi}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Net Kg" Binding="{Binding NetKg}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Bobin" Binding="{Binding BobinSayisi}" Width="Auto" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Satıcı" Width="Auto" IsReadOnly="True" Binding="{Binding Satici}" />
+                        <DataGridTextColumn Header="Ambalaj" Width="Auto" IsReadOnly="True" Binding="{Binding Ambalaj}" />
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Kaldır" Background="#FFCECECE" Click="BtnSecilenKaldir_Click"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </toolkit:ChildWindow>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*" />
+                <RowDefinition Height="42" />
+                <RowDefinition Height="250" />
+                <RowDefinition Height="278*" />
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="271*" />
+                <ColumnDefinition Width="422" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="HeaderBorder" BorderBrush="Black" BorderThickness="1" Padding="10,0" VerticalAlignment="Top" Margin="2,0,0,0" Height="31.96" Grid.ColumnSpan="5">
+                <DockPanel x:Name="Header" Height="25.96">
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run Text="Levent" /></TextBlock>
+                    <TextBlock Name="TxtDurum" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontWeight="Bold" Height="21.96" FontSize="16" Width="245" />
+                </DockPanel>
+            </Border>
+            <DataGrid AutoGenerateColumns="False" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="2" Name="DGridKullanilacakIplikler" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Kod" Binding="{Binding IplikKodu}" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Adı" Binding="{Binding IplikAdi}" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Lot No" Binding="{Binding LotNo}" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Renk" Width="Auto" Binding="{Binding RenkAdi}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Net Kg" Binding="{Binding NetKg}" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Bobin" Binding="{Binding BobinSayisi}" Width="Auto" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Satıcı" Width="Auto" IsReadOnly="True" Binding="{Binding Satici}" />
+                    <DataGridTextColumn Header="Ambalaj" Width="Auto" IsReadOnly="True" Binding="{Binding Ambalaj}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Name="GrdLevent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="362" />
+                    <ColumnDefinition Width="209" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Border Padding="5" BorderBrush="Black" BorderThickness="1" Margin="2,0,0,2">
+                    <Grid Name="GrdUst" Height="196">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="71*" />
+                            <ColumnDefinition Width="93*" />
+                            <ColumnDefinition Width="83*" />
+                            <ColumnDefinition Width="91*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Tip No:" />
+                        <Label Content="Renk No:" Grid.Column="0" Grid.Row="1" Margin="0,10,0,2" />
+                        
+                        <Label Content="Bobin Ad.:" Grid.Column="0" Grid.Row="2" Margin="0,10,0,2" />
+                        <Label Content="Tel Ad.:" Grid.Column="0" Grid.Row="3" Margin="0,10,0,2" />
+                        <Label Content="Bobin Metre:" Grid.Column="2" Grid.Row="0" Margin="0,10,0,2" />
+                        <Label Content="Reste Metre:" Grid.Column="2" Grid.Row="1" Margin="0,10,0,2" />
+                        <Label Content="Bant Sayısı:" Grid.Column="2" Grid.Row="2" Margin="0,10,0,2" />
+                        <ComboBox Name="CmbTipNo" Grid.Column="1" Margin="0,5,0,5" DisplayMemberPath="TipNo" SelectedValuePath="Id" SelectedValue="{Binding Path= TipId, Mode=TwoWay}" />
+                        <ComboBox Name="CmbRenkNo" Grid.Column="1" Grid.Row="1" Margin="0,5,0,5" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding Path= RenkId, Mode=TwoWay}" />
+                        <Grid Grid.Column="1" Grid.Row="2" Margin="0,5,0,5" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            
+                        </Grid>
+                        <cnt:CntIsdTextBox x:Name="TxtTelAd" Grid.Column="1" Grid.Row="3" Margin="0,5,0,5" TxtTipi="Sayisal" Text="{Binding Path=TelAdedi}" />
+                        <cnt:CntIsdTextBox x:Name="TxtBobinAd" Grid.Column="1" Grid.Row="2" Margin="0,5,0,5" TxtTipi="Sayisal" Text="{Binding Path=BobinAdedi}" />
+                        <cnt:CntIsdTextBox x:Name="TxtBobinMetre" Grid.Column="3" Grid.Row="0" Margin="0,5,0,5" TxtTipi="Sayisal" Text="{Binding Path=BobinMetre}" />
+                        <cnt:CntIsdTextBox x:Name="TxtResteMetre" Grid.Column="3" Grid.Row="1" Margin="0,5,0,5" TxtTipi="Sayisal" Text="{Binding Path=ResteMetre}" />
+                        <cnt:CntIsdTextBox x:Name="TxtBantSayisi" Grid.Column="3" Grid.Row="2" Margin="0,5,0,5" TxtTipi="Sayisal" Text="{Binding Path=BantSayisi}" IsReadOnly="True" />
+                        <Label Content="Açıklama:" Grid.Row="4" />
+                        <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" Name="TxtAciklama" TextWrapping="Wrap" Margin="0,1,0,4" MaxLength="250" Text="{Binding Aciklama}" />
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40*" />
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Margin="0,0,1,2" Grid.ColumnSpan="2" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="117*" />
+                            <ColumnDefinition Width="56*" />
+                            <ColumnDefinition Width="54*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                        </Grid.RowDefinitions>
+                        <Button Content="Ekle" Grid.Column="1" Grid.Row="6" Name="BtnLeventEkle" Margin="0,3,3,0" Click="BtnLeventEkle_Click" Grid.ColumnSpan="2" />
+                        <Label Content="Levent No:" FontWeight="Bold" />
+                        <cnt:CntIsdTextBox x:Name="TxtLeventNo" Grid.Column="1" Margin="0,2" TxtTipi="Sayisal" Text="{Binding Path=LeventNo}" Grid.ColumnSpan="2" />
+                        <Label Content="Çözgü:" Grid.Row="1" />
+                        <ComboBox x:Name="CmbCozgu" Grid.Column="1" Grid.Row="1" Margin="0,2" Grid.ColumnSpan="2">
+                            <ComboBoxItem Content="Alt Zemin" />
+                            <ComboBoxItem Content="Üst Zemin" />
+                            <ComboBoxItem Content="Hav" />
+                        </ComboBox>
+                        <Label Content="Tezgah:" Grid.Row="2" />
+                        <ComboBox x:Name="CmbTezgah" Grid.Column="1" Grid.Row="2" Margin="0,2" SelectedValue="{Binding Path= TezgahId, Mode=TwoWay}" DisplayMemberPath="KodAd" SelectedValuePath="Id" Grid.ColumnSpan="2" />
+                        <Label Content="Metre:" Grid.Row="3" />
+                        <cnt:CntIsdTextBox x:Name="TxtMetre" Grid.Column="1" Grid.Row="3" Margin="0,2" Text="{Binding Path=Metre}" TxtTipi="Sayisal" Grid.ColumnSpan="2" />
+                        <Label Content="Çeken Personel:" Grid.Row="4" />
+                        <ComboBox x:Name="CmbCekenPersonel" Grid.Column="1" Grid.Row="4" Margin="0,2" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding Path= CekenPersonelId, Mode=TwoWay}" Grid.ColumnSpan="2" />
+                        <Label Content="Çapı/Eni:" Grid.Column="0" Grid.Row="5" Margin="0,2" />
+                        <cnt:CntIsdTextBox x:Name="TxtLeventCap" Grid.Column="1" TxtTipi="Sayisal" Text="{Binding Path=LeventCapi}" Grid.Row="5" Margin="0,2,2,2"/>
+                        <cnt:CntIsdTextBox x:Name="TxtLeventEni" Grid.Column="2" TxtTipi="Sayisal" Text="{Binding Path=LeventEni}" Grid.Row="5" Margin="0,2"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <DataGrid AutoGenerateColumns="False" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="3" Name="DGridLeventler" IsReadOnly="True" Margin="2,2,2,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Levent No" Width="Auto" IsReadOnly="True" Binding="{Binding LeventNo}" />
+                    <DataGridTextColumn Header="Çözgü " Width="Auto" IsReadOnly="True" Binding="{Binding Cozgu}" />
+                    <DataGridTextColumn Header="Tezgah" Width="Auto" IsReadOnly="True" Binding="{Binding TezgahAdi}" />
+                    <DataGridTextColumn Header="Metre" Width="Auto" IsReadOnly="True" Binding="{Binding Metre}" />
+                    <DataGridTextColumn Header="Çeken Personel" Width="Auto" IsReadOnly="True" Binding="{Binding CekenPersonel}" />
+                    <DataGridTextColumn Header="Çapı" Width="Auto" IsReadOnly="True" Binding="{Binding LeventCapi}" />
+                    <DataGridTextColumn Header="Eni" Width="Auto" IsReadOnly="True" Binding="{Binding LeventEni}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="İplik Seç" Grid.Row="1" Name="BtnİplikSec" Click="BtnİplikSec_Click" Margin="2,1,2,3" />
+            <Button Content="Kaydet" Grid.Column="3" Grid.Row="4" Name="BtnKaydet" Click="BtnKaydet_Click" Margin="1" />
+            <Button Content="Leventleri Sil" Grid.Column="4" Grid.Row="4" Name="BtnLeventSil" Click="BtnLeventSil_Click" Margin="1" />
+        </Grid>
+    </Grid>
+</UserControl>

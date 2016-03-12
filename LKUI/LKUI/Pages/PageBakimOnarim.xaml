@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="LKUI.Pages.PageBakimOnarim"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:cnt="clr-namespace:LKUI.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800" Loaded="Page_Loaded" >
+    <DockPanel>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="684*" />
+                <ColumnDefinition Width="116*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="47"/>
+                <RowDefinition Height="29"/>
+                <RowDefinition Height="78"/>
+                <RowDefinition />
+                <RowDefinition Height="118" />
+                <RowDefinition Height="52" />
+            </Grid.RowDefinitions>
+            <toolkit:ChildWindow Name="ChildMakina" Width="300" Caption="Bakım yapılacak makinayı seçiniz.." IsModal="True"  WindowStartupLocation="Center" Grid.RowSpan="4" CaptionForeground="Brown" CloseButtonVisibility="Hidden">
+                <Grid Width="Auto">
+                    <DataGrid Name="DGridMakina" AutoGenerateColumns="False" IsReadOnly="True" Width="300" Height="200" MaxHeight="200" FontSize="14" MouseDoubleClick="DGridMakina_MouseDoubleClick" ColumnHeaderHeight="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Makina" Binding="{Binding Path=Adi}" Width="290" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </toolkit:ChildWindow>
+            <Border x:Name="HeaderBorder" BorderBrush="Black" BorderThickness="0"  Padding="10,0" VerticalAlignment="Top" Margin="2,0,0,0" Height="31.96" Grid.ColumnSpan="2">
+                <DockPanel x:Name="Header" Height="25.96">
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Bottom"   HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run  Text="Makine Bakım Onarım"/></TextBlock>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Bottom"   HorizontalAlignment="Right" FontWeight="Bold" Height="21.96" FontSize="16" Name="TxtSeciliMakina" MouseLeftButtonDown="TxtSeciliMakina_MouseLeftButtonDown"><Run  Text=""/></TextBlock>
+                </DockPanel>
+            </Border>
+            <Border HorizontalAlignment="Left" Height="45"  Margin="-2,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="419" Grid.RowSpan="2"></Border>
+            <Border Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid  Height="102" HorizontalAlignment="Left" Margin="0,0,0,0" d:LayoutOverrides="Width, HorizontalMargin" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="282" />
+                        <ColumnDefinition Width="312" />
+                        <ColumnDefinition Width="204" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="İşin Başlangıç Tarihi:" Height="27" VerticalAlignment="Top" Margin="-3,16,0,0" Width="117" HorizontalAlignment="Left" />
+                    <DatePicker x:Name="DatePickerBaslangic"  Height="25" VerticalAlignment="Bottom" Margin="0,0,11,60" Width="150" HorizontalAlignment="Right" />
+                    <Label Content="İşin Bitiş Tarihi:" Margin="24,48,168,25" Width="90" />
+                    <DatePicker x:Name="DatePickerBitis" Margin="0,49,11,28" Width="150" HorizontalAlignment="Right" />
+                    <Grid Margin="19,14,0,25" HorizontalAlignment="Left" Width="233" Grid.Column="1">
+                        <Label Content="Vardiyalar" HorizontalAlignment="Left" Margin="-5,-21,0,0" Width="85.993" FontWeight="Bold" Height="26.96" VerticalAlignment="Top" />
+                        <CheckBox Content="07.00-15.00" HorizontalAlignment="Left" x:Name="checkBox2" Margin="4,10,0,0" Width="85.76" Height="21" VerticalAlignment="Top" Checked="checkBox2_Checked" Unchecked="checkBox2_Unchecked" />
+                        <CheckBox Content="15.00-23.00" Height="20" HorizontalAlignment="Left" Margin="5,37,0,0" x:Name="checkBox3" VerticalAlignment="Top" Width="85.76" Checked="checkBox3_Checked" Unchecked="checkBox3_Unchecked" />
+                        <CheckBox Content="23.00-07.00" HorizontalAlignment="Right" Margin="0,10,29,0" x:Name="checkBox4" Height="22" VerticalAlignment="Top" Width="83.76" Checked="checkBox4_Checked" Unchecked="checkBox4_Unchecked" />
+                        <CheckBox Content="08.30-17.30" HorizontalAlignment="Right" x:Name="checkBox1" Margin="0,37,29,11" Width="83.76" Checked="checkBox1_Checked" Unchecked="checkBox1_Unchecked" />
+                    </Grid>
+                    <Label Content="Harcanan Süre:" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="101" Grid.Column="2" Margin="0,19,0,0" />
+                    <Label Content="saat" Height="30" HorizontalAlignment="Left" Name="label2" VerticalAlignment="Top" Width="38" Grid.Column="2" Margin="148,21,0,0" />  
+                    <cnt:CntIsdTextBox Height="28" x:Name="TxtHarcananSure" VerticalAlignment="Top" Grid.Column="2" Margin="91,19,0,0" TxtTipi="ZorunsuzSayisal" HorizontalAlignment="Left" Width="53" />
+                    
+                </Grid>
+            </Border>
+            <DataGrid x:Name="DGridGonder" AutoGenerateColumns="False" Grid.Row="3" Margin="0,40,0,0" d:LayoutOverrides="VerticalAlignment" IsReadOnly="True" FontSize="14" Grid.ColumnSpan="2">
+                <DataGrid.Columns> 
+                    <DataGridTextColumn Binding="{Binding Path=MalzemeKodu}" Header="Kodu" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=MalzemeAdi}" Header="Adı" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=Miktar}" Header="Miktarı" Width="Auto" IsReadOnly="False"/>
+                    <DataGridTextColumn Binding="{Binding Path=BirimAdi}" Header="Birim" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTemplateColumn >
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate >
+                                <Button x:Name="BtnMalzemeSil" Content="Sil" Background="#FFCECECE" Click="BtnMalzemeSil_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Border Margin="383,19,301,0" Grid.Row="2"></Border>
+            <Label Content="Kullanılan Malzemeler:" HorizontalAlignment="Left" Margin="8,5,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="-0.026,-0.116"/>
+            <Button Content="Seç" Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="143,7,0,0" Name="BtnKullanılanMalzemeSec" VerticalAlignment="Top" Width="85" Click="BtnKullanılanMalzemeSec_Click" />
+            <StackPanel Margin="18,1,0,0" Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <RadioButton x:Name="RadioButonArızaOnarım" Content="Arıza Onarım" Checked="RadioButonArızaOnarım_Checked"/>
+                <RadioButton x:Name="RadioButonPeriyodikBakım" Content="Periyodik Bakım" Checked="RadioButonPeriyodikBakım_Checked" Margin="40,0"/>
+                <RadioButton x:Name="RadioButonDiger" Content="Diğer" Checked="RadioButonDiger_Checked" />
+            </StackPanel>
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88.5" Height="26" Margin="0,3,0,0" Grid.Row="4" FontWeight="Bold" FontSize="14"><Run Text="Açıklamalar" /></TextBlock>
+            <TextBox Name="TxtAciklama" Background="LightGray"  Grid.Row="4" Margin="0,30,0,0" Grid.ColumnSpan="2" />
+            <Button Content="Kaydet" Grid.Row="5"  Name="BtnKaydet" Click="BtnKaydet_Click"  FontSize="14" Margin="5"  Grid.Column="1" />
+            <toolkit:ChildWindow x:Name="ChildKullanilanMalzemeSec" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="5" CaptionForeground="Brown" WindowState="Closed">
+                <Grid Height="Auto" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="96*" />
+                        <RowDefinition Height="504*" />
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Padding="10,0" VerticalAlignment="Top">
+                        <DockPanel Height="25.96">
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="183"><Run Text="Kullanılacak Malzeme" /></TextBlock>
+                        </DockPanel>
+                    </Border>
+                    <Border Height="62" VerticalAlignment="Top" Margin="10,34,1,0">
+                        <Grid Margin="-3.5,0,0,0.5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="483*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="26" />
+                                <RowDefinition Height="34" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Grubu:" Height="29" Width="49" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2" />
+                            <toolkit:WatermarkTextBox x:Name="TextBoxAdi" Watermark="Malzeme Adına Göre Ara.." Margin="5" TextChanged="TextBoxAdi_TextChanged" Grid.Row="1" Grid.Column="2" />
+                            <ComboBox SelectionChanged="ComboBox_SelectionChanged" Name="CmbMalzemeGruplari" ItemsSource="{Binding}" DisplayMemberPath="Adi" SelectedValuePath="Id" Grid.Column="1" Grid.ColumnSpan="2" Margin="2" />
+                            <toolkit:WatermarkTextBox Watermark="Malzeme Koduna Göre Ara.." Name="TxtKodu" TextChanged="TxtKodu_TextChanged" Grid.Row="1" Margin="5" Grid.ColumnSpan="2" />
+                        </Grid>
+                    </Border>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="300" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+                        <DataGrid x:Name="DGridEkle" AutoGenerateColumns="False" FontSize="14" SelectionChanged="DGridEkle_SelectionChanged" Grid.Row="0" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=Kodu}" Header="Kodu" Width="Auto" IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=Adi}" Header="Adı" Width="Auto" IsReadOnly="True" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <toolkit:WatermarkTextBox Name="TxtMalzemeMiktar" Grid.Row="1" Watermark="Miktarı Giriniz" Width="100" Height="25" HorizontalAlignment="Left" Background="LightBlue" />
+                        <ComboBox Name="CmbMalzemeBirim" Grid.Row="1" MinWidth="100" Height="25" HorizontalAlignment="Left" Margin="105,0,0,0" VerticalContentAlignment="Center" DisplayMemberPath="BirimAdi" SelectedValuePath="Id" />
+                        <Button Content="Ekle" x:Name="EkleButton" HorizontalAlignment="Right" Width="75" Grid.Row="1" Click="EkleButton_Click" Margin="0,5,5,5" />
+                    </Grid>
+                </Grid>
+            </toolkit:ChildWindow>
+        </Grid>
+    </DockPanel>
+</UserControl>

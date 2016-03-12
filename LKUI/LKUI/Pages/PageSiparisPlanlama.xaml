@@ -1,0 +1,583 @@
+﻿<UserControl x:Class="LKUI.Pages.PageSiparisPlanlama"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:pages="clr-namespace:LKUI.Pages"
+      xmlns:cnt="clr-namespace:LKUI.Controls"
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      mc:Ignorable="d" Loaded="Page_Loaded"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:dtl="clr-namespace:LKUI.Details"
+      d:DesignHeight="600" d:DesignWidth="800"
+	 >
+    <UserControl.Resources>
+        <pages:PlanMesajVisibilityConverter x:Key="MesajVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Siparişler">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="702*" />
+                        <ColumnDefinition Width="98*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="139*" />
+                        <RowDefinition Height="22*" />
+                        <RowDefinition Height="152*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="190*" />
+                        <RowDefinition Height="40*" />
+                    </Grid.RowDefinitions>
+                    <toolkit:ChildWindow x:Name="ChildHamStokDurumu" WindowStartupLocation="Center" Height="400" IsModal="True" Grid.Column="0" Grid.ColumnSpan="100" Grid.Row="0" Grid.RowSpan="100" Width="550" CaptionForeground="Brown">
+                        <Grid>
+                            <TabControl>
+                                <TabItem Header="Ham Stoklar">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="15*" />
+                                            <ColumnDefinition Width="50*" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0" />
+                                            <RowDefinition Height="157*" />
+                                            <RowDefinition Height="0" />
+                                            <RowDefinition />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <toolkit:ChildWindow x:Name="ChildRezerveler" IsModal="True" WindowStartupLocation="Center" Grid.Column="0" Grid.ColumnSpan="100" Grid.Row="0" Grid.RowSpan="100">
+                                            <DataGrid x:Name="DGridHamStokRezerve" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2" Height="200" IsReadOnly="True">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Müşteri" Width="Auto" IsReadOnly="True" Binding="{Binding MusteriAdi}" />
+                                                    <DataGridTextColumn Header="Tip" Width="Auto" IsReadOnly="True" Binding="{Binding TipNo}" />
+                                                    <DataGridTextColumn Header="Kalite" Width="Auto" IsReadOnly="True" Binding="{Binding KalitePuan}" />
+                                                    <DataGridTextColumn Header="Metre" Width="Auto" IsReadOnly="True" Binding="{Binding RezerveMetre}" />
+                                                    <DataGridTemplateColumn>
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <Button Content="İptal" Name="BtnRezerveIptal" Click="BtnRezerveIptal_Click" />
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </toolkit:ChildWindow>
+                                        <DataGrid x:Name="DGridHamStok" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="3" IsReadOnly="True">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Müşteri" Width="Auto" IsReadOnly="True" Binding="{Binding Firma}" />
+                                                <DataGridTextColumn Header="Tip" Width="Auto" IsReadOnly="True" Binding="{Binding TipNo}" />
+                                                <DataGridTextColumn Header="Kalite" Width="Auto" IsReadOnly="True" Binding="{Binding KalitePuan}" />
+                                                <DataGridTextColumn Header="Metre" Width="Auto" IsReadOnly="True" Binding="{Binding Metre}" />
+                                                <DataGridTemplateColumn>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Button Content="Rezerveler" Name="BtnRezerveGor" Click="BtnRezerveGor_Click" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <cnt:CntIsdTextBox x:Name="TxtRezerveMiktar" Grid.Column="0" Grid.Row="4" Margin="10,2" TxtTipi="Sayisal" Width="100" HorizontalAlignment="Left" />
+                                        <Button Content="Rezerve Et" Grid.Row="4" Height="25" Name="BtnRezerve" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="2,2,10,0" Click="BtnRezerve_Click" HorizontalAlignment="Left" />
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Planlanan Stoklar">
+                                    <DataGrid Name="DGridPlanlananStoklar" IsReadOnly="True" AutoGenerateColumns="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Firma" Width="Auto" IsReadOnly="True" Binding="{Binding Firma}" />
+                                            <DataGridTextColumn Header="Tip" Width="Auto" IsReadOnly="True" Binding="{Binding TipNo}" />
+                                            <DataGridTextColumn Header="Metre" Width="Auto" IsReadOnly="True" Binding="{Binding PlanMiktar}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </TabItem>
+                            </TabControl>
+                        </Grid>
+                    </toolkit:ChildWindow>
+                    <telerik:RadGridView Grid.Row="1" Grid.RowSpan="10" Name="DGridSiparisler" Grid.ColumnSpan="2"  telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True" 
+                             ShowColumnFooters="True" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="True" Background="#FFF0F0F0">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="Sipariş" Width="Auto" DataMemberBinding="{Binding Path=SozlesmeNo}" IsReadOnly="True">
+                                <telerik:GridViewDataColumn.AggregateFunctions>
+                                    <telerik:CountFunction/>
+                                </telerik:GridViewDataColumn.AggregateFunctions>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn Header="Müşteri" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=FirmaAdi}"/>
+                            <telerik:GridViewDataColumn Header="Tip" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=TipNo}"/>
+                            <telerik:GridViewDataColumn Header="Renk" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=RenkNo}"/>
+                            <telerik:GridViewDataColumn Header="Metre" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=PlanSiparisMetre}">
+                                <telerik:GridViewDataColumn.AggregateFunctions>
+                                    <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                                </telerik:GridViewDataColumn.AggregateFunctions>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn Header="Çözgüde" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=CozguMetre}" IsVisible="False"/>
+                            <telerik:GridViewDataColumn Header="Planlanan" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=PlanMetre}" IsVisible="False"/>
+                            <telerik:GridViewColumn Header="Termin">
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <DatePicker Name="DpTermin" SelectedDate="{Binding Path=TerminTarihi}"/>
+                                            <Button Content="Ver" Name="BtnTerminVer" Click="BtnTerminVer_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                            <telerik:GridViewColumn Header="Rezerve">
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox IsReadOnly="True" MinWidth="50"/>
+                                            <Button x:Name="BtnStok" Content="Stok" Click="BtnStok_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                            <telerik:GridViewCheckBoxColumn Header="Partilendi" DataMemberBinding="{Binding PartilendiMi}" IsReadOnly="True"/>
+                            <telerik:GridViewCheckBoxColumn Header="Boyandı" DataMemberBinding="{Binding BoyandiMi}" IsReadOnly="True"/>
+                            <telerik:GridViewColumn Header="Çözgüye At" IsVisible="False">
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnCozgu" Content="Çözgü" Click="BtnCozgu_Click"/>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                            <telerik:GridViewColumn Header="Tezgaha Ata" IsVisible="False">
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnPlanla" Content="Planla" Click="BtnPlanla_Click"/>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                            <telerik:GridViewColumn Header="Sipariş Notu">
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnInfo" Content="Not" Click="BtnInfo_Click" Background="Red" Visibility="{Binding Converter={StaticResource MesajVisibilityConverter}}"/>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>                 
+                    <Border BorderBrush="Black" BorderThickness="0"  Padding="10,0" VerticalAlignment="Top" Margin="1.5,0,0.5,0" Height="31.96">
+                        <DockPanel  Height="25.96"></DockPanel>
+                    </Border>
+                    <toolkit:ChildWindow x:Name="ChildGenel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="100" Grid.RowSpan="100" Closed="ChildGenel_Closed" IsModal="True" WindowStartupLocation="Center"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tezgah Planları" Name="TabItemTezgahPlan">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="400"/>
+                    </Grid.RowDefinitions>
+                    <telerik:RadGridView Grid.Row="0" Name="DGridPlanlanacakSiparisler" Grid.ColumnSpan="2"  telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" ShowGroupFooters="False" 
+                             ShowColumnFooters="False" ShowGroupPanel="False" Background="#FFF0F0F0" RowIndicatorVisibility="Collapsed">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="Sipariş" Width="Auto" DataMemberBinding="{Binding Path=SozlesmeNo}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="Müşteri" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=Musteri}"/>
+                            <telerik:GridViewDataColumn Header="Tip" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=TipNo}"/>
+                            <telerik:GridViewDataColumn Header="Metre" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=SiparisMetre}"/>
+                            <telerik:GridViewDataColumn Header="Çözgüde" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=CozguMetre}"/>
+                            <telerik:GridViewDataColumn Header="Planlanan" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=PlanMetre}"/>
+                            <telerik:GridViewDataColumn Header="Dokunan" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Path=DokunanMetre}"/>
+                            <telerik:GridViewColumn>
+                                <telerik:GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnPlanla2" Content="Planla" Click="BtnPlanla_Click"/>
+                                    </DataTemplate>
+                                </telerik:GridViewColumn.CellTemplate>
+                            </telerik:GridViewColumn>
+                        </telerik:RadGridView.Columns>
+                        <telerik:RadGridView.ContextMenu>
+                            <ContextMenu>
+                                <ContextMenu.ItemsSource>
+                                    <CompositeCollection>
+                                        <MenuItem Name="MIPlanSil" Header="Planı Sil" Click="MIPlanSil_Click" />
+                                        <MenuItem Name="MICozguSil" Header="Çözgü Sil" Click="MICozguSil_Click"/>
+                                    </CompositeCollection>
+                                </ContextMenu.ItemsSource>
+                            </ContextMenu>
+                        </telerik:RadGridView.ContextMenu>
+                    </telerik:RadGridView>
+                    <Grid Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="609*" />
+                            <ColumnDefinition Width="191*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="32*" />
+                            <RowDefinition Height="158*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock TextWrapping="Wrap"  FontWeight="Bold" Height="21.96" FontSize="16"  Grid.Row="0" ><Run Text="Tezgah Planları" /></TextBlock>
+
+                        <Grid Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,0, 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="609*" />
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="26" />
+                                <RowDefinition Height="166*" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                                <Label Content="Yıl:" Height="28" HorizontalAlignment="Left"  Name="label1" VerticalAlignment="Top" Margin="3,0,0,0"/>
+                                <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" Name="CmbYil" VerticalAlignment="Top" Width="82" SelectionChanged="CmbYil_SelectionChanged">
+                                    <ComboBoxItem Content="2012" />
+                                    <ComboBoxItem Content="2013" />
+                                    <ComboBoxItem Content="2014" />
+                                    <ComboBoxItem Content="2015" />
+                                    <ComboBoxItem Content="2016" />
+                                    <ComboBoxItem Content="2017" />
+                                    <ComboBoxItem Content="2018" />
+                                    <ComboBoxItem Content="2019" />
+                                    <ComboBoxItem Content="2020" />
+                                    <ComboBoxItem Content="2021" />
+                                    <ComboBoxItem Content="2022" />
+                                    <ComboBoxItem Content="2023" />
+                                </ComboBox>
+                                <Label Content="Ay:" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="label2" VerticalAlignment="Top" />
+                                <ComboBox Height="24" HorizontalAlignment="Left" Margin="10,0,0,0" Name="CmbAy" VerticalAlignment="Top" Width="92" SelectionChanged="CmbAy_SelectionChanged" >
+                                    <ComboBoxItem Content="Ocak" />
+                                    <ComboBoxItem Content="Şubat" />
+                                    <ComboBoxItem Content="Mart" />
+                                    <ComboBoxItem Content="Nisan" />
+                                    <ComboBoxItem Content="Mayıs" />
+                                    <ComboBoxItem Content="Haziran" />
+                                    <ComboBoxItem Content="Temmuz" />
+                                    <ComboBoxItem Content="Ağustos" />
+                                    <ComboBoxItem Content="Eylül" />
+                                    <ComboBoxItem Content="Ekim" />
+                                    <ComboBoxItem Content="Kasım" />
+                                    <ComboBoxItem Content="Aralık" />
+                                </ComboBox>
+                            </StackPanel>
+
+                            <telerik:RadGridView Grid.Row="2" SelectionUnit="Cell" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridTezgahlar" IsReadOnly="True" ShowGroupFooters="false" ShowColumnFooters="False"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" 
+                                                  DataLoadMode="Asynchronous" SelectedCellsChanged="DGridTezgahlar_SelectedCellsChanged" MouseDoubleClick="DGridTezgahlar_MouseDoubleClick" FrozenColumnCount="2">
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TipNo}" Header="Tip" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tezgah}" Header="Tezgah" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih1}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih2}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih3}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih4}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih5}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih6}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih7}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih8}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih9}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih10}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih11}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih12}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih13}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih14}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih15}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih16}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih17}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih18}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih19}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih20}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih21}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih22}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih23}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih24}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih25}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih26}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih27}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih28}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih29}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih30}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih31}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih32}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih33}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih34}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih35}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih36}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih37}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih38}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih39}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih40}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih41}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih42}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih43}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih44}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih45}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih46}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih47}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih48}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih49}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih50}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih51}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih52}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih53}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih54}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih55}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih56}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih57}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih58}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih59}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih60}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih61}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih62}" IsReadOnly="True"/>
+                                </telerik:RadGridView.Columns>
+                                <telerik:RadGridView.ContextMenu>
+                                    <ContextMenu Opened="ContextMenu_Opened" >
+                                        <ContextMenu.ItemsSource>
+                                            <CompositeCollection>
+                                                <MenuItem x:Name="menuItemKes" Foreground="Black" Header="Kes" Click="menuItemKes_Click" IsEnabled="True"/>
+                                                <MenuItem x:Name="menuItemYapistir" Foreground="Black" Header="Yapıştır" Click="menuItemYapistir_Click" IsEnabled="False"/>
+                                                <MenuItem x:Name="menuItemSil" Foreground="Black" Header="Sil" Click="menuItemSil_Click"/>
+                                                <MenuItem Name="MIPlanExcel" Header="Excel'e Aktar" Click="MIPlanExcel_Click"/>
+                                            </CompositeCollection>
+                                        </ContextMenu.ItemsSource>
+                                    </ContextMenu>
+                                </telerik:RadGridView.ContextMenu>
+                            </telerik:RadGridView>
+                            <Grid Grid.Column="1" Name="GrdOzet" Grid.Row="1" Margin="5,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="113*" />
+                                    <ColumnDefinition Width="112*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="13*" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="16*" />
+                                </Grid.RowDefinitions>
+                                <Button Content="Ötele" Name="BtnOtele" Grid.Column="1" Margin="0,1,0,0" Click="BtnOtele_Click"/>
+                                <Button Content="Geri Çek" Name="BtnGeriCek" Margin="0,1,0,0" Click="BtnGeriCek_Click" />
+                                <Label Content="Sipariş No" Grid.Row="1" />
+                                <TextBox IsReadOnly="true" Grid.Column="1" Grid.Row="1" Text="{Binding SozlesmeNo}" TextAlignment="Left" FontWeight="Bold"/>
+                                <Label Content="Tip No" Grid.Row="2" />
+                                <TextBox IsReadOnly="true"  x:Name="TxtSiparis" Grid.Column="1" Grid.Row="2" Text="{Binding TipNo}" TextAlignment="Left" FontWeight="Bold"/>
+                                <Label Content="Günlük Metre" Grid.Row="3" Margin="-1,0,1,2" />
+                                <TextBox Grid.Column="1" Grid.Row="3" Name="TxtUretilenMetre" Text="{Binding Miktar}" IsReadOnly="True"/>
+                                <Label Content="Sipariş Metre" Grid.Row="4" />
+                                <TextBox Grid.Column="1" Grid.Row="4" Name="TxtToplamMetre" Height="28" VerticalAlignment="Top" />
+                                <Label Content="Tezgah" Grid.Row="5" />
+                                <ComboBox Grid.Column="1" Grid.Row="5" Name="CmbTezgah" DisplayMemberPath="KodAd" SelectedValuePath="Id" SelectedValue="{Binding TezgahId, Mode=TwoWay}" Background="White" SelectionChanged="CmbTezgah_SelectionChanged"/>
+                                <Label Content="Başlangıç Tarihi" Grid.Row="6" />
+                                <DatePicker x:Name="DpBasTarihi" Grid.Row="6" Grid.Column="1" Height="30" VerticalAlignment="Top" SelectedDate="{Binding Tarih}"/>
+                                <Button Content="Kaydet" Grid.Row="7" Margin="0,2,0,0"  Name="BtnKaydet"  Width="95" Grid.Column="1"  Click="BtnKaydet_Click" />
+                                <Label Content="Top. Dokunan :" Grid.Row="9" />
+                                <TextBlock Name="LblDokunan" Grid.Row="9" Grid.Column="1" Text="{Binding ToplamDokunan, StringFormat='###,##0.00'}" VerticalAlignment="Center"/>
+                                <Label Content="Top. Plan :" Grid.Row="10" />
+                                <TextBlock Name="LblPlanlanan" Grid.Row="10" Grid.Column="1" Text="{Binding ToplamPlan, StringFormat='###,##0.00'}" VerticalAlignment="Center"/>
+                                <Label Content="Ötelenen Gün :" Grid.Row="11" />
+                                <TextBlock Name="LblOtelenen" Grid.Row="11" Grid.Column="1" Text="{Binding AtkiOtelemesi, StringFormat='###,##0'}" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                
+            </TabItem>
+            <TabItem Header="Çözgü Sepeti" Name="TabItemCozgu">
+                <Grid>
+                    <toolkit:ChildWindow x:Name="ChildCozguIsEmri" WindowStartupLocation="Center" IsModal="True" Grid.Column="0" Grid.ColumnSpan="100" Grid.Row="0" Grid.RowSpan="100" Closed="ChildCozguIsEmri_Closed" CaptionForeground="Brown">
+                        <Grid Height="550" Width="750">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="87*" />
+                                <ColumnDefinition Width="107*" />
+                                <ColumnDefinition Width="81*" />
+                                <ColumnDefinition Width="109*" />
+                                <ColumnDefinition Width="86*" />
+                                <ColumnDefinition Width="94*" />
+                                <ColumnDefinition Width="82*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="33" />
+                                <RowDefinition Height="38" />
+                                <RowDefinition Height="36" />
+                                <RowDefinition />
+                                <RowDefinition Height="45" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="0" Padding="10,0" VerticalAlignment="Top" Margin="1.5,0,5,0" Grid.ColumnSpan="9">
+                                <DockPanel>
+                                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16"><Run Text="Çözgü İş Emri" /></TextBlock>
+                                </DockPanel>
+                            </Border>
+                            <Label Content="Tip No:" Grid.Row="1" Margin="5" FontWeight="Bold" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="TxtTipNoIsEmri" Margin="5" />
+                            <Label Content="Dokuma Metresi:" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" />
+                            <cnt:CntIsdTextBox Grid.Column="3" Grid.Row="1" x:Name="TxtDokumaMetresiIsEmri" Margin="3" TxtTipi="Sayisal" Text="{Binding DokumaMetre}" />
+                            <Button Content="Hesapla" Grid.Column="4" Grid.Row="1" Height="23" Name="BtnHesaplaIsEmri" Width="75" Margin="6,6,28,8" Click="BtnHesaplaIsEmri_Click" />
+                            <Label Content="Hav:" Grid.Column="0" Grid.Row="2" Margin="5" />
+                            <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Text="{Binding HavMetre}" />
+                            <Label Content="Alt Zemin:" Grid.Column="2" Grid.Row="2" Margin="5" />
+                            <TextBox Grid.Column="3" Grid.Row="2" Name="TxtAltZeminIsEmri" Margin="5" Text="{Binding AltZeminMetre}" />
+                            <Label Content="Üst Zemin:" Grid.Column="4" Grid.Row="2" Margin="5" />
+                            <TextBox Grid.Column="5" Grid.Row="2" Name="TxtUstZeminIsEmri" Margin="5" Text="{Binding UstZeminMetre}" />
+                            <Button Content="Ekle" Grid.Column="6" Grid.Row="2" Height="23" Name="BtnEkleIsEmri" Width="70" Margin="5" Click="BtnEkleIsEmri_Click" />
+                            <DataGrid AutoGenerateColumns="False" Grid.ColumnSpan="8" Grid.Row="3" Name="DGridCozguIsEmri" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Tip No" Width="Auto" IsReadOnly="True" Binding="{Binding TipNo}" />
+                                    <DataGridTextColumn Header="İplik Adı" Width="Auto" IsReadOnly="True" Binding="{Binding IplikKodu}" />
+                                    <DataGridTextColumn Header="Tel Sayısı" Width="Auto" IsReadOnly="True" Binding="{Binding IplikTelAdedi}" />
+                                    <DataGridTextColumn Header="Dokuma Metresi" Width="Auto" IsReadOnly="True" Binding="{Binding DokumaMetre}" />
+                                    <DataGridTextColumn Header="Çözgü" Width="Auto" IsReadOnly="True" Binding="{Binding Cozgu}" />
+                                    <DataGridTextColumn Header="Çözgü Metresi" Width="Auto" IsReadOnly="True" Binding="{Binding Metre}" />
+                                    <DataGridTemplateColumn Header="Tezgah No" Width="Auto" IsReadOnly="True" SortMemberPath="TezgahAdi">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding Tezgahlar}" SelectedValuePath="Id" DisplayMemberPath="KodAd" SelectedValue="{Binding TezgahId, UpdateSourceTrigger=PropertyChanged}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button x:Name="BtnIsEmriSil" Content="Sil" Click="BtnIsEmriSil_Click" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Button Content="Kaydet" Grid.Column="7" Grid.Row="4" Name="BtnYazdirIsEmri" Margin="3" Click="BtnYazdirIsEmri_Click" />
+                        </Grid>
+                    </toolkit:ChildWindow>
+                    <toolkit:ChildWindow x:Name="ChildHavHesapla" WindowStartupLocation="Center" IsModal="True" Grid.Column="0" Grid.ColumnSpan="10" Grid.Row="1" Grid.RowSpan="10" CaptionForeground="Brown">
+                        <Grid x:Name="LayoutRoot" Height="600" Width="800">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="108*" />
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="481*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="41*" />
+                                <RowDefinition Height="30*" />
+                                <RowDefinition Height="28*" />
+                                <RowDefinition Height="28*" />
+                                <RowDefinition Height="35*" />
+                                <RowDefinition Height="119*" />
+                                <RowDefinition Height="29*" />
+                                <RowDefinition Height="125*" />
+                                <RowDefinition Height="32*" />
+                                <RowDefinition Height="133*" />
+                            </Grid.RowDefinitions>
+                            <toolkit:ChildWindow x:Name="ChildTalep" WindowStartupLocation="Center" IsModal="True" Grid.Column="0" Grid.ColumnSpan="10" Grid.Row="1" Grid.RowSpan="10" CaptionForeground="Brown">
+                                <pages:PageMalzemeIhtiyac x:Name="PageTalep" />
+                            </toolkit:ChildWindow>
+                            <Border x:Name="HeaderBorder1" BorderBrush="Black" BorderThickness="0" Padding="10,0" VerticalAlignment="Top" Margin="2,0,0,0" Height="31.96" Grid.ColumnSpan="5">
+                                <DockPanel x:Name="Header1" Height="25.96">
+                                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run Text="Çözgü İş Emri" /></TextBlock>
+                                </DockPanel>
+                            </Border>
+                            <Label Content="Çözgü Metresi:" Grid.Row="3" />
+                            <Label Content="HAV" Grid.Column="1" Grid.Row="2" Margin="17,0,0,0" />
+                            <Label Content="ALT ZEMİN" Grid.Column="2" Grid.Row="2" />
+                            <Label Content="ÜST ZEMİN" Grid.Column="3" Grid.Row="2" />
+                            <TextBox Grid.Column="1" Grid.Row="3" IsReadOnly="True" Name="TxtHav" Margin="0,0,6,0" />
+                            <TextBox Grid.Column="2" Grid.Row="3" IsReadOnly="True" Name="TxtAltZemin" Margin="6,0,6,0" />
+                            <TextBox Grid.Column="3" Grid.Row="3" IsReadOnly="True" Name="TxtÜstZemin" Margin="6,0,0,0" />
+                            <DataGrid AutoGenerateColumns="False" Grid.ColumnSpan="5" Grid.Row="5" Name="DGridİplikİhtiyac" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Kodu" IsReadOnly="True" Binding="{Binding MalzemeKodu}" />
+                                    <DataGridTextColumn Header="Adı" IsReadOnly="True" Binding="{Binding MalzemeAdi}" />
+                                    <DataGridTextColumn Header="Kg" IsReadOnly="True" Binding="{Binding MinStok}" />
+                                    <DataGridTemplateColumn Header="Yeni Talep">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button x:Name="BtnYeniTalep" Content="Ekle" Click="BtnYeniTalep_Click" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Label Content="İplik İhtiyacı:" Grid.ColumnSpan="2" Grid.Row="4" Height="26" HorizontalAlignment="Left" Name="label11" Width="138" FontWeight="Bold" />
+                            <Label Content="Büküm İçin Gerekli Makinalar:" Grid.Row="6" Grid.ColumnSpan="4" Margin="0,0,1,0" FontWeight="Bold" />
+                            <DataGrid AutoGenerateColumns="False" Grid.ColumnSpan="5" Grid.Row="7" Name="DGridGerekliBükümMakinalari">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="İplik Numarası" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Tezgah Devri" Width="Auto" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Büküm Dişlisi" Width="Auto" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="ÜretimMak/Gün" Width="Auto" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Günlük İhtiya." Width="Auto" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Gerekli Makina Adet" Width="Auto" IsReadOnly="True" />
+                                    <DataGridTemplateColumn Header="Ortalama">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TxtOrtMakina" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Label Content="Büküm Makinalarının Çalışma Durumu:" Grid.Row="8" Height="28" Name="label21" Grid.ColumnSpan="5" FontWeight="Bold" />
+                            <DataGrid x:Name="BukumMakinalariCalismaDurumu" AutoGenerateColumns="True" Grid.Row="9" Grid.ColumnSpan="5"></DataGrid>
+                            <Label Content="Dokuma Metresi:" Grid.Row="1" />
+                            <cnt:CntIsdTextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" x:Name="TxtDokumaMetresi" Margin="3" TxtTipi="Sayisal" />
+                            <Button Content="Hesapla" Grid.Column="3" Grid.Row="1" Name="BtnHesapla" Margin="3" Click="BtnHesapla_Click" />
+                        </Grid>
+                    </toolkit:ChildWindow>
+                    <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" >
+                        <WrapPanel Name="WrapCozgu" Grid.Row="3" Grid.ColumnSpan="2" OpacityMask="{x:Null}" Background="#FFEFEFEF"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tezgah Dağılımları" Name="TabTezgahDagilimlari">
+                <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridTezgahDagilimlari" IsReadOnly="True" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Tezgah}" Header="Tezgah" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Musteri}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SonPlanTarihi, StringFormat='dd.MM.yyyy'}" Header="Plan Tarihi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Planlanan}" Header="Plan Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Rapor" Name="TabItemRapor">
+                <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridPlanRapor" IsReadOnly="True" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Musteri}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SonPlanTarihi, StringFormat='dd.MM.yyyy'}" Header="Plan Tarihi" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Planlanan}" Header="Plan Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DokunanMetre}" Header="Dokunan" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DokunacakMetre}" Header="Dokunması Gereken" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </TabItem>
+            <TabItem Header="Gantt Chart (Tip)" Name="TabItemChart">
+                <dtl:DtlPlanGanntChart x:Name="DtlChartTip"></dtl:DtlPlanGanntChart>
+            </TabItem>
+            <TabItem Header="Gantt Chart (Sipariş)" Name="TabItemSipChart">
+                <dtl:DtlPlanGanttChartSiparis x:Name="DtlChartSiparis"/>
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+    
+</UserControl>

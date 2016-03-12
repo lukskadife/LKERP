@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="LKUI.Pages.PageFuarProses"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:cnt="clr-namespace:LKUI.Controls" Loaded="UserControl_Loaded"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="231*" />
+                <ColumnDefinition Width="74*" />
+                <ColumnDefinition Width="128*" />
+                <ColumnDefinition Width="508*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="504*" />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1"  Padding="10,0" VerticalAlignment="Top" Grid.ColumnSpan="4">
+                <DockPanel Height="26">
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Bottom"   HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16"><Run  Text="Proses "/></TextBlock>
+                </DockPanel>
+            </Border>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.RowSpan="2">
+                <Button Content="Ekle" Width="70"  Grid.Row="1"  Name="BtnEkle" Click="BtnEkle_Click" />
+                <Button Content="Sil" Width="70"  Grid.Row="1"  Name="BtnSil" Click="BtnSil_Click" />
+            </StackPanel>
+            <telerik:RadGridView Grid.ColumnSpan="4" Grid.Row="3"  telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridProses" IsReadOnly="True" ShowGroupFooters="True"
+                                 ShowColumnFooters="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" DataLoadMode="Asynchronous" RowIndicatorVisibility="Collapsed">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Proses" MinWidth="150" IsReadOnly="True" DataMemberBinding="{Binding Path=Adi}" />
+                    <telerik:GridViewDataColumn Header="Fiyat" Width="1*" IsReadOnly="True" DataMemberBinding="{Binding Path=Fiyati}" />
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </Grid>
+        <tkit:ChildWindow IsModal="True" Height="Auto" WindowStartupLocation="Center" Name="ChildProses" Closed="ChildProses_Closed" Width="300">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Adı :"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Fiyatı :"/>
+                <cnt:CntIsdTextBox x:Name="TxtAdi" Grid.Row="0" Grid.Column="1" Text="{Binding Adi, UpdateSourceTrigger=PropertyChanged}"/>
+                <cnt:CntIsdTextBox x:Name="TxtFiyati" TxtTipi="Sayisal" Grid.Row="1" Grid.Column="1" Text="{Binding Fiyati, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Content="Kaydet" Grid.Row="3" Grid.Column="1" Name="BtnKaydet" HorizontalAlignment="Right" Width="70" Click="BtnKaydet_Click"/>
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

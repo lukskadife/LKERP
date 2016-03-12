@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="LKUI.Details.DtlDokumaUrunAgaci" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="600" d:DesignWidth="900">
+    <Grid Height="600" Width="900">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130*" />
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="69*" />
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="102*" />
+            <ColumnDefinition Width="120*" />
+            <ColumnDefinition Width="62*" />
+            <ColumnDefinition Width="58*" />
+            <ColumnDefinition Width="6*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="27" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="0,0,0,1" Padding="10,0" VerticalAlignment="Top" Grid.ColumnSpan="10"></Border>
+        <Label Content="Tip No:" Grid.Row="2" />
+        <Label Content="Tip Adı:" Grid.Row="3" />
+        <Label Content="Numune Tip No:" Grid.Row="4" />
+        <Label Content="Atkı Sıklığı Tez Ü.:" Grid.Row="5" />
+        <Label Content="Çözgü Sıklığı :" Grid.Row="6" />
+        <Label Content="Zemin Çözgü Tel Ad.:" Grid.Row="7" />
+        <Label Content="Hav Çözgü Tel Ad.:" Grid.Row="8" />
+        <Label Content="Kenar Çözgü Tel Ad.:" Grid.Row="9" />
+        <Label Content="Spiger Çözgü Tel Ad.:" Grid.Row="10" />
+        <Label Content="Tarak No:" Grid.Row="11" />
+        <Label Content="Tarak Eni(cm):" Grid.Row="12" />
+        <Label Content="Ham Eni(cm):" Grid.Row="13" />
+        <Label Content="Mamül Eni(cm):" Grid.Row="14" />
+        <Label Content="H.Hav Yüksek(mm):" Grid.Row="15" />
+        <Label Content="M.Hav Yüksek(mm):" Grid.Row="16" />
+        <Label Content="Zemin Örgü:" Grid.Row="17" />
+        <Label Content="Hav  Bağlantı:" Grid.Row="18" />
+        <Label Content="Hav  Örgü:" Grid.Row="19" />
+        <Label Content="Tahar No:" Grid.Row="20" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="2" x:Name="TxtTipNo" Margin="2" Text="{Binding TipNo}"/>
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="3" x:Name="TxtTipAdı" Margin="2" Text="{Binding TipAdi}"/>
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="4" x:Name="TxtNumuneTipNo" Margin="2" Text="{Binding NumuneTipNo}"/>
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="5" x:Name="TxtAtkiSikligiTezÜ" Margin="2" Text="{Binding AtkiSiklik}"/>
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="6" x:Name="TxtCozguSikligi" Margin="2" Text="{Binding CozguSiklik}"/>
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="7" x:Name="TxtZeminCozguTelAdet" Margin="2" Text="{Binding ZeminCozguTel}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="8" x:Name="TxtHavCozguTelAdet" Margin="2" Text="{Binding HavCozguTel}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="9" x:Name="TxtKenarCozguTelAdet" Margin="2" Text="{Binding KenarCozguTel}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="10" x:Name="TxtSpigerCozguTelAdet" Margin="2" Text="{Binding SpigerCozguTel}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="11" x:Name="TxtTarakNo" Margin="2" Text="{Binding TarakNo}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="12" x:Name="TxtTarakEni" Margin="2" Text="{Binding TarakEni}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="13" x:Name="TxtHamEni" Margin="2" Text="{Binding HamEn}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="14" x:Name="TxtMamulEni" Margin="2" Text="{Binding MamulEn}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="15" x:Name="TxtHHavYuksek" Margin="2" Text="{Binding HHavYuksek}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="16" x:Name="TxtMHavYuksek" Margin="2" Text="{Binding MHavYuksek}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="17" x:Name="TxtZeminOrgu" Margin="2" Text="{Binding ZeminOrgu}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="18" x:Name="TxtHavBaglanti" Margin="2" Text="{Binding HavBaglanti}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="19" x:Name="TxtHavOrgu" Margin="2" Text="{Binding HavOrgu}" />
+        <cnt:CntIsdTextBox Grid.Column="1" Grid.Row="20" x:Name="TxtTaharNo" Margin="2" Text="{Binding TaharNo}" />
+        <Label Content="Atkı 1:" Grid.Column="2" Grid.Row="2" />
+        <Label Content="Atkı 2:" Grid.Column="2" Grid.Row="3" />
+        <Label Content="Atkı 3:" Grid.Column="2" Grid.Row="4" />
+        <Label Content="Atkı 4:" Grid.Column="2" Grid.Row="5" />
+        <Label Content="Zemin 1:" Grid.Column="2" Grid.Row="6" />
+        <Label Content="Zemin 2:" Grid.Column="2" Grid.Row="7" />
+        <Label Content="Zemin 3:" Grid.Column="2" Grid.Row="8" />
+        <Label Content="Zemin 4:" Grid.Column="2" Grid.Row="9" />
+        <Label Content="Hav 1:" Grid.Column="2" Grid.Row="10" />
+        <Label Content="Hav 2:" Grid.Column="2" Grid.Row="11" />
+        <Label Content="Hav 3:" Grid.Column="2" Grid.Row="12" />
+        <Label Content="Hav 4:" Grid.Column="2" Grid.Row="13" />
+        <Label Content="Kenar:" Grid.Column="2" Grid.Row="14" />
+        <Label Content="Spiger:" Grid.Column="2" Grid.Row="15" />
+        <Label Content="Komp.:" Grid.Column="2" Grid.Row="16" />
+        <Label Content="Varyant:" Grid.Column="2" Grid.Row="17" />
+        <Label Content="Cinsi:" Grid.Column="2" Grid.Row="18" />
+        <Label Content="Grup:" Grid.Column="2" Grid.Row="19" />
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="2" x:Name="SelAtki1" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Atki1" SelectedValuePath="Id" Margin="2" />-->
+        <!--<ComboBox Grid.Column="3" Grid.Row="2" x:Name="SelAtki22" DisplayMemberPath="Kodu"  Margin="0,3,16,0" HorizontalAlignment="Left"  VerticalContentAlignment="Center"  SelectedValuePath="Id" SelectedValue="{Binding PersonelId, UpdateSourceTrigger=PropertyChanged}"/>-->
+        <!--<telerik:RadComboBox Name="SelAtki1" Grid.Column="3" Grid.Row="2" SelectedValuePath="Id" DisplayMemberPath="Kodu" IsEditable="True" IsReadOnly="True" TextSearchMode="Contains" IsFilteringEnabled="True"/>-->
+
+
+        <telerik:RadComboBox Name="SelAtki1" Grid.Column="3" Grid.Row="2" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"  />
+        <telerik:RadComboBox Name="SelAtki2" Grid.Column="3" Grid.Row="3" SelectedValuePath="Id"  DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelAtki3" Grid.Column="3" Grid.Row="4" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelAtki4" Grid.Column="3" Grid.Row="5" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="3" x:Name="SelAtki2" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Atki2" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="4" x:Name="SelAtki3" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Atki3" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="5" x:Name="SelAtki4" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Atki4" SelectedValuePath="Id" Margin="2" />-->
+        <telerik:RadComboBox Name="SelZemin1" Grid.Column="3" Grid.Row="6" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelZemin2" Grid.Column="3" Grid.Row="7" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelZemin3" Grid.Column="3" Grid.Row="8" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelZemin4" Grid.Column="3" Grid.Row="9" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="6" x:Name="SelZemin1" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Zemin1" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="7" x:Name="SelZemin2" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Zemin2" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="8" x:Name="SelZemin3" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Zemin3" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="9" x:Name="SelZemin4" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Zemin4" SelectedValuePath="Id" Margin="2" />-->
+        <telerik:RadComboBox Name="SelHav1" Grid.Column="3" Grid.Row="10" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelHav2" Grid.Column="3" Grid.Row="11" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelHav3" Grid.Column="3" Grid.Row="12" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <telerik:RadComboBox Name="SelHav4" Grid.Column="3" Grid.Row="13" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="10" x:Name="SelHav1" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Hav1" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="11" x:Name="SelHav2" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Hav2" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="12" x:Name="SelHav3" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Hav3" SelectedValuePath="Id" Margin="2" />-->
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="13" x:Name="SelHav4" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Hav4" SelectedValuePath="Id" Margin="2" />-->
+        <telerik:RadComboBox Name="SelKenar" Grid.Column="3" Grid.Row="14" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsEditable="True" IsReadOnly="True"  IsTextSearchEnabled="True" TextSearchMode="Contains" IsFilteringEnabled="True" Margin="2"/>
+        <!--<cnt:CntSelectBox Grid.Column="3" Grid.Row="14" x:Name="SelKenar" Columns="Kodu,Kodu;Adı,Adi" DisplayMember="Kodu" FiltreAdi="Kodu" BindIdPath="Kenar" SelectedValuePath="Id" Margin="2" />-->
+        <telerik:RadComboBox Name="CmbKumasCinsi" Grid.Column="3" Grid.Row="18" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsReadOnly="True" Margin="2"/>
+        <telerik:RadComboBox Name="CmbKumasGrup" Grid.Column="3" Grid.Row="19" SelectedValuePath="Id" DisplayMemberPath="Adi"  IsReadOnly="True" Margin="2"/>
+        <TextBox Grid.Column="3" Grid.Row="15" x:Name="TxtSpiger" Text="{Binding Spiger}" Margin="2" />
+        <TextBox Grid.Column="3" Grid.Row="16" x:Name="TxtKompozisyon" Text="{Binding Kompozisyon}" Margin="2" />
+        <TextBox Grid.Column="3" Grid.Row="17" x:Name="TxtVaryant" Margin="2" Text="{Binding Varyant}" MaxLength="20"/>
+        <Label Content="Atkı 1 gr/m:" Grid.Column="4" Grid.Row="2" />
+        <Label Content="Atkı 2 gr/m:" Grid.Column="4" Grid.Row="3" />
+        <Label Content="Atkı 3 gr/m:" Grid.Column="4" Grid.Row="4" />
+        <Label Content="Atkı 4 gr/m:" Grid.Column="4" Grid.Row="5" />
+        <Label Content="Zemin 1 gr/m:" Grid.Column="4" Grid.Row="6" />
+        <Label Content="Zemin 2 gr/m:" Grid.Column="4" Grid.Row="7" />
+        <Label Content="Zemin 3 gr/m:" Grid.Column="4" Grid.Row="8" />
+        <Label Content="Zemin 4 gr/m:" Grid.Column="4" Grid.Row="9" />
+        <Label Content="Hav 1 gr/m:" Grid.Column="4" Grid.Row="10" />
+        <Label Content="Hav 2 gr/m:" Grid.Column="4" Grid.Row="11" />
+        <Label Content="Hav 3 gr/m:" Grid.Column="4" Grid.Row="12" />
+        <Label Content="Hav 4 gr/m:" Grid.Column="4" Grid.Row="13" />
+        <Label Content="Kenar gr/m:" Grid.Column="4" Grid.Row="14" />
+        <Label Content="Spiger gr/m:" Grid.Column="4" Grid.Row="15" />
+        <Label Content="Toplam:" Grid.Column="4" Grid.Row="16" />
+        <Label Content="Hav Sevki:" Grid.Column="4" Grid.Row="17" />
+        <Label Content="Zemin Sevki:" Grid.Column="4" Grid.Row="18" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="2" x:Name="TxtAtki1grm" Margin="2" Text="{Binding Atki1HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="3" x:Name="TxtAtki2grm" Margin="2" Text="{Binding Atki2HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="4" x:Name="TxtAtki3grm" Margin="2" Text="{Binding Atki3HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="5" x:Name="TxtAtki4grm" Margin="2" Text="{Binding Atki4HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="6" x:Name="TxtZemin1grm" Margin="2" Text="{Binding Zemin1HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="7" x:Name="TxtZemin2grm" Margin="2" Text="{Binding Zemin2HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="8" x:Name="TxtZemin3grm" Margin="2" Text="{Binding Zemin3HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="9" x:Name="TxtZemin4grm" Margin="2" Text="{Binding Zemin4HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="10" x:Name="TxtHav1grm" Margin="2" Text="{Binding Hav1HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="11" x:Name="TxtHav2grm" Margin="2" Text="{Binding Hav2HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="12" x:Name="TxtHav3grm" Margin="2" Text="{Binding Hav3HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="13" x:Name="TxtHav4grm" Margin="2" Text="{Binding Hav4HamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="14" x:Name="TxtKenargrm" Margin="2" Text="{Binding KenarHamGr}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="15" x:Name="TxtSpigergrm" Margin="2" Text="{Binding SpigerHamGr}" />
+        <!--<cnt:CntIsdTextBox Grid.Column="5" Grid.Row="16" x:Name="TxtToplam" Margin="2" Text="{Binding }"/>-->
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="17" x:Name="TxtHavSevki" Margin="2" Text="{Binding HavSevki}" />
+        <cnt:CntIsdTextBox Grid.Column="5" Grid.Row="18" x:Name="TxtZeminSevki" Margin="2" Text="{Binding ZeminSevki}" />
+        <Label Content="Atkı 1 gr/m:" Grid.Column="6" Grid.Row="2" />
+        <Label Content="Atkı 2 gr/m:" Grid.Column="6" Grid.Row="3" />
+        <Label Content="Atkı 3 gr/m:" Grid.Column="6" Grid.Row="4" />
+        <Label Content="Atkı 4 gr/m:" Grid.Column="6" Grid.Row="5" />
+        <Label Content="Zemin 1 gr/m:" Grid.Column="6" Grid.Row="6" />
+        <Label Content="Zemin 2 gr/m:" Grid.Column="6" Grid.Row="7" />
+        <Label Content="Zemin 3 gr/m:" Grid.Column="6" Grid.Row="8" />
+        <Label Content="Zemin 4 gr/m:" Grid.Column="6" Grid.Row="9" />
+        <Label Content="Hav 1 gr/m:" Grid.Column="6" Grid.Row="10" />
+        <Label Content="Hav 2 gr/m:" Grid.Column="6" Grid.Row="11" />
+        <Label Content="Hav 3 gr/m:" Grid.Column="6" Grid.Row="12" />
+        <Label Content="Hav 4 gr/m:" Grid.Column="6" Grid.Row="13" />
+        <Label Content="Kenar gr/m:" Grid.Column="6" Grid.Row="14" />
+        <Label Content="Spiger gr/m:" Grid.Column="6" Grid.Row="15" />
+        <Label Content="Toplam:" Grid.Column="6" Grid.Row="16" Margin="2" />
+        <Label Content="Ham Ağırlığı gr/m:" Grid.Column="6" Grid.Row="17" />
+        <Label Content="M.A. gr/m  (A/Ü):" Grid.Column="6" Grid.Row="18" />
+        <Label Content="Ham M2 Ağırlığı:" Grid.Column="6" Grid.Row="19" />
+        <Label Content="Mamül M2 Ağırlığı: " Grid.Column="6" Grid.Row="20" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="2" x:Name="TxtAtki1grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Atki1UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="3" x:Name="TxtAtki2grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Atki2UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="4" x:Name="TxtAtki3grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Atki3UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="5" x:Name="TxtAtki4grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Atki4UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="6" x:Name="TxtZemin1grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin1UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="7" x:Name="TxtZemin2grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin2UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="8" x:Name="TxtZemin3grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin3UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="9" x:Name="TxtZemin4grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin4UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="10" x:Name="TxtHav1grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Hav1UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="11" x:Name="TxtHav2grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Hav2UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="12" x:Name="TxtHav3grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Hav3UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="13" x:Name="TxtHav4grmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding Hav4UstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="14" x:Name="TxtKenargrmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding KenarUstuGr}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="15" x:Name="TxtSpigergrmUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding SpigerUstuGr}" />
+        <!--<cnt:CntIsdTextBox Grid.Column="7" Grid.Row="16" x:Name="TxtToplamUstubulu" Grid.ColumnSpan="2" Margin="2" Text="{Binding }" />-->
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="17" x:Name="TxtHamAgirligi" Grid.ColumnSpan="2" Margin="2" Text="{Binding HamAgirlik}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="18" x:Name="TxtMamulAgirligi" Grid.ColumnSpan="1" Margin="2" Text="{Binding MamulAgirlik}" />
+        <cnt:CntIsdTextBox Grid.Column="8" Grid.Row="18" x:Name="TxtMamulAgirligiU" Grid.ColumnSpan="2" Margin="2" Text="{Binding MamulAgirlikUst}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="19" x:Name="TxtHamM2Agirligi" Grid.ColumnSpan="2" Margin="2" Text="{Binding HamM2Agirlik}" />
+        <cnt:CntIsdTextBox Grid.Column="7" Grid.Row="20" x:Name="TxtMamulM2Agirligi" Grid.ColumnSpan="2" Margin="2" Text="{Binding MamulM2Agirlik}" />
+        <Button Content="Vazgeç" Grid.Column="8" Grid.Row="21" Name="BtnVazgec" Grid.ColumnSpan="2" Click="BtnVazgec_Click" Margin="0,4,2,0"/>
+        <Button Content="Kaydet" Grid.Column="7" Grid.Row="21" Name="BtnKaydet" Click="BtnKaydet_Click" Margin="0,4,0,0"/>
+        <Label Content="Özellikler" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="1" FontWeight="Bold" />
+        <Label Content="İplik Numaraları" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="1" FontWeight="Bold" />
+        <Label Content="Ham Dokuma İplik Ağırlıkları" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="1" FontWeight="Bold" />
+        <Label Content="Üstübülü İplik" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="1" FontWeight="Bold" />
+    </Grid>
+</UserControl>

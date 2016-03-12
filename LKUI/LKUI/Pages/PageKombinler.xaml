@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="LKUI.Pages.PageKombinler"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" Loaded="Page_Loaded" FontSize="14"
+      d:DesignHeight="600" d:DesignWidth="800"
+	>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="241*" />
+            <ColumnDefinition Width="559*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="62*" />
+            <RowDefinition Height="192*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="257*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+            <Button Content="Ekle" Height="58" Name="BtnEkle" Width="60" Click="BtnEkle_Click" />
+            <Button Content="Düzenle" Height="58" Name="BtnDüzenle" Width="60" Click="BtnDüzenle_Click"/>
+            <Button Content="Sil" Height="58" Name="Sil" Width="60" Click="Sil_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26*" />
+                <RowDefinition Height="129*" />
+                <RowDefinition Height="37*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="655*" />
+                <ColumnDefinition Width="145*" />
+            </Grid.ColumnDefinitions>
+            <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridKombinler" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" 
+                                 RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" ShowGroupPanel="False" SelectionMode="Extended" MouseDoubleClick="DGridKombinler_MouseDoubleClick" SelectionChanged="DGridKombinler_SelectionChanged" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Kombin No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding KombinNo}"/>
+                    <telerik:GridViewDataColumn Header="Kombin Adı" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding KombinAdi}"/>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0" Grid.RowSpan="3" Margin="0,1">
+                <Image Name="ImgThumbKombinView" Stretch="Fill" Grid.Row="0" Grid.Column="1"/>
+            </Border>
+        </Grid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" >
+            <Button Content="Ekle" Height="58" Name="BtnKumasEkle" Width="60" Click="BtnKumasEkle_Click" />
+            <Button Content="Sil" Height="58" Name="BtnKumasSil" Width="60" Click="BtnKumasSil_Click"/>
+        </StackPanel>
+        <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridKombinKumaslar" ShowGroupFooters="True" ShowColumnFooters="True"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5"
+                                             Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" ShowGroupPanel="False" SelectionMode="Extended" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding DesenNo}" Header="Desen No" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding BaskiNo}" Header="Baskı No" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakisNo}" Header="Nakış No" Width="Auto" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Varyant}" Header="Varyant" Width="Auto" IsReadOnly="True"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <toolkit:ChildWindow x:Name="ChildKombin" WindowStartupLocation="Center" IsModal="True" Grid.ColumnSpan="2" Grid.RowSpan="5" Height="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.Row="3" Height="200" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="28"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+                        <Image Name="ImgKombin" Stretch="Fill"/>
+                    </Border>
+                    <Button Grid.Row="1" Name="BtnResimSec" Content="Büyük Resim Ekle" Background="White" HorizontalAlignment="Right" Click="BtnResimSec_Click"/>
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="3" Height="200" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="28"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+                        <Image Name="ImgThumbKombin" Stretch="Fill"/>
+                    </Border>
+                    <Button Grid.Row="1" Name="BtnThumbResimSec" Content="Küçük Resim Ekle" Background="White" HorizontalAlignment="Right" Click="BtnThumbResimSec_Click"/>
+                </Grid>
+                <Label Content="Kombin No:" Grid.Row="0" Grid.Column="0"/>
+                <TextBox x:Name="TxtKombinNo" Text="{Binding KombinNo}" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,0"/>
+                <Label Content="Kombin Adı:" Grid.Column="0" Grid.Row="1"/>
+                <TextBox x:Name="TxtKombinAdi" Text="{Binding KombinAdi}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="10,0"/>
+                <Button Content="Kaydet" HorizontalAlignment="Right" Width="150" Name="BtnKaydet" Grid.Row="6" Grid.Column="2" Click="BtnKaydet_Click"/>
+            </Grid>
+        </toolkit:ChildWindow>
+        <toolkit:ChildWindow x:Name="ChildFuarKumaslar" WindowStartupLocation="Center" IsModal="True" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="5" Width="600" Height="500" CaptionForeground="Brown">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="228*" />
+                    <RowDefinition Height="30*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120*" />
+                    <ColumnDefinition Width="64*" />
+                </Grid.ColumnDefinitions>
+                <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridKumaslar" ShowGroupFooters="True" ShowColumnFooters="True" Grid.Column="0" Grid.ColumnSpan="2" Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" ShowGroupPanel="False" SelectionMode="Extended">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DesenNo}" Header="Desen No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding BaskiNo}" Header="Baskı No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NakisNo}" Header="Nakış No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Varyant}" Header="Varyant" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewSelectColumn />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <Button Name="BtnFuarKumasSecim" Grid.Row="1" Grid.Column="1" Click="BtnFuarKumasSecim_Click" Content="Ekle" />
+            </Grid>
+        </toolkit:ChildWindow>
+    </Grid>
+</UserControl>

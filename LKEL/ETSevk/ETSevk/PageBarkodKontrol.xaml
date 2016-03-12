@@ -1,0 +1,23 @@
+﻿<Window x:Class="ETSevk.PageBarkodKontrol"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize" WindowStyle="ToolWindow" Topmost="True" Top="0" Left="0"
+        Title="Barkod Kontrol" Height="314" Width="234" LocationChanged="Window_LocationChanged" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="DGridBarkodlar" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Barkod}" Header="Barkod" />
+                <DataGridTextColumn Binding="{Binding TipNo}" Header="Tip No" />
+                <DataGridTextColumn Binding="{Binding Metre}" Header="Brüt Metre" />
+                <DataGridTextColumn Binding="{Binding RenkNo}" Header="Renk No" />
+                <DataGridTextColumn Binding="{Binding Tur}" Header="Tür" />
+                <DataGridTextColumn Binding="{Binding NetMetre}" Header="Net Metre" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Name="TxtCount" HorizontalAlignment="Left" Width="50" FontSize="11" Grid.Row="1" />
+        <Label Name="TxtSum" HorizontalAlignment="Right" Width="100" FontSize="11" Grid.Row="1" Margin="0,0,10,0" />
+    </Grid>
+</Window>

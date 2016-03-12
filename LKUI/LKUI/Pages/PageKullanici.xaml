@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="LKUI.Pages.PageKullanici"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+      d:DesignHeight="354" d:DesignWidth="576" Loaded="UserControl_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <Button Content="Ekle" Height="60" Name="BtnEkle" Width="60" Click="BtnEkle_Click" Margin="5,3,3,3" FontSize="14" />
+            <Button Content="Düzelt" Height="60" Name="BtnDüzelt" Width="60" Click="BtnDüzelt_Click"  Margin="3" FontSize="14" />
+        </StackPanel>
+        <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridKullanici" IsReadOnly="False" ShowGroupFooters="True" 
+                             ShowColumnFooters="False" ShowGroupPanel="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" 
+                             DataLoadMode="Asynchronous" SelectionMode="Extended" Grid.Row="1" MouseDoubleClick="DGridKullanici_MouseDoubleClick">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding KulAdi}" Header="Kullanıcı Adı" MinWidth="150" Width="Auto" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding PersonelAdi}" Header="Personel" MinWidth="150" Width="Auto" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding AktifMi}" Header="Aktif" MinWidth="50" Width="Auto" IsReadOnly="True" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <tkit:ChildWindow Name="ChildKullanici" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="2" Closed="ChildKullanici_Closed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="45" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="270" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Personel : " Grid.Row="1" HorizontalAlignment="Left" />
+                <ComboBox Name="cmbPersonel" Grid.Row="1" Grid.Column="1" Background="White" HorizontalAlignment="Left" Width="250" Margin="0,1" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding Path=PersonelId, Mode=TwoWay}"/>
+                <Label Content="Kullanıcı Adı : " Grid.Row="2" HorizontalAlignment="Left" />
+                <TextBox Name="txtKullaniciAdi" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="250" Margin="0,1" Text="{Binding KulAdi}"/>
+                <Label Content="Eski Şifre : " Grid.Row="3" HorizontalAlignment="Left" />
+                <PasswordBox Name="pbEskiSifre" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Width="250" Margin="0,1" />
+                <Label Content="Şifre : " Grid.Row="4" HorizontalAlignment="Left" />
+                <PasswordBox Name="pbSifre" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Width="250" Margin="0,1" />
+                <Label Content="Şifre Onay : " Grid.Row="5" HorizontalAlignment="Left" />
+                <PasswordBox Name="pbSifreOnay" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Width="250" Margin="0,1" />
+                <Button Name="btnKaydet" Grid.Row="7" Grid.Column="1" Background="White" Content="Kaydet" Margin="175,1,20,11" FontWeight="Medium" Click="btnKaydet_Click" />
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

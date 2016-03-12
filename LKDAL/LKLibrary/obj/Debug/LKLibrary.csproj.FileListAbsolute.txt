@@ -1,0 +1,52 @@
+D:\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll.config
+D:\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
+D:\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
+D:\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
+D:\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\bin\Debug\Reports\RprRefakatKarti.rdlc
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll.config
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.csprojResolveAssemblyReference.cache
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
+C:\Users\isd\Desktop\Luks Kadife\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll.config
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\app.config
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\Interop.UnityObjects.dll
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.csproj.ResolveComReference.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.XML
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\app.config
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll.config
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\System.Configuration.dll
+D:\Projelerim\isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\obj\Debug\LKLibrary.csprojResolveAssemblyReference.cache
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKLibrary\bin\Debug\LKLibrary.XML
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\app.config
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll.config
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.XML
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
+D:\Github\LKERP\LKDAL\LKLibrary\bin\Debug\System.Configuration.dll
+D:\Github\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.csprojResolveAssemblyReference.cache
+D:\Github\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
+D:\Github\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
+D:\Github\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
+D:\Github\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb

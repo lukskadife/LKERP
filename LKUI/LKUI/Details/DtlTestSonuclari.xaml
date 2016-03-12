@@ -1,0 +1,303 @@
+﻿<UserControl x:Class="LKUI.Details.DtlTestSonuclari"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Loaded="UserControl_Loaded"
+             mc:Ignorable="d" Width="530" Height="600" >
+    <Grid Height="600" Width="530">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36" />
+                <ColumnDefinition Width="246" />
+                <ColumnDefinition Width="168" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="180" />
+                <RowDefinition Height="272*" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="57*" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="4">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="80*" />
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="80*" />
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Parti No:" Height="34" VerticalAlignment="Top" FontWeight="Bold" Foreground="Crimson" FontSize="15"  />
+                    <Label Content="Tip No:" Grid.Row="0" Grid.Column="2" FontWeight="Bold" Foreground="Crimson" FontSize="15" />
+                    <Label Content="Renk No:" Grid.Row="0" Grid.Column="4" FontWeight="Bold" Foreground="Crimson" FontSize="15" />
+                    <Label  Grid.Column="1" Grid.Row="0" x:Name="LBlPartiNo" Margin="0,2" FontWeight="Bold" FontSize="15" />
+                    <Label  Grid.Column="3" Grid.Row="0" x:Name="LBlTipNo" Margin="0,2" FontWeight="Bold" FontSize="15" />
+                    <Label  Grid.Column="5" Grid.Row="0" x:Name="LBlRenkNo" Margin="0,2" FontWeight="Bold" FontSize="15" />
+                </Grid>
+            </Border>
+            <Border  BorderBrush="Black" BorderThickness="1"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="146" />
+                        <ColumnDefinition Width="61" />
+                        <ColumnDefinition Width="94" />
+                        <ColumnDefinition Width="74" />
+                        <ColumnDefinition Width="75" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="29" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Kumaş Eni:" />
+                    <Label Content="Gramaj:" Grid.Row="1"  />
+                    <Label Content="Sürtme Haslığı:" Grid.Row="2" />
+                    <Label Content="Boyut Stabilitesi:" Grid.Row="3"  />
+                    <Label Content="MartinDale:" Grid.Row="4" />
+                    <Label Content="Pilling:" Grid.Row="5"  />
+                    <TextBox Name="TxtKumasEni"  Grid.Column="1" Grid.ColumnSpan="2" Margin="2" Text="{Binding EnSonuc}"/>
+                    <Label Content="gr/m" Grid.Column="1" Grid.Row="1"  />
+                    <Label Content="gr/m2" Grid.Column="3" Grid.Row="1"   />
+                    <TextBox Grid.Column="2" Grid.Row="1"  Name="TxtGrm" Margin="2" Text="{Binding GrMSonuc}"/>
+                    <TextBox Grid.Column="4" Grid.Row="1"  Name="TxtGrm2" Margin="2" Text="{Binding GrM2Sonuc}"/>
+                    <Label Content="Yaş" Grid.Column="1" Grid.Row="2"  />
+                    <Label Content="Kuru" Grid.Column="3" Grid.Row="2"   />
+                    <TextBox Grid.Column="2" Grid.Row="2"  Name="TxtYas" Margin="2" Text="{Binding SYasSonuc}"/>
+                    <TextBox Grid.Column="4" Grid.Row="2"  Name="TxtKuru" Margin="2" Text="{Binding SKuruSonuc}"/>
+                    <Label Content="Atkı" Grid.Column="1" Grid.Row="3"  />
+                    <Label Content="Çözgü" Grid.Column="3" Grid.Row="3"   />
+                    <TextBox Grid.Column="2" Grid.Row="3"  Name="TxtAtki" Margin="2" Text="{Binding BStabilAtkiSonuc}"/>
+                    <TextBox Grid.Column="4" Grid.Row="3"  Name="TxtCozgu" Margin="2" Text="{Binding BStabilCozguSonuc}"/>
+                    <TextBox Name="TxtMartinDale"  Grid.Column="1" Grid.ColumnSpan="2" Margin="2" Grid.Row="4" Text="{Binding MartinDaleSonuc}"/>
+                    <TextBox Name="TxtPilling"  Grid.Column="1" Grid.ColumnSpan="2" Margin="2" Grid.Row="5" Text="{Binding PillingSonuc}"/>
+                </Grid>
+            </Border>
+            <ScrollViewer Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="28" />
+                        <ColumnDefinition Width="32" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="40*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Kopma Mukavemeti:" />
+                    <Label Content="Yırtılma Mukavemeti:"  Grid.Row="1"/>
+                    <Label Content="Dikiş Kayması:"  Grid.Row="2"/>
+                    <Label Content="Ter Haslığı:"  Grid.Row="4"/>
+                    <Label Content="Yıkama Haslığı:"  Grid.Row="5" Grid.RowSpan="2" VerticalAlignment="Center"/>
+                    <Label Content="Işık Haslığı:"  Grid.Row="7"/>
+                    <Label Content="Hav Kaybı (Acclerator):"  Grid.Row="8"/>
+                    <Label Content="Kuru Temizleme:"  Grid.Row="3" />
+                    <Label Content="Yanmazlık:"  Grid.Row="9"/>
+                    <Label Content="Atkı" Grid.Column="1"  />
+                    <Label Content="Çözgü" Grid.Column="4" Grid.ColumnSpan="2" Width="63" />
+                    <TextBox Grid.Column="2" Text="{Binding KopMukAtkiSonuc}" Name="TxtKopmaAtki" Margin="2" Grid.ColumnSpan="2" />
+                    <TextBox Grid.Column="6" Text="{Binding KopMukCozguSonuc}" Name="TxtKopmaCozgu" Margin="0,2,2,2" Grid.ColumnSpan="2" Width="92" />
+                    <Label Content="Atkı" Grid.Column="1" Grid.Row="1"  />
+                    <Label Content="Çözgü" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Width="63" />
+                    <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding YirtMukAtkiSonuc}" Name="TxtYirtilmaAtki" Margin="2" Grid.ColumnSpan="2" />
+                    <TextBox Grid.Column="6" Grid.Row="1" Text="{Binding YirtMukCozguSonuc}" Name="TxtYirtilmaCozgu" Margin="0,2,2,2" Grid.ColumnSpan="2" Width="92" />
+                    <Label Content="Atkı" Grid.Column="1" Grid.Row="2"  />
+                    <Label Content="Çözgü" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Width="63" />
+                    <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding DikisKayAtkiSonuc}" Name="TxtDikisKaymasiAtki" Margin="2" Grid.ColumnSpan="2" />
+                    <TextBox Grid.Column="6" Grid.Row="2" Text="{Binding DikisKayCozguSonuc}" Name="TxtDikisKaymasiCozgu" Margin="0,2,2,2" Grid.ColumnSpan="2" Width="92" />
+                    <Label Content="Atkı" Grid.Column="1"  Grid.Row="3"  />
+                    <Label Content="Çözgü" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Width="63" />
+                    <TextBox Grid.Column="2" Text="{Binding KuruTemizAtkiSonuc}" Grid.Row="3"  Name="TxtKuruTemizlemeAtki" Margin="2" Grid.ColumnSpan="2" />
+                    <TextBox Grid.Column="6" Text="{Binding KuruTemizCozguSonuc}" Grid.Row="3"  Name="TxtKuruTemizlemeCozgu" Margin="0,2,2,2" Grid.ColumnSpan="2" Width="92" />
+                    <TextBox Grid.Column="1" Text="{Binding TerHaslikSonuc}" Grid.ColumnSpan="3" Grid.Row="4" Name="TxtTerHasligi" Margin="2" />
+                    <TextBox Grid.Column="1" Text="{Binding YikamaHaslikSonuc}" Grid.ColumnSpan="8" Grid.Row="5" Grid.RowSpan="2" Name="TxtYikamaHasligi" Margin="2"  />
+                    <TextBox Grid.Column="1" Text="{Binding IsikHaslikSonuc}" Grid.ColumnSpan="3" Grid.Row="7" Name="TxtIsikHasligi" Margin="2" />
+                    <TextBox Grid.Column="1" Text="{Binding HavKaybiSonuc}" Grid.ColumnSpan="8" Grid.Row="8" Name="TxtHavKaybi" Margin="2"  />
+                    <Label Content="BS 5852" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Width="69" />
+                    <ComboBox Grid.Column="3" Grid.Row="9" Name="CmbBS5852" Margin="2">
+                        <ComboBoxItem Content="Geçti"/>
+                        <ComboBoxItem Content="Kaldı"/>
+                    </ComboBox>
+                    <Label Content="M1" Grid.Column="4"  Grid.Row="9"  />
+                    <ComboBox Grid.Column="5" Grid.Row="9"  Name="CmbM1" Margin="2" Grid.ColumnSpan="2" >
+                        <ComboBoxItem Content="Geçti"/>
+                        <ComboBoxItem Content="Kaldı"/>
+                    </ComboBox>
+                    <Label Content="Diğer" Grid.Column="7" Grid.Row="9" />
+                    <ComboBox Grid.Column="8" Grid.Row="9" Name="CmbDiger" Margin="2" >
+                        <ComboBoxItem Content="Geçti"/>
+                        <ComboBoxItem Content="Kaldı"/>
+                    </ComboBox>
+                </Grid>
+            </ScrollViewer>
+
+            <Label Content="Test Notları" Grid.Row="5" Grid.ColumnSpan="2" Background="#FFC1CFE8" Margin="0,0,1,0"/>
+            <ScrollViewer Grid.Row="6" Grid.ColumnSpan="2">
+                <TextBox TextWrapping="Wrap" Text="{Binding SonucAciklama}" />
+            </ScrollViewer>
+            <Label Content="Müşteri Kriterleri" Grid.Row="5" Grid.ColumnSpan="2" Background="#FFC1CFE8" Grid.Column="2" Margin="1,0,0,0"  />
+            <ScrollViewer Name="SVKriter" Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="2">
+                <StackPanel  Name="StackMusteriKriter" Orientation="Vertical" >
+                    <StackPanel x:Name="StackKumasEni" Orientation="Horizontal">
+                        <Label Content="Kumaş Eni:"/>
+                        <Label Name="LblKumasEn" Content="{Binding EnKriter}"/>
+                    </StackPanel>
+                    <StackPanel x:Name="StackGramajm" Orientation="Horizontal">
+                        <Label Content="Gramaj gr/m"></Label>
+                        <Label Name="LblGrM" Content="{Binding GrMKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackGramajm2" Orientation="Horizontal" >
+                        <Label Content="Gramaj gr/m2"></Label>
+                        <Label Name="LblGrM2" Content="{Binding GrM2Kriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackSurtmeHaslikYas" Orientation="Horizontal">
+                        <Label Content="Sürtme Hasligi (Yaş)"></Label>
+                        <Label Name="LblSurtYas" Content="{Binding SYasKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackSurtmeHaslikKuru" Orientation="Horizontal" >
+                        <Label Content="Sürtme Hasligi (Kuru)"></Label>
+                        <Label Name="LblSurtKuru" Content="{Binding SKuruKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackBoyutStabilitesiAtki" Orientation="Horizontal">
+                        <Label Content="Boyut Stabilitesi (Atkı)"></Label>
+                        <Label Name="LblBytAtki" Content="{Binding BStabilAtkiKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackBoyutStabilitesiCozgu" Orientation="Horizontal">
+                        <Label Content="Boyut Stabilitesi (Çözgü)"></Label>
+                        <Label Name="LblBytCozgu" Content="{Binding BStabilCozguKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackMartindale" Orientation="Horizontal">
+                        <Label Content="Martindale"></Label>
+                        <Label Name="LblMartin" Content="{Binding MartinDaleKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackPilling" Orientation="Horizontal">
+                        <Label Content="Pilling"></Label>
+                        <Label Name="LblPill" Content="{Binding PillingKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackKopmaMukavemetiAtki" Orientation="Horizontal">
+                        <Label Content="Kopma Mukavemeti (Atkı)"></Label>
+                        <Label Name="LblKopAtki" Content="{Binding KopMukAtkiKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackKopmaMukavemetiCozgu" Orientation="Horizontal">
+                        <Label Content="Kopma Mukavemeti (Çözgü)"></Label>
+                        <Label Name="LblKopCoz" Content="{Binding KopMukCozguKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackYirtilmaMukavemetiAtki" Orientation="Horizontal">
+                        <Label Content="Yırtılma Mukavemeti (Atkı)"></Label>
+                        <Label Name="LblYirtAtki" Content="{Binding YirtMukAtkiKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackYirtilmaMukavemetiCozgu" Orientation="Horizontal">
+                        <Label Content="Yırtılma Mukavemeti (Çözgü)"></Label>
+                        <Label Name="LblYirtCoz" Content="{Binding YirtMukCozguKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackDikisKaymasiAtki" Orientation="Horizontal">
+                        <Label Content="Dikiş Kayması (Atkı)"></Label>
+                        <Label Name="LblDikAtki" Content="{Binding DikisKayAtkiKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackDikisKaymasiCozgu" Orientation="Horizontal">
+                        <Label Content="Dikiş Kayması (Çözgü)"></Label>
+                        <Label Name="LblDikCoz" Content="{Binding DikisKayCozguKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackBoyutStabilitesiKTAtki" Orientation="Horizontal">
+                        <Label Content="Kuru Temizleme (Atkı)"></Label>
+                        <Label Name="LblKuruAtki" Content="{Binding KuruTemizAtkiKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackBoyutStabilitesiKTCozgu" Orientation="Horizontal">
+                        <Label Content="Kuru Temizleme (Çözgü)"></Label>
+                        <Label Name="LblKuruCoz" Content="{Binding KuruTemizCozguKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackTerHasligi" Orientation="Horizontal">
+                        <Label Content="Ter Haslığı"></Label>
+                        <Label Name="LblTer" Content="{Binding TerHaslikKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackYikamaHasligi" Orientation="Horizontal">
+                        <Label Content="Yıkama Haslığı"></Label>
+                        <Label Name="LblYikama" Content="{Binding YikamaHaslikKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackIsikHasligi" Orientation="Horizontal">
+                        <Label Content="Işık Haslığı"></Label>
+                        <Label Name="LblIsik" Content="{Binding IsikHaslikKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackHavKaybi" Orientation="Horizontal">
+                        <Label Content="Hav Kaybı"></Label>
+                        <Label Name="LblHav" Content="{Binding HavKaybiKriter}"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackYanmazlikBS5852" Orientation="Horizontal" Height="0">
+                        <Label Content="Yanmazlık BS5852"></Label>
+                        <Label Name="LblYanmazlik"  Content="{Binding }"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackYanmazlikM1" Orientation="Horizontal" Height="0">
+                        <Label Content="Yanmazlık M1"></Label>
+                        <Label Content="{Binding }"></Label>
+                    </StackPanel>
+                    <StackPanel x:Name="StackYanmazlikDiger" Orientation="Horizontal" Height="0">
+                        <Label Content="Yanmazlık Diğer"></Label>
+                        <Label Content="{Binding }"></Label>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Button Content="Kaydet" Grid.Column="3" Grid.Row="7"  Name="BtnKaydet" Margin="2" Click="BtnKaydet_Click" />
+            <Grid  Name="grid1" Grid.Row="1" Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="29" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="25" />
+
+                </Grid.RowDefinitions>
+                <CheckBox IsEnabled="False" IsChecked="{Binding EnVarMi}" Name="ChckKumasEni" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding GramVarMi}" Name="ChckGramaj" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="1" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding SurtmeVarMi}" Name="ChckSurtmeHasligi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="2" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding BoyutStabilVarMi}" Name="ChckBoyutStabilitesi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="3" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding MartinDaleVarMi}" Name="ChckMartinDale" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="4" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding PillingVarMi}" Name="ChckPilling" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="5" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding KopMukVarMi}" Name="ChckKopmaMukavemeti" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="6" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding YirtMukVarMi}" Name="ChckYirtilmaMukavemeti" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="7" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding DikisKayVarMi}" Name="ChckDikisKaymasi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="8" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding KuruTemizVarMi}" Name="ChckBoyutStabilitesiKuruTemizleme" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="9" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding TerHaslikVarMi}" Name="ChckTerHasligi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="10" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding YikamaHaslikVarMi}" Name="ChckYikamaHasligi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="11" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding IsikHaslikVarMi}" Name="ChckIsikHasligi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="12" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding HavKaybiVarMi}" Name="ChckHavKaybi" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="13" />
+                <CheckBox IsEnabled="False" IsChecked="{Binding YanmazlikVarMi}" Name="ChckYanmazlik" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="14" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

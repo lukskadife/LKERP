@@ -1,0 +1,208 @@
+﻿<UserControl xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  x:Class="LKUI.Pages.PageSiparisler"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+      xmlns:dtl="clr-namespace:LKUI.Details"
+      mc:Ignorable="d" Loaded="Page_Loaded" Name="PageSiparis" 
+       d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <tkit:ChildWindow Name="ChildGenel" IsModal="True" MinWidth="800" MinHeight="600" WindowStartupLocation="Manual" Closed="ChildGenel_Closed" Visibility="Hidden"/>
+        <tkit:ChildWindow Name="ChildEkleDuzelt" IsModal="True" Height="{Binding Path=ActualHeight, ElementName=PageSiparis}"  WindowStartupLocation="Center" Closed="ChildEkleDuzelt_Closed" MinHeight="600" MinWidth="800" >
+            <dtl:DtlSiparisEkleDuzenle x:Name="DtlEkleDuzelt"/>
+        </tkit:ChildWindow>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="243" />
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="86*" />
+                <ColumnDefinition Width="93" />
+                <ColumnDefinition Width="172" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27" />
+                <RowDefinition Height="105" />
+                <RowDefinition Height="458*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <Border x:Name="HeaderBorder" BorderBrush="Black" BorderThickness="0"  Padding="0,0" VerticalAlignment="Top" Margin="5,0,0,0" Height="35" Grid.ColumnSpan="5">
+                <DockPanel x:Name="Header" Height="25.96" VerticalAlignment="Top">
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Bottom"   HorizontalAlignment="Left" FontWeight="Bold" Height="21.96" FontSize="16" Width="245"><Run  Text="Satış Siparişleri"/></TextBlock>
+                </DockPanel>
+            </Border>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                <Button Content="Ekle" Height="55" Name="BtnEkle" Width="55" Click="BtnEkle_Click" Margin="5,3,3,3"/>
+                <Button Content="Düzenle" Height="55" Name="BtnDüzenle" Width="55" Click="BtnDüzenle_Click"  Margin="3"/>
+                <Button Content="Sil" Height="55" Name="Sil" Width="55" Click="Sil_Click"  Margin="3"/>
+                <Button Content="Yenile" Height="55" Name="Yenile" Width="55"  Margin="3" Click="Yenile_Click"/>
+            </StackPanel>
+            <Label Content="Sipariş Tipi:" Grid.Column="1" Grid.Row="1" Margin="2,20,0,19" HorizontalAlignment="Left" Width="75" FontWeight="Bold" />
+            <ComboBox x:Name="ComboBoxSiparisTipi" Grid.Column="1" Grid.Row="1" Margin="0,22,2,0" HorizontalAlignment="Right" Width="140" Height="27" VerticalAlignment="Top" SelectedValuePath="Id" DisplayMemberPath="SozlesmeNo" SelectionChanged="ComboBoxSiparisTipi_SelectionChanged"/>
+            <StackPanel Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" Margin="0,0,10,0">
+                <RadioButton Content="Bekliyor"  Height="16" HorizontalAlignment="Left"  Name="RadioButtonBekliyor" VerticalAlignment="Top" Checked="RadioButtonBekliyor_Checked" />
+                <RadioButton Content="Termin Bekliyor"  Height="16" HorizontalAlignment="Left"  Name="RadioButtonTerminBekliyor" VerticalAlignment="Top" Checked="RadioButtonTerminBekliyor_Checked" />
+                <RadioButton Content="Onay Bekliyor"  Height="16" HorizontalAlignment="Left"  Name="RadioButtonOnayBekliyor" VerticalAlignment="Top" Checked="RadioButtonOnayBekliyor_Checked" />
+                <RadioButton Content="Açık"  Height="16" HorizontalAlignment="Left"  Name="RadioButtonAcik" VerticalAlignment="Top" Checked="RadioButtonAcik_Checked"/>
+                <RadioButton Content="Tamamlandı"  Height="16" HorizontalAlignment="Left"  Name="RadioButtonTamamlandi" VerticalAlignment="Top" Checked="RadioButtonTamamlandi_Checked"/>
+                <RadioButton Content="İptal"  Height="16" HorizontalAlignment="Left"  Name="RadioButtonİptal" VerticalAlignment="Top" Checked="RadioButtonİptal_Checked"/>
+            </StackPanel>
+            <telerik:RadGridView MouseDoubleClick="DGridSiparisler_MouseDoubleClick" Name="DGridSiparisler" Grid.Row="2" Grid.ColumnSpan="5" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Background="#FFF0F0F0" 
+                IsReadOnly="True" ShowGroupFooters="True" ShowColumnFooters="True" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SozlesmeNo}" Header="Sözleşme No" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=FirmaAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=KarsiReferansNo}" Header="Karşı Ref.No" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Tarih, StringFormat='dd MMM yyyy'}" Header="Tarih" Width="Auto" IsReadOnly="False"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TopMiktar}" Header="Miktar" Width="Auto" IsReadOnly="True">
+                        <telerik:GridViewDataColumn.AggregateFunctions>
+                            <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
+                        </telerik:GridViewDataColumn.AggregateFunctions>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TerminTarihi,StringFormat='dd MMM yyyy'}" Header="Termin Tarihi" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TerminHaftasi}" Header="Termin Haftasi" Width="Auto" IsReadOnly="True"/>
+                    <telerik:GridViewCheckBoxColumn Header="Sevk Emri" IsReadOnly="True" DataMemberBinding="{Binding SevkEdilebilirMi}"/>
+                    <telerik:GridViewColumn>
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Sevk Emri Ver" x:Name="BtnSevkEmri" Click="BtnSevkEmri_Click"/>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                </telerik:RadGridView.Columns>
+                <telerik:RadGridView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Name="MIIadeSiparisEkle" Header="İade Siparişi Ekle" Click="MIIadeSiparisEkle_Click"/>
+                    </ContextMenu>
+                </telerik:RadGridView.ContextMenu>
+            </telerik:RadGridView>
+            <DataGrid Visibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False" MouseDoubleClick="DGridSiparisler_MouseDoubleClick"  Grid.RowSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=SozlesmeNo}" Header="Sözleşme No" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=FirmaAdi}" Header="Müşteri" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=Tarih, StringFormat='dd MMM yyyy'}" Header="Tarih" Width="Auto" IsReadOnly="False"/>
+                    <DataGridTextColumn Binding="{Binding Path=TopMiktar}" Header="Miktar" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=TerminTarihi,StringFormat='dd MMM yyyy'}" Header="Son Termin Tarihi" Width="Auto" IsReadOnly="True"/>
+                    <DataGridCheckBoxColumn Header="Sevk Emri" IsReadOnly="True" Binding="{Binding SevkEdilebilirMi}"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Sevk Emri Ver" Name="BtnSevkEmri" Click="BtnSevkEmri_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <tkit:ChildWindow  Name="ChildSevkEmri" IsModal="True" Width="900" MinHeight="600" WindowStartupLocation="Center" Closed="ChildSevkEmri_Closed" CaptionForeground="Brown">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180" />
+                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <tkit:ChildWindow Name="ChildBarkodlar" IsModal="True" Width="700" Height="500" WindowStartupLocation="Center" CaptionForeground="Brown" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="100" Grid.RowSpan="100">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <telerik:RadGridView telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBarkodlar" IsReadOnly="True" ShowGroupFooters="False" 
+                                             ShowColumnFooters="True" Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" 
+                                             ShowGroupPanel="False" Grid.Row="0" SelectionMode="Extended" FrozenColumnCount="7">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewSelectColumn />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Barkod}" Header="Barkod" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:CountFunction Caption="Adet : " />
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn Name="ClmTipNo" DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn Name="ClmRenkNo" DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}" />
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Tur}" Header="Alt Üst" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşterisi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DesenNo}" Header="Desen" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding En}" Header="En" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipVaryant}" Header="Tip Varyant" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkVaryant}" Header="Renk Varyant" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Aciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn Header="Kg" DataMemberBinding="{Binding Kg}" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}" />
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Durum}" Header="Durum" Width="Auto" IsReadOnly="True" />
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                        <Button Name="BtnBarkodEkle" Grid.Row="1" HorizontalAlignment="Right" Background="White" Content=" Ekle " Click="BtnBarkodEkle_Click" Width="70" Margin="3" />
+                    </Grid>
+                </tkit:ChildWindow>
+                <telerik:RadGridView Grid.Row="0" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridSevkEmriSiparisSatirlari" IsReadOnly="True" ShowGroupFooters="False" ShowColumnFooters="False" Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" ShowGroupPanel="False" SelectionChanged="DGridSevkEmriSiparisSatirlari_SelectionChanged">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Varyant}" Header="Varyant" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Miktar}" Header="Metre" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewColumn>
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Barkod Seç" Name="BtnSevkBarkodlariSec" Click="BtnSevkBarkodlariSec_Click" Background="White" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <telerik:RadGridView AutoGenerateColumns="False" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" FrozenColumnCount="6" Name="DGridSevkEmriMamulleri" Margin="0,0,1,0" IsReadOnly="True" telerik:StyleManager.Theme="Summer" ShowGroupFooters="True" ShowColumnFooters="True" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" Background="#FFF0F0F0">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewColumn>
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="BtnSevkEmriMamulSil" Background="White" Content="  Sil  " Click="BtnSevkEmriMamulSil_Click" />
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Barkod}" Header="Barkod" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction Caption="Adet : " />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NetMetre}" Header="Net Metre" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KaliteAdet}" Header="Kalite" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Tur}" Header="Alt Üst" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SevkEdildi}" Header="Sevk Edildi" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DesenNo}" Header="Desen" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding En}" Header="En" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipVaryant}" Header="Tip Varyant" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkVaryant}" Header="Renk Varyant" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Aciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn Header="Kg" DataMemberBinding="{Binding Kg}" Width="Auto" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Tarih}" Header="Tarih" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn Header="Parça" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Parca}" />
+                        <telerik:GridViewDataColumn Header="Parça Metresi" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding ParcaMetre}" />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <Button Grid.Row="2" Name="BtnSevkEmriOlustur" Content="Sevk Emri Oluştur" Click="BtnSevkEmriOlustur_Click" HorizontalAlignment="Right" Margin="5" Background="White" />
+            </Grid>
+        </tkit:ChildWindow>
+
+        
+
+    </Grid>
+</UserControl>

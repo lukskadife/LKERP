@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="49532750-d4f1-4474-a516-3a55f796b933" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://server/LKEntegrasyon/EntegrasyonServisi.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EntegrasyonServisi.xsd" MetadataType="Schema" ID="c6e5d059-e884-420e-b281-9d923851bb8b" SourceId="1" SourceUrl="http://server/LKEntegrasyon/EntegrasyonServisi.svc?xsd=xsd1" />
+    <MetadataFile FileName="EntegrasyonServisi1.xsd" MetadataType="Schema" ID="944a769d-83ce-4580-b8c3-b051d4f39e07" SourceId="1" SourceUrl="http://server/LKEntegrasyon/EntegrasyonServisi.svc?xsd=xsd0" />
+    <MetadataFile FileName="EntegrasyonServisi.wsdl" MetadataType="Wsdl" ID="0f938ae8-39f9-4bdf-9cba-cc56b88043b1" SourceId="1" SourceUrl="http://server/LKEntegrasyon/EntegrasyonServisi.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

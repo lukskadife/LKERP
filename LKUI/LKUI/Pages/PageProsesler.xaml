@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="LKUI.Details.DtlProses"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls" Loaded="UserControl_Loaded"
+             d:DesignHeight="300" d:DesignWidth="300" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" ShowGroupPanel="False" AutoGenerateColumns="False" Background="#FFF0F0F0" 
+            IsReadOnly="True" Name="DGridProsesler" MouseDoubleClick="DGridProsesler_MouseDoubleClick">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Kodu" DataMemberBinding="{Binding Kodu}"/>
+                <telerik:GridViewDataColumn Header="Adı" DataMemberBinding="{Binding Adi}"/>
+                <telerik:GridViewCheckBoxColumn Header="Aktif" DataMemberBinding="{Binding AktifMi}"/>
+                <telerik:GridViewCheckBoxColumn Header="Fason" DataMemberBinding="{Binding FasonMu}"/>
+                <telerik:GridViewCheckBoxColumn Header="Boya" DataMemberBinding="{Binding Boya}" IsReadOnly="True"/>
+                <telerik:GridViewCheckBoxColumn Header="Kimyasal" DataMemberBinding="{Binding Kimyasal}" IsReadOnly="True"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="BtnEkle" Content="Ekle" Width="75" Click="BtnEkle_Click" Background="White"/>
+            <Button Name="BtnDuzelt" Content="Düzelt" Width="75" Click="BtnDuzelt_Click" Background="White"/>
+            <Button Name="BtnSil" Content="Sil" Width="75" Click="BtnSil_Click" Background="White"/>
+        </StackPanel>
+        <tkit:ChildWindow Grid.Row="0" Grid.RowSpan="2" IsModal="True" Height="200" Width="300" Name="ChildProses" WindowStartupLocation="Center">
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="108*" />
+                    <ColumnDefinition Width="176*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition  />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Button Content="Kaydet" Name="BtnKaydet" Click="BtnKaydet_Click" HorizontalAlignment="Right" Background="White" Width="75" Grid.Row="6" Grid.Column="1" />
+                <Label Grid.Row="0" Grid.Column="0" Content="Kodu :"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Adı :"/>
+                <cnt:CntIsdTextBox x:Name="TxtKodu" Text="{Binding Kodu}" Grid.Column="1" Grid.Row="0" TxtTipi="Gerekli" />
+                <cnt:CntIsdTextBox x:Name="TxtAdi" Text="{Binding Adi}" Grid.Column="1" Grid.Row="1" TxtTipi="Gerekli" />
+                <CheckBox IsChecked="{Binding AktifMi}" Content="Aktif" Margin="10,8,0,0" Grid.Column="1" Grid.Row="2"/>
+                <CheckBox IsChecked="{Binding FasonMu}" Content="Fason" Margin="25,8,0,0" Grid.Column="0" Grid.Row="2"/>
+                <CheckBox IsChecked="{Binding Kimyasal}" Content="Kimyasal" Margin="10,8,0,0" Grid.Column="1" Grid.Row="3"/>
+                <CheckBox IsChecked="{Binding Boya}" Content="Boya" Margin="25,8,0,0" Grid.Column="0" Grid.Row="3"/>
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

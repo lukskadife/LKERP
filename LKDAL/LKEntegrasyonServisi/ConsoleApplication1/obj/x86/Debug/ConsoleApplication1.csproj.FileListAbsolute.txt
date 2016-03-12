@@ -1,0 +1,11 @@
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+D:\Projeler\Şirket\ISD\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+D:\Projelerim\Isd\LuksKadifeERP\Dev\LKDAL\LKEntegrasyonServisi\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb

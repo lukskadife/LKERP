@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://server/LKERP/Service/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://server/LKERP/Service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://server/LKERP/Service/Imports">
+      <xsd:import schemaLocation="http://server/LKERP/Service/FileOperationServices.svc?xsd=xsd0" namespace="http://server/LKERP/Service/" />
+      <xsd:import schemaLocation="http://server/LKERP/Service/FileOperationServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFileOperationServices_GetFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileOperationServices_GetFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileOperationServices_SaveFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileOperationServices_SaveFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileOperationServices_CreateDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IFileOperationServices_CreateDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFileOperationServices">
+    <wsdl:operation name="GetFile">
+      <wsdl:input wsaw:Action="http://server/LKERP/Service/IFileOperationServices/GetFile" message="tns:IFileOperationServices_GetFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://server/LKERP/Service/IFileOperationServices/GetFileResponse" message="tns:IFileOperationServices_GetFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <wsdl:input wsaw:Action="http://server/LKERP/Service/IFileOperationServices/SaveFile" message="tns:IFileOperationServices_SaveFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://server/LKERP/Service/IFileOperationServices/SaveFileResponse" message="tns:IFileOperationServices_SaveFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectory">
+      <wsdl:input wsaw:Action="http://server/LKERP/Service/IFileOperationServices/CreateDirectory" message="tns:IFileOperationServices_CreateDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://server/LKERP/Service/IFileOperationServices/CreateDirectoryResponse" message="tns:IFileOperationServices_CreateDirectory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

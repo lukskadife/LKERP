@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\service" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/LKLibrary.dll" publishTime="07/24/2012 16:49:52" />
+    <file relUrl="Service1.svc" publishTime="07/24/2012 16:47:49" />
+    <file relUrl="bin/WcfService1.pdb" publishTime="07/24/2012 17:00:05" />
+    <file relUrl="Web.config" publishTime="07/24/2012 17:00:19" />
+    <file relUrl="bin/WcfService1.dll" publishTime="07/24/2012 17:00:05" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,660 @@
+﻿<UserControl x:Class="LKUI.Pages.PageSiparisTumMaliyet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900" Loaded="SiparisTumMaliyet_Loaded"
+             xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended">
+
+    <Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="330" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#E5DEDC">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Name="lblSiparisNoC" Content="Sipariş No: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                <Label Grid.Column="1" Name="lblSiparisNo" Content="Sipariş No: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                <Label Grid.Column="2" Name="lblMusteriC" Content="Müşteri: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                <Label Grid.Column="3" Name="lblMusteri" Content="Müşteri: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="500*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="#5394">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1" BorderBrush="White" Grid.RowSpan="2"/>
+                    <Grid Grid.Row="0" Background="#3BA0B0">
+                        <!--2C7593-->
+                        <Border BorderThickness="1" BorderBrush="White"/>
+                        <Label Name="lblmetraj" Content="Metraj " VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="20"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="5,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="170" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Name="lblSiparisMetresiC" Content="Sipariş Metre: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="0" Name="lblsiparisMetresi" Content="Sipariş Metre:" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="1" Name="lblÜretimMetresiC" Content="Mamül Metre: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="1" Name="lblÜretimMetresi" Content="Paketlenen Metre: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="2" Name="lblSevkMetresiC" Content="Sevk Metre: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="2" Name="lblSevkMetresi" Content="Sevk Metre: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="3" Name="birinciKaliteC" Content="I. Kalite: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="3" Name="birinciKalite" Content="I. Kalite: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="4" Name="ikinciKaliteC" Content="2.(IA) KLT: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="4" Name="ikinciKalite" Content="2.(IA) KLT: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="5" Name="lblHataC" Content="Hata: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="5" Name="lblHata" Content="Hata: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="6" Name="lblParcaC" Content="Parça: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="6" Name="lblParca" Content="Parça: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                        <Label Grid.Column="0" Grid.Row="7" Name="lblReProcessC" Content="ReProcess: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                        <Label Grid.Column="1" Grid.Row="7" Name="lblReProcess" Content="ReProcess: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" Background="#5394">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#3BA0B0">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="350" />
+                                <ColumnDefinition Width="300" />
+                                <ColumnDefinition Width="100*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Label  Name="lblMaliyetC" Content="Maliyet " VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"  Foreground="White" FontSize="20"/>
+                                <Border BorderThickness="2" BorderBrush="White"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Label  Name="lblOzetC" Content="Özet " VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"  Foreground="White" FontSize="20"/>
+                                <Border BorderThickness="2" BorderBrush="White"/>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <Label  Name="lblPartilerC" Content="Partiler " VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"  Foreground="White" FontSize="20"/>
+                                <Border BorderThickness="2" BorderBrush="White"/>
+                            </Grid>
+                        </Grid>
+                        <Border BorderThickness="1" BorderBrush="White"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="350" />
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="100*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Margin="5,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35" />
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="35" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="250" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Name="lblSatisToplamC" Content="Satış Toplam: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Name="lblSatisToplam" Content="Satış Toplam: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="250" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Name="lblGenelToplamC" Content="Maliyet Toplam: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Name="lblGenelToplam" Content="Maliyet Toplam: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Name="lblMetreFiyatiC" Content="Metre Fiyatı: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <!--<Label Grid.Column="1" Name="lblMetreFiyati" Content="Metre Fiyatı: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16"/>-->
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35"/>
+                                        <RowDefinition Height="35"/>
+                                        <RowDefinition Height="35"/>
+                                        <RowDefinition Height="35"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="25*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Name="lblTL" Content="TL: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Name="lblDlr" Content="$: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Name="lblEr" Content="€: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16"/>
+                                    <Label Grid.Row="3" Grid.Column="0" Name="lblStrln" Content="£: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Name="lblMetreFiyatiTL" Content="Metre Fiyatı: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16" FontWeight="Bold"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Name="lblMetreFiyatiDlr" Content="Metre Fiyatı: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16" FontWeight="Bold"/>
+                                    <Label Grid.Row="2" Grid.Column="1" Name="lblMetreFiyatiE" Content="Metre Fiyatı: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16" FontWeight="Bold"/>
+                                    <Label Grid.Row="3" Grid.Column="1" Name="lblMetreFiyatiS" Content="Metre Fiyatı: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="16" FontWeight="Bold"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Name="lblKarZararC" Content="Kar / Zarar: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Name="lblKarZarar" Content="Kar Zarar: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red"  FontSize="18"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Border BorderBrush="White" BorderThickness="1"/>
+                            <Grid Margin="5,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" Name="lblIplikC" Content="İplik: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Grid.Row="0" Name="lblIplik" Content="İplik: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                                <Label Grid.Column="0" Grid.Row="1" Name="lblBukumC" Content="Büküm: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Grid.Row="1" Name="lblBukum" Content="Büküm: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                                <Label Grid.Column="0" Grid.Row="2" Name="lblCozguC" Content="Çözgü: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Grid.Row="2" Name="lblCozgu" Content="Çözgü: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                                <Label Grid.Column="0" Grid.Row="3" Name="lblDokumaC" Content="Dokuma: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Grid.Row="3" Name="lblDokuma" Content="Dokuma: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                                <Label Grid.Column="0" Grid.Row="4" Name="lblBoyahaneC" Content="Boyahane: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Blue" FontSize="14"/>
+                                <Label Grid.Column="1" Grid.Row="4" Name="lblBoyahane" Content="Boyahane: " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Red" FontSize="18"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <telerik:RadGridView Name="DGSiparisPartileri" ShowGroupPanel="False" Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True" Background="#FFF0F0F0" CanUserFreezeColumns="False"  RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Maliyet" Width="Auto" IsReadOnly="True">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                            <telerik:SumFunction />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                    </telerik:GridViewDataColumn>
+                                    <telerik:GridViewDataColumn DataMemberBinding="{Binding UretimMetresi}" Header="Ham Metre" Width="Auto" IsReadOnly="True">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                            <telerik:SumFunction />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                    </telerik:GridViewDataColumn>
+                                </telerik:RadGridView.Columns>
+                                <telerik:RadGridView.ContextMenu>
+                                    <ContextMenu>
+                                        <ContextMenu.ItemsSource>
+                                            <CompositeCollection>
+                                                <!--<MenuItem Name="MIOGunlukMamulUretim" Header="Excel'e Aktar" Click="MIOGunlukMamulUretim_Click" Height="25" FontSize="15"/>-->
+                                            </CompositeCollection>
+                                        </ContextMenu.ItemsSource>
+                                    </ContextMenu>
+                                </telerik:RadGridView.ContextMenu>
+                            </telerik:RadGridView>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="350" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <telerik:RadGridView Name="DGSiparisler" ShowGroupPanel="False" Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="False"  Background="#FFF0F0F0" CanUserFreezeColumns="False"  RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Sira}" Header="Sira" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Miktar}" Header="Sipariş Miktarı" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding BirimFiyat}" Header="Birim Fiyat" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Doviz}" Header="Döviz" Width="Auto" IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SevkMiktar}" Header="Sevk Miktarı" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Durum}" Header="Durum" Width="Auto" IsReadOnly="True"/>
+                    </telerik:RadGridView.Columns>
+                    <telerik:RadGridView.ContextMenu>
+                        <ContextMenu>
+                            <ContextMenu.ItemsSource>
+                                <CompositeCollection>
+                                    <!--<MenuItem Name="MIOGunlukMamulUretim" Header="Excel'e Aktar" Click="MIOGunlukMamulUretim_Click" Height="25" FontSize="15"/>-->
+                                </CompositeCollection>
+                            </ContextMenu.ItemsSource>
+                        </ContextMenu>
+                    </telerik:RadGridView.ContextMenu>
+                </telerik:RadGridView>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <telerik:RadGridView Name="DGBoyahaneProcessler" ShowGroupPanel="False" Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True" Background="#FFF0F0F0" CanUserFreezeColumns="False"  RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Process}" Header="Process" Width="Auto" IsReadOnly="True"/>                            
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Maliyet TL" Width="Auto" IsReadOnly="True">
+                                <telerik:GridViewDataColumn.AggregateFunctions>
+                                    <telerik:SumFunction />
+                                </telerik:GridViewDataColumn.AggregateFunctions>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding CalismaDk}" Header="Çalışma Dk" Width="Auto" IsReadOnly="True">
+                                <telerik:GridViewDataColumn.AggregateFunctions>
+                                    <telerik:SumFunction />
+                                </telerik:GridViewDataColumn.AggregateFunctions>
+                            </telerik:GridViewDataColumn>
+                        </telerik:RadGridView.Columns>                      
+                    </telerik:RadGridView>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="3" Background="#E5DEDC">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Button Name="btnGuncelle" Grid.Column="2" Content="Yeniden Hesapla" Margin="5" Click="btnGuncelle_Click"/>
+                <Button Name="btnOzet" Grid.Column="3" Content="Detay" Margin="5" Click="btnOzet_Click"/>
+                <Label Name="label" Grid.Column="0" HorizontalAlignment="Left" Content="Son Hesaplama Tarihi : " VerticalAlignment="Center" FontWeight="Bold" FontSize="17" Visibility="Hidden" />
+                <Label Name="lblSonGuncellemeTarihi" Grid.Column="1" HorizontalAlignment="Left" Content="" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Foreground="Red" />
+            </Grid>
+        </Grid>
+
+        <tkit:ChildWindow Name="MaliyetFormu" MinHeight="600" MinWidth="900" WindowStartupLocation="Center" Caption="Maliyet Detay" Closed="MaliyetFormu_Closed">
+            <Grid>
+
+                <TabControl Name="TabCntMaliyet" Grid.Row="2" SelectionChanged="TabCntMaliyet_SelectionChanged">
+
+                    <TabItem Header="Maliyet" Name="TabProcessHam">
+
+                        <telerik:RadGridView Name="DGSiparisPartileriMaliyetHam"  Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="True" FrozenColumnCount="5" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}" >
+                            <telerik:RadGridView.GroupDescriptors>
+                                <telerik:GroupDescriptor x:Name="groupDescriptorProcessMaliyetleriHamSiparisNo" Member="SiparisNo" SortDirection="Ascending"/>
+                                <telerik:GroupDescriptor x:Name="groupDescriptorProcessMaliyetleriHamPartiNo" Member="PartiNo" SortDirection="Ascending"/>
+                                <telerik:GroupDescriptor x:Name="groupDescriptorProcessMaliyetleriHamCinsi" Member="Cinsi" />
+                            </telerik:RadGridView.GroupDescriptors>
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Cinsi}" Header="Cinsi" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessAdi}" Header="Process" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Satir Toplami" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Toplam:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DirekIscilik}" Header="Direk Işçilik" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Direk İşçilik:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DogalGaz}" Header="Doğal Gaz" Width="Auto" IsReadOnly="True" >
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Doğal Gaz:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Elektrik}" Header="Elektrik" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Elektrik:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding AtikSu}" Header="Atık Su" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Atık Su:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Amortisman}" Header="Amortisman" Width="Auto" IsReadOnly="True" >
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Amortisman:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsletmeMalzeme}" Header="İşletme Malzeme" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="İşletme Malzeme:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakliyeBakimGideri}" Header="Nakliye Bakım" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Nakliye Bakım:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Kimyasal}" Header="Kimyasal" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Kimyasal:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding EnDirekIscilik}" Header="En Direk İşçilik" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="En Direk İşçilik:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ambalaj}" Header="Ambalaj" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Ambalaj:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonProcess}" Header="Fason Process" Width="Auto" IsReadOnly="True" >
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Fason Process:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBukum}" Header="Fason Büküm" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Fason Büküm:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBoyali}" Header="Fason Boyalı" Width="Auto" IsReadOnly="True" >
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Fason Boyalı:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonRenkDuzeltme}" Header="Fason Renk Düzenleme" Width="Auto" IsReadOnly="True" >
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Fason Renk Düzenleme:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonFikse}" Header="Fason Fikse" Width="Auto" IsReadOnly="True" >
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="Fason Fikse:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikKg}" Header="İplik Kg" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="İplik Kg:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikFiyati}" Header="İplik Fiyatı" Width="Auto" IsReadOnly="True">
+                                    <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:SumFunction Caption="İplik Fiyatı:"/>
+                                    </telerik:GridViewDataColumn.AggregateFunctions>
+                                </telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikAdi}" Header="Iplik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanimAlani}" Header="Kullanım Alanı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ay}" Header="Ay" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Yil}" Header="Yil" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding GecenMetre}" Header="Geçen Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahKodu}" Header="Tezgah Kodu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahAdi}" Header="Tezgah Adi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding MaliyetSira}" Header="Maliyet Sıra" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Boyasal}" Header="Boyasal" Width="Auto" IsReadOnly="True" />
+
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+
+                    </TabItem>
+
+                    <TabItem Header="İplik" Name="TabIplikDetay" >
+                        <telerik:RadGridView Name="DGIplikDetay"  Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisId}" Header="Sipariş Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiId}" Header="Parti Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipId}" Header="Tip Id" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahKodu}" Header="Tezgah Kodu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahAdi}" Header="Tezgah Adı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahId}" Header="Tezgah Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TopMetre}" Header="Top Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ay}" Header="Ay" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Yil}" Header="Yil" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding HavZeminSevki}" Header="HavZemin Sevki" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikId}" Header="İplik Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikKodu}" Header="İplik Kodu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikAdi}" Header="İplik Adi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding UstuBuluGr}" Header="UstuBuluGr" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanimAlani}" Header="Kullanım Alani" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding LogoFiyati}" Header="Logo Fiyatı" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikKg}" Header="Kullanılan İplik(Kg)" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikFiyati}" Header="Kullanılan İplik Fiyatı" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DirekIscilik}" Header="Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Dogalgaz}" Header="Doğal Gaz" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Elektrik}" Header="Elektrik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding AtikSu}" Header="Atık Su" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Amortisman}" Header="Amortisman" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsletmeMalzeme}" Header="Işletme Malzeme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakliyeBakim}" Header="Nakliye Bakım" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Kimyasal}" Header="Kimyasal" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding EnDirekIscilik}" Header="En Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ambalaj}" Header="Ambalaj" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Satır Toplamı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Cinsi}" Header="Cinsi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessAdi}" Header="Process" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonProcess}" Header="Fason Process" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBukum}" Header="Fason Büküm" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBoyali}" Header="Fason Boyalı" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonRenkDuzeltme}" Header="Fason Renk Düzeltme" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonFikse}" Header="Fason Fikse" Width="Auto" IsReadOnly="True" />
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </TabItem>
+
+                    <TabItem Header="Büküm" Name="TabBukumDetay" >
+                        <telerik:RadGridView Name="DGBukumDetay"  Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisId}" Header="Sipariş Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiId}" Header="Parti Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipId}" Header="Tip Id" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TopMetre}" Header="Top Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ay}" Header="Ay" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Yil}" Header="Yil" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikId}" Header="İplik Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikKodu}" Header="İplik Kodu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikAdi}" Header="İplik Adi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanimAlani}" Header="Kullanım Alani" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikKg}" Header="Kullanılan İplik(Kg)" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DirekIscilik}" Header="Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Dogalgaz}" Header="Doğal Gaz" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Elektrik}" Header="Elektrik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding AtikSu}" Header="Atık Su" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Amortisman}" Header="Amortisman" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsletmeMalzeme}" Header="Işletme Malzeme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakliyeBakim}" Header="Nakliye Bakım" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Satır Toplamı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBukum}" Header="Fason Büküm" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBoyama}" Header="Fason Boyama" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonRenkDuzeltme}" Header="Fason Renk Düzeltme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonFikse}" Header="Fason Fikse" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding BukumIscilikFaktoru}" Header="Büküm İşçilik Faktorü" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding BukumGenelUretimFaktoru}" Header="Büküm Genel Üretim Faktorü" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Katsayi}" Header="Katsayi" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ToplamKatsayi}" Header="Toplam Katsayı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FiiliUretim}" Header="Fiili Üretim" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ToplamUretim}" Header="Toplam Üretim" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Levent}" Header="Levent" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding HavSevki}" Header="HavSevki" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TelAdedi}" Header="Tel Adedi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding CozguToplamKg}" Header="Çözgü Toplam(Kg)" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding LotNo}" Header="LotNo" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SetId}" Header="Set Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ZeminSevki}" Header="ZeminSevki" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IplikNo}" Header="İplik No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SonUretimTarihi}" Header="Son Üretim Tarihi" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Cinsi}" Header="Cinsi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessAdi}" Header="Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonProcess}" Header="Fason Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikFiyati}" Header="Kullanılan İplik Fiyatı" Width="Auto" IsReadOnly="True" />
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </TabItem>
+
+                    <TabItem Header="Çözgü" Name="TabCozguDetay" >
+                        <telerik:RadGridView Name="DGCozguDetay"  Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisId}" Header="Sipariş Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Cinsi}" Header="Cinsi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahKodu}" Header="TezgahKodu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahAdi}" Header="TezgahAdi" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TopMetre}" Header="Top Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ay}" Header="Ay" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Yil}" Header="Yil" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DirekIscilik}" Header="Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Dogalgaz}" Header="Doğal Gaz" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Elektrik}" Header="Elektrik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding AtikSu}" Header="Atık Su" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Amortisman}" Header="Amortisman" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsletmeMalzeme}" Header="Işletme Malzeme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakliyeBakimGideri}" Header="Nakliye Bakım" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Kimyasal}" Header="Kimyasal" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding EnDirekIscilik}" Header="En Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ambalaj}" Header="Ambalaj" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Satır Toplamı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahId}" Header="Tezgah Id" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding HavZeminSevki}" Header="HavZeminSevki" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding LogoFiyat}" Header="LogoFiyat" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DaireCozguToplamMetre}" Header="Daire Çözgü Toplam Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding MtIscilik}" Header="Mt İşçilik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessAdi}" Header="Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonProcess}" Header="Fason Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBukum}" Header="Fason Büküm" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBoyali}" Header="Fason Boyalı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonRenkDuzeltme}" Header="Fason Renk Düzeltme" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonFikse}" Header="Fason Fikse" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikKg}" Header="Kullanılan İplik(Kg)" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikFiyati}" Header="Kullanılan İplik Fiyatı" Width="Auto" IsReadOnly="True"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </TabItem>
+
+                    <TabItem Header="Dokuma" Name="TabDokumaDetay" >
+                        <telerik:RadGridView Name="DGDokumaDetay"  Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisId}" Header="Sipariş Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Cinsi}" Header="Cinsi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahKodu}" Header="TezgahKodu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahAdi}" Header="TezgahAdi" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TopMetre}" Header="Top Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ay}" Header="Ay" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Yil}" Header="Yil" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DirekIscilik}" Header="Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Dogalgaz}" Header="Doğal Gaz" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Elektrik}" Header="Elektrik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding AtikSu}" Header="Atık Su" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Amortisman}" Header="Amortisman" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsletmeMalzeme}" Header="Işletme Malzeme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakliyeBakimGideri}" Header="Nakliye Bakım" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Kimyasal}" Header="Kimyasal" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding EnDirekIscilik}" Header="En Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ambalaj}" Header="Ambalaj" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Satır Toplamı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TezgahId}" Header="Tezgah Id" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding HavZeminSevki}" Header="HavZeminSevki" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Katsayi}" Header="Katsayı" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ToplamKatsayi}" Header="Toplam Katsayı" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessAdi}" Header="Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonProcess}" Header="Fason Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBukum}" Header="Fason Büküm" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBoyali}" Header="Fason Boyalı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonRenkDuzeltme}" Header="Fason Renk Düzeltme" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonFikse}" Header="Fason Fikse" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikKg}" Header="Kullanılan İplik(Kg)" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikFiyati}" Header="Kullanılan İplik Fiyatı" Width="Auto" IsReadOnly="True"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </TabItem>
+
+                    <TabItem Header="Boyahane" Name="TabBoyahaneDetay" >
+                        <telerik:RadGridView Name="DGBoyahaneDetay"  Grid.Row="1" Grid.RowSpan="3" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupFooters="True"
+                             ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" DataContext="{Binding}">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisId}" Header="Sipariş Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisNo}" Header="Sipariş No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Cinsi}" Header="Cinsi" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding TopMetre}" Header="Top Metre" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ay}" Header="Ay" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Yil}" Header="Yil" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding DirekIscilik}" Header="Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Dogalgaz}" Header="Doğal Gaz" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Elektrik}" Header="Elektrik" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding AtikSu}" Header="Atık Su" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Amortisman}" Header="Amortisman" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsletmeMalzeme}" Header="Işletme Malzeme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding NakliyeBakimGideri}" Header="Nakliye Bakım" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Kimyasal}" Header="Kimyasal" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding EnDirekIscilik}" Header="En Direk İşçilik" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ambalaj}" Header="Ambalaj" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SatirToplami}" Header="Satır Toplamı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessCalismaDk}" Header="Process Çalışma(Dk)" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding MakinaToplamCalismaDk}" Header="Makina Toplam Çalışma(Dk)" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProcessId}" Header="Process Id" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Process}" Header="Process" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding MakinaId}" Header="Makina Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Makina}" Header="Makina" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Sira}" Header="Sıra" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonMu}" Header="Fason Mu" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ReProcess}" Header="ReProcess" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonMaliyet}" Header="Fason Maliyet" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiId}" Header="Parti Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisActId}" Header="SiparişAct Id" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding Boyasal}" Header="Boyasal" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikKg}" Header="Kullanılan İplik(Kg)" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding KullanilanIplikFiyati}" Header="Kullanılan İplik Fiyatı" Width="Auto" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBukum}" Header="Fason Büküm" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonBoyali}" Header="Fason Boyalı" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonRenkDuzeltme}" Header="Fason Renk Düzeltme" Width="Auto" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonFikse}" Header="Fason Fikse" Width="Auto" IsReadOnly="True"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </TabItem>
+
+                </TabControl>
+
+            </Grid>
+        </tkit:ChildWindow>
+
+    </Grid>
+</UserControl>
