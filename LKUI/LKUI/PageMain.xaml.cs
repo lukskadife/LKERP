@@ -84,7 +84,6 @@ namespace LKUI
             }
             CntLogon.BtnGiris_Click(sender, e);
         }
-        //fgfgfgfgfgfgfg
 
         private void CntLogin_Logined(object sender, RoutedEventArgs e)
         {
