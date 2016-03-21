@@ -137,31 +137,37 @@
             <ComboBoxItem Content="Tam Dolu" />
             <ComboBoxItem Content="1 Dolu 1 Boş" />
             <ComboBoxItem Content="4 Dolu 8 Boş" />
+            <ComboBoxItem Content="2 Dolu 2 Boş" />
         </cnt:CntIsdCombo>
         <cnt:CntIsdCombo x:Name="CmbZemin2TarakTahar" Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin2TarakTahar}" SelectedValuePath="Content" TabIndex="7">
             <ComboBoxItem Content="Tam Dolu" />
             <ComboBoxItem Content="1 Dolu 1 Boş" />
             <ComboBoxItem Content="4 Dolu 8 Boş" />
+            <ComboBoxItem Content="2 Dolu 2 Boş" />
         </cnt:CntIsdCombo>
         <cnt:CntIsdCombo x:Name="CmbZemin5TarakTahar" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin5TarakTahar}" SelectedValuePath="Content" TabIndex="7">
             <ComboBoxItem Content="Tam Dolu" />
             <ComboBoxItem Content="1 Dolu 1 Boş" />
             <ComboBoxItem Content="4 Dolu 8 Boş" />
+            <ComboBoxItem Content="2 Dolu 2 Boş" />
         </cnt:CntIsdCombo>
         <cnt:CntIsdCombo x:Name="CmbZemin6TarakTahar" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="2" Margin="2" Text="{Binding Zemin6TarakTahar}" SelectedValuePath="Content" TabIndex="7">
             <ComboBoxItem Content="Tam Dolu" />
             <ComboBoxItem Content="1 Dolu 1 Boş" />
             <ComboBoxItem Content="4 Dolu 8 Boş" />
+            <ComboBoxItem Content="2 Dolu 2 Boş" />
         </cnt:CntIsdCombo>
         <cnt:CntIsdCombo x:Name="CmbHav3TarakTahar" Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="2" Margin="2" Text="{Binding Hav3TarakTahar}" SelectedValuePath="Content" TabIndex="7">
             <ComboBoxItem Content="Tam Dolu" />
             <ComboBoxItem Content="1 Dolu 1 Boş" />
             <ComboBoxItem Content="4 Dolu 8 Boş" />
+            <ComboBoxItem Content="2 Dolu 2 Boş" />
         </cnt:CntIsdCombo>
         <cnt:CntIsdCombo x:Name="CmbHav4TarakTahar" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="2" Margin="2" Text="{Binding Hav4TarakTahar}" SelectedValuePath="Content" TabIndex="7">
             <ComboBoxItem Content="Tam Dolu" />
             <ComboBoxItem Content="1 Dolu 1 Boş" />
             <ComboBoxItem Content="4 Dolu 8 Boş" />
+            <ComboBoxItem Content="2 Dolu 2 Boş" />
         </cnt:CntIsdCombo>
         <Button Content="Vazgeç" Grid.Column="8" Grid.Row="21" Name="BtnVazgec" Grid.ColumnSpan="2" Click="BtnVazgec_Click" Margin="0,4,2,0"/>
         <Button Content="Kaydet" Grid.Column="7" Grid.Row="21" Name="BtnKaydet" Click="BtnKaydet_Click" Margin="0,4,0,0"/>

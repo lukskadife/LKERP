@@ -80,6 +80,7 @@
     <Compile Include="Classes\MalzemeTalep.cs" />
     <Compile Include="Classes\Mamul.cs" />
     <Compile Include="Classes\Menu.cs" />
+    <Compile Include="Classes\OrmeTezgahHaberlesme.cs" />
     <Compile Include="Classes\PackList.cs" />
     <Compile Include="Classes\Partileme.cs" />
     <Compile Include="Classes\Planlama.cs" />

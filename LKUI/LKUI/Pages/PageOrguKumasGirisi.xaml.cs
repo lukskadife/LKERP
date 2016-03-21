@@ -18,6 +18,8 @@ using LKUI.Details;
 using System.Reflection;
 using System.Drawing.Printing;
 using System.Runtime.InteropServices;
+using System.IO.Ports;
+using System.Windows.Threading;
 
 namespace LKUI.Pages
 {
@@ -26,14 +28,21 @@ namespace LKUI.Pages
     /// </summary>
     public partial class PageOrguKumasGirisi : UserControl
     {
+        OrmeTezgahHaberlesme _OrmeTezgahHaberlesme;
+
         public PageOrguKumasGirisi()
         {
             InitializeComponent();
+           
+           
+           
         }
 
         HamKumas _KumasIslem;
         TezgahHaberlesme _Tezgah;
+       
         tblHamHatalari _Hata = new tblHamHatalari();
+        //private serialPort _seriPort = new SerialPort() { PortName = "COM1", BaudRate = 9600, DataBits = 8, Parity = Parity.None, StopBits = StopBits.One, Handshake = Handshake.None };
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -44,11 +53,13 @@ namespace LKUI.Pages
             CmbTezgahNo.ItemsSource = HamKumas.OrmeTezgahlariGetir();
             CmbTipNo.ItemsSource = HamKumas.OrmeTipleriGetir();
 
-            //Tezgah haberleşmesi hazırlanıyor.
-            _Tezgah = new TezgahHaberlesme();
-            _Tezgah.TezgahHareketEtti += new TezgahHaberlesme.TezgahEvent(_Tezgah_TezgahHareketEtti);
-            if (_Tezgah.HazirMi == false) MessageBox.Show("Tezgah ile iletişim yok..!", App.AlertCaption, MessageBoxButton.OK, MessageBoxImage.Error);
+          
 
+            _OrmeTezgahHaberlesme = new OrmeTezgahHaberlesme();
+            //_OrmeTezgahHaberlesme.TezgahHareketEtti += new OrmeTezgahHaberlesme.TezgahEvent(_OrmeTezgah_TezgahHareketEtti);
+            //if(_OrmeTezgahHaberlesme.HazirMi==false) MessageBox.Show("Tezgahla iletişim sağlanamadı");
+            TxtKacinciMetre.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+          
             _KumasIslem = new HamKumas("Örme") { Tarih = DateTime.Today };
             GrdUst.DataContext = _KumasIslem;
             GrdHata.DataContext = _Hata;
@@ -59,11 +70,14 @@ namespace LKUI.Pages
             
         }
 
-        void _Tezgah_TezgahHareketEtti()
+      
+        void _OrmeTezgah_TezgahHareketEtti()
         {
-            string snc = _Tezgah.ReturnDeger;
-            TxtKacinciMetre.Text = _Tezgah.ReturnDeger;
-            TxtMetreÜst.Text = _Tezgah.ReturnDeger;
+            string snc = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            TxtKacinciMetre.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            TxtMetreÜst.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            TxtAciklama.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            
         }
 
         private void DPBaslangic_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -148,6 +162,7 @@ namespace LKUI.Pages
         {
             if (this.IsLoaded)
             {
+               
                 if (DPBaslangic.SelectedDate == null || DPBitis.SelectedDate == null) return;
                 DGridTartımDetayları.ItemsSource = HamKumas.OrmeKayitlariGetir(DPBaslangic.SelectedDate.Value.Date, DPBitis.SelectedDate.Value.Date).OrderByDescending(o => o.Id).ToList();
             }
@@ -191,6 +206,7 @@ namespace LKUI.Pages
 
         private void BtnHataEkle_Click(object sender, RoutedEventArgs e)
         {
+            
             HataEkle();
         }
 
@@ -211,6 +227,7 @@ namespace LKUI.Pages
         {
             if (CmbHata.SelectedItem == null | TxtUzunluk.TextGirisiDogruMu == false | TxtKacinciMetre.TextGirisiDogruMu == false) return;
             tblHamHatalari ekle = GrdHata.DataContext as tblHamHatalari;
+//            ekle.Metresi = Convert.ToDouble(_OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri);
             ekle.Metresi = TxtKacinciMetre.DoubleTxt == null ? 0 : TxtKacinciMetre.DoubleTxt.Value;
             ekle.HataKodu = (CmbHata.SelectedItem as vHataTanim).Kodu;
             ekle.HataAdi = (CmbHata.SelectedItem as vHataTanim).Adi;
@@ -300,6 +317,7 @@ namespace LKUI.Pages
 
         private void TxtKacinciMetre_KeyUp(object sender, KeyEventArgs e)
         {
+               
             if (e.Key == Key.Enter) TxtUzunluk.Focus();
         }
 

@@ -245,7 +245,7 @@ namespace LKLibrary.Classes
 
         public static List<tblPersoneller> OrmeKalitecileriGetir()
         {
-            return new DBEvents().GetGeneric<tblPersoneller>(c => c.BolumId == 23 && c.AktifMi == true);
+            return new DBEvents().GetGeneric<tblPersoneller>(c => c.BolumId == 14 && c.AktifMi == true);
         }
 
         public static List<tblKumas> TipleriGetir()
@@ -265,7 +265,7 @@ namespace LKLibrary.Classes
 
         public static List<tblMakinalar> OrmeTezgahlariGetir()
         {
-            return new DBEvents().GetGeneric<tblMakinalar>(c => c.BaglantiId == 3 && c.AktifMi == true);
+            return new DBEvents().GetGeneric<tblMakinalar>(c => c.BaglantiId == 1 && c.AktifMi == true);
         }
 
         public static List<vHataTanim> HataTanimlariGetir()
@@ -387,7 +387,7 @@ namespace LKLibrary.Classes
             else
             {
                 //Örme kumaş
-                _KumasAlt = new tblHamKumaslar() { HavLeventId = null, ZeminAltLeventId = null, ZeminUstLeventId = null, SiparisId = null, DepoId = 401 };
+                _KumasAlt = new tblHamKumaslar() { HavLeventId = null, ZeminAltLeventId = null, ZeminUstLeventId = null, SiparisId = null, DepoId = 400 };
                 _KumasUst = new tblHamKumaslar(); // Örme de kullanmıyoruz.
                 if (duzeltilecekKumas != null)
                 {                    

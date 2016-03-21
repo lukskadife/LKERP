@@ -155,13 +155,13 @@ namespace LKLibrary.Classes
 
         public List<tblMakinalar> MakinalariGetir()
         {
-            List<tblMakinalar> list = db.GetGeneric<tblMakinalar>(c => c.BaglantiId != -1 && c.AktifMi == true).OrderBy(o=>o.KodAd).ToList();
+            List<tblMakinalar> list = db.GetGeneric<tblMakinalar>(c => c.BaglantiId != -1 && c.AktifMi == true).OrderBy(o=>o.Kodu).ToList();
             return list != null ? list : new List<tblMakinalar>();
         }
 
         public List<tblMakinalar> MakinalariGetir(int bagId)
         {
-            return db.GetGeneric<tblMakinalar>(c => c.BaglantiId == bagId && c.AktifMi == true);
+            return db.GetGeneric<tblMakinalar>(c => c.BaglantiId == bagId && c.AktifMi == true).OrderBy(o=>o.Kodu).ToList();
         }
 
         public List<vBakimOnarimAct> BakimOnarimMalzemeleriGetir(int bakimOnarimFormId)

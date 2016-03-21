@@ -28,3 +28,13 @@ D:\Github\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.xml
 D:\Github\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.csprojResolveAssemblyReference.cache
 D:\Github\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.exe
 D:\Github\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.pdb
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\app.config
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKPlanServiceApp.exe
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKPlanServiceApp.pdb
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.dll
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.pdb
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.xml
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.csprojResolveAssemblyReference.cache
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.exe
+D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.pdb

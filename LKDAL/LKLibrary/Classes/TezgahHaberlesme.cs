@@ -11,7 +11,7 @@ namespace LKLibrary.Classes
     {
         private SerialPort _TezgahPort;
         private DispatcherTimer _Thread;
-        
+      
         public string ReturnDeger;
         public bool HazirMi = false;
 
@@ -31,8 +31,8 @@ namespace LKLibrary.Classes
                 this.HazirMi = true;
                 _Thread = new DispatcherTimer();
                 _Thread.Interval = new TimeSpan(0, 0, 0, 0, 500);
-                _Thread.Tick += new EventHandler((snd, ea) => { TezgahSinyalGonder(); });
-                _Thread.Start();
+              _Thread.Tick += new EventHandler((snd, ea) => { TezgahSinyalGonder(); });
+               _Thread.Start();
             }
             catch
             {
@@ -41,6 +41,7 @@ namespace LKLibrary.Classes
                 if (_Thread != null) _Thread.Stop();
             }
         }
+
 
         private int SinyalGondermeHataSayisi = 0;
         private void TezgahSinyalGonder()
@@ -62,11 +63,12 @@ namespace LKLibrary.Classes
                 70,
                 56,
                 13,
-                10
+                10         
+
             };
 
             _TezgahPort.Write(c, 0, c.Length);
-            try
+          try
             {
                 string veri = _TezgahPort.ReadLine();
                 if (veri.IndexOf(':') == -1) return;
@@ -85,6 +87,60 @@ namespace LKLibrary.Classes
             }
         }
 
+       
+        //örme
+        //private void OrmeTezgahSinyalGonder()
+        //{
+        //    char[] o = new char[1];
+        //    o[0] = 'R';
+
+        //    _TezgahPort.Write(o, 0, o.Length);
+        //    //_TezgahPort.Write("R");
+        //    try
+        //    {
+        //        string overi = _TezgahPort.ReadLine();
+        //        //if (overi == null) overi = "R";
+        //        //if (overi.IndexOf('.') == -1) return;
+        //        OrmeTezgahOku(overi);
+        //        this.SinyalGondermeHataSayisi = 0;
+        //    }
+        //    catch
+        //    {
+        //        this.SinyalGondermeHataSayisi++;
+        //        if (this.SinyalGondermeHataSayisi == 3)
+        //        {
+        //            if (_TezgahPort.IsOpen) _TezgahPort.Close();
+        //            if (_Thread != null) _Thread.Stop();
+        //            this.HazirMi = false;
+        //        }
+        //    }
+           
+        //}
+
+        //private void OrmeTezgahOku(string tezgahVerisi)
+        //{
+        //    if (tezgahVerisi == null) tezgahVerisi = "R";
+        //    string tmpStr;
+        //    tmpStr = tezgahVerisi;
+        //  //  tmpStr = tmpStr.Substring(0, 7);
+        //  //  tmpStr = int.Parse(tmpStr, System.Globalization.NumberStyles.AllowHexSpecifier).ToString();
+        //    string asil = tmpStr;
+
+        //    //if (asil.Length == 2)
+        //    //{
+        //    //    tmpStr = '0' + tmpStr;
+        //    //    tmpStr = tmpStr.Insert(2, ",");
+        //    //}
+        //    //if (asil.Length == 3) tmpStr = tmpStr.Insert(1, ",");
+        //    //if (asil.Length == 4) tmpStr = tmpStr.Insert(2, ",");
+        //    //if (asil.Length == 5) tmpStr = tmpStr.Insert(3, ",");
+        //    //if (asil.Length == 6) tmpStr = tmpStr.Insert(4, ",");
+        //    this.OrmeOkunanDeger = tmpStr;
+        //    if (TezgahHareketEtti != null) TezgahHareketEtti();
+        //}
+
+
+             
         private void TezgahOku(string tezgahVerisi)
         {
             string tmpStr;
