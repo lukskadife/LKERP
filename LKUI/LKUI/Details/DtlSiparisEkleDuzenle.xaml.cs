@@ -396,6 +396,18 @@ namespace LKUI.Details
                 raporlama.RaporGoster("RprSozlesme", list);
             }
 
+            //23.03.2014 sukru
+            else if (SiparisForm.BelgeTuru == "Fason Sözleşme")
+            {
+                List<DtlRapor.RaporItem> list = new List<DtlRapor.RaporItem>()
+                {
+                    new DtlRapor.RaporItem("DSSiparis", new List<vSiparisler>(){SiparisForm}),
+                    new DtlRapor.RaporItem("DSSiparisAct", DataGridSiparisDetay.ItemsSource )
+                };
+                raporlama.RaporGoster("RprFasonSozlesme", list);
+            }
+
+
             ChildGenel.Content = raporlama;
             ChildGenel.Show();
         }

@@ -248,6 +248,7 @@
                     <ComboBoxItem Content="Sözleşme"/>
                     <ComboBoxItem Content="Proforma"/>
                     <ComboBoxItem Content="Invoice"/>
+                    <ComboBoxItem Content="Fason Sözleşme"/>
                 </ComboBox>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">

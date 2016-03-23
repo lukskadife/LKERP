@@ -18,6 +18,8 @@ namespace LKUI.Pages
             InitializeComponent();
         }
 
+        //21 mart 2016
+
         private void MIExcel_Click(object sender, RoutedEventArgs e)
         {
             DGridBoyaProgrami.ToExcel<vBoyaProgrami>();
