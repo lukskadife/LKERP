@@ -7,6 +7,28 @@ using LKLibrary.DbClasses;
 namespace LKLibrary.DbClasses
 {
 
+    [Table(Name = "tblBoyaProgrami")]
+    public class tblBoyaProgrami : IDisposable
+    { 
+        [Column(Name="Id", IsDbGenerated=true, IsPrimaryKey=true)]
+        public int Id { get; set; }
+        public int PartiId { get; set; }
+        public int BoyanacakHafta { get; set; }
+        public string Aciklama { get; set; }
+        public bool Boyandi { get; set; }
+        public bool Tahsis { get; set; }
+        public bool HamKumas { get; set; }
+        public bool HamFirca { get; set; }
+        public bool Fikse { get; set; }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+    }
+
+
+
     [Table(Name = "tblAmbarAct")]
     public class tblAmbarAct : IDisposable
     {

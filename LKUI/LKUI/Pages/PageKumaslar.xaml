@@ -35,7 +35,8 @@
             <DataGrid x:Name="DGridKumaslar" Grid.ColumnSpan="4" Grid.Row="3" AutoGenerateColumns="False" MouseDoubleClick="DGridKumaslar_MouseDoubleClick" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn  Header="Tip No" MinWidth="150" IsReadOnly="True" Binding="{Binding Path=TipNo}" />
-                    <DataGridTextColumn Header="Tip Adi" Width="1*" IsReadOnly="True" Binding="{Binding Path=TipAdi}" />
+                    <DataGridTextColumn Header="Tip Adi" Width="300" IsReadOnly="True" Binding="{Binding Path=TipAdi}" />
+                    <DataGridTextColumn  Header="Varyant" Width="1*" IsReadOnly="True" Binding="{Binding Path=TipNo}" />
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="2" Orientation="Horizontal" Height="30" Margin="20,0,0,0">

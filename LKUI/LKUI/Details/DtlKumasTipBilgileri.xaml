@@ -15,7 +15,7 @@
                 <ColumnDefinition Width="23" />
                 <ColumnDefinition Width="119" />
                 <ColumnDefinition Width="84" />
-                
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="27" />
@@ -44,7 +44,7 @@
                 <Label Content="Hav Kompozisyonu:" Height="28"  />
                 <Label Content="Total Kompozisyon:" Height="28"  />
                 <Label Content="Kullanım Alanı:" Height="28"  />
-               
+
                 <Label Content="Yıkama Talimatı:" Height="28"/>
                 <Label Content="Yıkama Talimatı Not:" Height="28"  />
                 <Label Content="Martindale:" Height="28"  />
@@ -53,23 +53,23 @@
                 <Label Content="Renk Haslıkları:" Height="28"  />
                 <Label Content="Sürtme Haslıkları YAŞ:" Height="28"  />
                 <Label Content="Sürtme Haslıkları KURU:" Height="28"  />
-                 <Label Content="Fiyat:" Height="28"  />
+                <Label Content="Fiyat:" Height="28"  />
                 <Label Content="Döviz:" Height="28"  />
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="9">
-                <cnt:CntIsdTextBox x:Name="TxtTipNo" Height="28" Text="{Binding Path=TipNo}"/>
+                <cnt:CntIsdTextBox x:Name="TxtTipNo" Height="28" Text="{Binding Path=TipNo}" Margin="0,0,165,0"/>
                 <cnt:CntIsdTextBox x:Name="TxtTipAdi" Height="28" Text="{Binding Path=TipAdi}"/>
-                <cnt:CntIsdTextBox x:Name="TxtKumasEni" Height="28" Text="{Binding Path=KumasEn}" TxtTipi="ZorunsuzSayisal" />
-                <cnt:CntIsdTextBox x:Name="TxtGramajgm" Height="28" Text="{Binding Path=KumasAgirlik}" TxtTipi="ZorunsuzSayisal" />
+                <cnt:CntIsdTextBox x:Name="TxtKumasEni" Height="28" Text="{Binding Path=MamulEn}" TxtTipi="ZorunsuzSayisal" />
+                <cnt:CntIsdTextBox x:Name="TxtGramajgm" Height="28" Text="{Binding Path=MamulAgirlik}" TxtTipi="ZorunsuzSayisal" />
                 <cnt:CntIsdTextBox x:Name="TxtHavKomp" Height="28" Text="{Binding Path=HavKomp}"/>
                 <cnt:CntIsdTextBox x:Name="TxtTotalKomp" Height="28" Text="{Binding Path=TotalKomp}"/>
                 <StackPanel Grid.Column="1" Grid.Row="4" Height="28" Orientation="Horizontal">
                     <CheckBox x:Name="ChckDosemelik" Content="Döşemelik" IsChecked="{Binding Path=Dosemelik}"/>
                     <CheckBox x:Name="ChckPerdelik" Content="Perdelik" IsChecked="{Binding Path=Perdelik}"/>
                     <CheckBox x:Name="ChckElbiselik" Content="Elbiselik" IsChecked="{Binding Path=Elbiselik}"/>
-                    <CheckBox x:Name="ChckLikraliElbiselik" Content="Likralı Elbiselik" IsChecked="{Binding Path=Likrali}"/>  
+                    <CheckBox x:Name="ChckLikraliElbiselik" Content="Likralı Elbiselik" IsChecked="{Binding Path=Likrali}"/>
                 </StackPanel>
-               
+
                 <StackPanel Orientation="Horizontal" Height="28">
                     <CheckBox x:Name="Chck1" IsChecked="{Binding Path=Yik1}">
                         <Image Source="/LKUI;component/Resources/p.jpg"/>
@@ -120,7 +120,7 @@
                 <ComboBox x:Name="CmbDoviz" Height="27" Width="40" Background="White" HorizontalContentAlignment="Center" HorizontalAlignment="Left" ItemsSource="{Binding Dovizler}" DisplayMemberPath="Aciklama" SelectedValuePath="Id" SelectedValue="{Binding DovizId, Mode=TwoWay}"/>
             </StackPanel>
             <Button x:Name="BtnKaydet" Content="Kaydet" Grid.Row="10" Grid.Column="3" Width="92" Click="BtnKaydet_Click" Margin="105,0,6,6" Grid.ColumnSpan="2" />
-            <cnt:CntIsdTextBox x:Name="TxtGramajgm2" Height="28" Text="{Binding Path=KumasAgirlik2}" Grid.Column="3" Grid.Row="2" />
+            <cnt:CntIsdTextBox x:Name="TxtGramajgm2" Height="28" Text="{Binding Path=MamulM2Agirlik}" Grid.Column="3" Grid.Row="2" />
             <cnt:CntIsdTextBox x:Name="TxtMukavemetCözgü" Height="28" Text="{Binding Path=MukavemetCözgü}" Grid.Column="3" Grid.Row="4" />
             <cnt:CntIsdTextBox x:Name="TxtDikisSiyrilmasiCözgü" Height="28" Text="{Binding Path=DikSiyrikCozgu}" Grid.Column="3"  Grid.Row="5" />
             <Label Content="-" Grid.Column="2"  Grid.Row="4"  FontSize="15" Margin="0,4,0,0" />
@@ -129,6 +129,8 @@
             <Label Content="(gram/m2)" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left"  Name="label1"  />
             <Label Content="(Çözgü)" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Left"  />
             <Label Content="(Çözgü)" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Left"  />
+            <cnt:CntIsdTextBox x:Name="TxtVaryant" Height="28" Text="{Binding Path=Varyant}" Grid.Column="1" Grid.Row="1" Margin="224,0,0,56" />
+            <Label Content="Varyant :" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="163,0,0,56"  />
         </Grid>
     </Grid>
 </UserControl>

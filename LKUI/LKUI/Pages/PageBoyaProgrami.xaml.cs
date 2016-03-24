@@ -100,5 +100,11 @@ namespace LKUI.Pages
 
             }
         }
+
+        private void BtnBoyaPrograminaEkle_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
     }
 }
