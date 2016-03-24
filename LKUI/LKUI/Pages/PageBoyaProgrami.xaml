@@ -10,11 +10,21 @@
             <TabItem Header="Tüm Partiler" Name="TabItemProgram">
                 <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBoyaProgrami" IsReadOnly="False" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" FrozenColumnCount="5" RowLoaded="DGridBoyaProgrami_RowLoaded">
                     <telerik:RadGridView.Columns>
+                        <telerik:GridViewColumn >
+                            <telerik:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="BtnBoyaPrograminaEkle" Click="BtnBoyaPrograminaEkle_Click" Content=" Boya P.Ekle " Background="White"/>
+                                </DataTemplate>
+                            </telerik:GridViewColumn.CellTemplate>
+                        </telerik:GridViewColumn>
+
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True">
                             <telerik:GridViewDataColumn.AggregateFunctions>
                                 <telerik:CountFunction Caption="Adet : " />
                             </telerik:GridViewDataColumn.AggregateFunctions>
                         </telerik:GridViewDataColumn>
+                      
+
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding AOK}" Header="AOK" Width="Auto" IsReadOnly="True"/>

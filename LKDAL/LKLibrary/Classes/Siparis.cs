@@ -496,7 +496,7 @@ namespace LKLibrary.Classes
 
         public static List<tblPersoneller> PersonelleriGetir()
         {
-            return new DBEvents().GetGeneric<tblPersoneller>(c => c.BolumId == 7);
+            return new DBEvents().GetGeneric<tblPersoneller>(c => c.BolumId == 7 && c.AktifMi==true);
         }
 
         public static List<tblMalzemeler> SiparisMamulleriGetir()
