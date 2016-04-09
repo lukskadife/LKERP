@@ -1104,6 +1104,9 @@ namespace LKLibrary.DbClasses
         [Column]
         public DateTime? TerminTarihi { get; set; }
 
+        [Column]
+        public string KumasCinsi { get; set; }
+
         #region IDisposable Members
 
         public void Dispose()

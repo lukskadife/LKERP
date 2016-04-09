@@ -123,6 +123,11 @@ namespace LKLibrary.Classes
             return new DBEvents().GetGenericWithSQLQuery<vKaliteDagilimTip>("EXEC spKaliteDagilim '" + ilkTarih.Date.ToDateString() + "','" + sonTarih.Date.ToDateString() + "', 'mamul'", new string[0]);
         }
 
+        public static List<vKaliteDagilimTip> TipBazliRenksizMamulKaliteDagilimiGetir(DateTime ilkTarih, DateTime sonTarih)
+        {
+            return new DBEvents().GetGenericWithSQLQuery<vKaliteDagilimTip>("EXEC spKaliteDagilim '" + ilkTarih.Date.ToDateString() + "','" + sonTarih.Date.ToDateString() + "', 'MamulRenksiz'", new string[0]);
+        }
+
         public static List<vKaliteDagilimMusteri> MusteriBazliHamKaliteDagilimiGetir(DateTime ilkTarih, DateTime sonTarih)
         {
             return new DBEvents().GetGenericWithSQLQuery<vKaliteDagilimMusteri>("EXEC spKaliteDagilimMusteriRaporu '" + ilkTarih.Date.ToDateString() + "','" + sonTarih.Date.ToDateString() + "', 'ham'", new string[0]);

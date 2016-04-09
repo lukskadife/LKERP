@@ -52,3 +52,14 @@ D:\Github\LKERP\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.xml
 D:\Github\LKERP\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.csprojResolveAssemblyReference.cache
 D:\Github\LKERP\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.exe
 D:\Github\LKERP\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\app.config
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe.config
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.exe
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\ConAppLibTest.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\bin\Debug\LKLibrary.xml
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.csprojResolveAssemblyReference.cache
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.exe
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\ConAppLibTest\obj\x86\Debug\ConAppLibTest.pdb

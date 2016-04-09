@@ -61,3 +61,14 @@ D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\bin\Debug\app.config
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll.config
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\bin\Debug\System.Configuration.dll
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.csprojResolveAssemblyReference.cache

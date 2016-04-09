@@ -76,7 +76,7 @@ namespace LKUI
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            TxtVersiyon.Text = "LKERP v1.0.207.4.6";
+            TxtVersiyon.Text = "LKERP v1.0.207.4.7";
             if (App.KullaniciId != 0) LoadPage();
             else
             {

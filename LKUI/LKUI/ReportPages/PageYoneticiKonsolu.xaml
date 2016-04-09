@@ -337,6 +337,7 @@
                         </telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding KumasCinsi}" Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True"/>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisMetre}" Header="Sipariş Metre" Width="Auto" IsReadOnly="True">
                             <telerik:GridViewDataColumn.AggregateFunctions>
                                 <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>

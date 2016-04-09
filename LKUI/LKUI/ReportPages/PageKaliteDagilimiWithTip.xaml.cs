@@ -31,6 +31,7 @@ namespace LKUI.ReportPages
                 DGridRapor.ItemsSource = Rapor.TipBazliHamKaliteDagilimiGetir(DateIlkTarih.SelectedDate.Value, DateSonTarih.SelectedDate.Value);
             }
             if (_Tur == "mamul") DGridRapor.ItemsSource = Rapor.TipBazliMamulKaliteDagilimiGetir(DateIlkTarih.SelectedDate.Value, DateSonTarih.SelectedDate.Value);
+            if (_Tur == "MamulRenksiz") DGridRapor.ItemsSource = Rapor.TipBazliRenksizMamulKaliteDagilimiGetir(DateIlkTarih.SelectedDate.Value, DateSonTarih.SelectedDate.Value);
 
         }
 

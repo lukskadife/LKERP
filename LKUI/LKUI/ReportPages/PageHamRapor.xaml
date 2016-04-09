@@ -33,6 +33,7 @@
                 <telerik:GridViewDataColumn  Header="Plan Durum" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding PlanDurum}"/>
                 <telerik:GridViewDataColumn  Header="Tezgah No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TezgahNo}"/>
                 <telerik:GridViewDataColumn  Header="Tip No" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding TipNo}"/>
+                <telerik:GridViewDataColumn  Header="Kumaş Cinsi" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding KumasCinsi}"/>
                 <telerik:GridViewDataColumn  Header="Tür" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Tur}"/>
                 <telerik:GridViewDataColumn  Header="Brüt Kg" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding Kg}">
                     <telerik:GridViewDataColumn.AggregateFunctions>
