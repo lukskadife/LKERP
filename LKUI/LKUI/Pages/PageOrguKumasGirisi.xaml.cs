@@ -28,7 +28,7 @@ namespace LKUI.Pages
     /// </summary>
     public partial class PageOrguKumasGirisi : UserControl
     {
-        OrmeTezgahHaberlesme _OrmeTezgahHaberlesme;
+        //OrmeTezgahHaberlesme _OrmeTezgahHaberlesme;
 
         public PageOrguKumasGirisi()
         {
@@ -55,10 +55,10 @@ namespace LKUI.Pages
 
           
 
-            _OrmeTezgahHaberlesme = new OrmeTezgahHaberlesme();
-            //_OrmeTezgahHaberlesme.TezgahHareketEtti += new OrmeTezgahHaberlesme.TezgahEvent(_OrmeTezgah_TezgahHareketEtti);
-            //if(_OrmeTezgahHaberlesme.HazirMi==false) MessageBox.Show("Tezgahla iletişim sağlanamadı");
-            TxtKacinciMetre.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            //_OrmeTezgahHaberlesme = new OrmeTezgahHaberlesme();
+            ////_OrmeTezgahHaberlesme.TezgahHareketEtti += new OrmeTezgahHaberlesme.TezgahEvent(_OrmeTezgah_TezgahHareketEtti);
+            ////if(_OrmeTezgahHaberlesme.HazirMi==false) MessageBox.Show("Tezgahla iletişim sağlanamadı");
+            //TxtKacinciMetre.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
           
             _KumasIslem = new HamKumas("Örme") { Tarih = DateTime.Today };
             GrdUst.DataContext = _KumasIslem;
@@ -73,10 +73,10 @@ namespace LKUI.Pages
       
         void _OrmeTezgah_TezgahHareketEtti()
         {
-            string snc = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
-            TxtKacinciMetre.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
-            TxtMetreÜst.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
-            TxtAciklama.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            //string snc = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            //TxtKacinciMetre.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            //TxtMetreÜst.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
+            //TxtAciklama.Text = _OrmeTezgahHaberlesme.OrmeOkunanMetreDegeri;
             
         }
 

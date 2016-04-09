@@ -80,6 +80,7 @@ namespace LKUI.Classes
                 case "PageIplikGirisRaporu": return new PageIplikGirisRaporu();
                 case "HamTipBazliKaliteDagilim": return new PageKaliteDagilimiWithTip("ham");
                 case "MamulTipBazliKaliteDagilim": return new PageKaliteDagilimiWithTip("mamul");
+                case "MamulTipBazliRenksizKaliteDagilim": return new PageKaliteDagilimiWithTip("MamulRenksiz");
                 case "DtlProses": return new DtlProses();
                 case "PageProsesGrup": return new PageProsesGrup();
                 case "HamMusteriBazliKaliteDagilim": return new PageKaliteDagilimiWithMusteri("ham");

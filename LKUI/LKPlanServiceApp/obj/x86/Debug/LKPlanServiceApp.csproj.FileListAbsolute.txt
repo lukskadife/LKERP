@@ -38,3 +38,13 @@ D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.xml
 D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.csprojResolveAssemblyReference.cache
 D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.exe
 D:\Github\LKERP\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\Reports\RprRefakatKarti.rdlc
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\app.config
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKPlanServiceApp.exe
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKPlanServiceApp.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Debug\LKLibrary.xml
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.csprojResolveAssemblyReference.cache
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.exe
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\obj\x86\Debug\LKPlanServiceApp.pdb

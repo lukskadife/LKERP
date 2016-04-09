@@ -25,3 +25,12 @@ D:\Projelerim\Isd\LuksKadifeERP\GitHub\lkui\LKUI\LKPlanServiceApp\bin\Release\LK
 D:\Projelerim\Isd\LuksKadifeERP\GitHub\lkui\LKUI\LKPlanServiceApp\obj\x86\Release\LKPlanServiceApp.csprojResolveAssemblyReference.cache
 D:\Projelerim\Isd\LuksKadifeERP\GitHub\lkui\LKUI\LKPlanServiceApp\obj\x86\Release\LKPlanServiceApp.exe
 D:\Projelerim\Isd\LuksKadifeERP\GitHub\lkui\LKUI\LKPlanServiceApp\obj\x86\Release\LKPlanServiceApp.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Release\Reports\RprRefakatKarti.rdlc
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Release\app.config
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Release\LKPlanServiceApp.exe
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Release\LKPlanServiceApp.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Release\LKLibrary.dll
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\bin\Release\LKLibrary.pdb
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\obj\x86\Release\LKPlanServiceApp.csprojResolveAssemblyReference.cache
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\obj\x86\Release\LKPlanServiceApp.exe
+D:\Projelerim\Isd\LuksKadifeERP\GitHub\Mehmet-Fork\LKERP\LKUI\LKPlanServiceApp\obj\x86\Release\LKPlanServiceApp.pdb
