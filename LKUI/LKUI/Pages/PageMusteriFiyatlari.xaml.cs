@@ -104,8 +104,8 @@ namespace LKUI.Pages
         private void BtnEkle_Click(object sender, RoutedEventArgs e)
         {
             //Ay parametresi kaldırılacak.
-            (DGridMusteriFiyatListesi.ItemsSource as List<vFiyatListeleri>).Add(new vFiyatListeleri(){ Dovizler = ListDoviz, Yil = Convert.ToInt32((ComboBoxYil.SelectedValue as ComboBoxItem).Content), Ay = ComboBoxYil.SelectedIndex + 1 });
-            DGridMusteriFiyatListesi.Items.Refresh();
+            //(DGridMusteriFiyatListesi.ItemsSource as List<vFiyatListeleri>).Add(new vFiyatListeleri(){ Dovizler = ListDoviz, Yil = Convert.ToInt32((ComboBoxYil.SelectedValue as ComboBoxItem).Content), Ay = ComboBoxAy.SelectedIndex + 1 });
+            //DGridMusteriFiyatListesi.Items.Refresh();
         }
     }
 }

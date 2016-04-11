@@ -96,61 +96,6 @@
                     </telerik:RadGridView.ContextMenu>
                 </telerik:RadGridView>
             </TabItem>
-            <!--Boya programına alınanlar gridi-->
-            <TabItem Header="Boya Programına Alınanlar" Name="TabBoyaPrograminaAlinanlar">
-                <telerik:RadGridView Grid.Row="1" telerik:StyleManager.Theme="Summer" AutoGenerateColumns="False" Name="DGridBoyaPrograminaAlinanlar" IsReadOnly="False" ShowGroupFooters="True" ShowColumnFooters="True"  Background="#FFF0F0F0" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DataLoadMode="Asynchronous" FrozenColumnCount="5">
-                    <telerik:RadGridView.Columns>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiNo}" Header="Parti No" Width="Auto" IsReadOnly="True">
-                            <telerik:GridViewDataColumn.AggregateFunctions>
-                                <telerik:CountFunction Caption="Adet : " />
-                            </telerik:GridViewDataColumn.AggregateFunctions>
-                        </telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding AOK}" Header="AOK" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SozlesmeNo}" Header="Sipariş No" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MusteriAdi}" Header="Müşteri" MaxWidth="170" IsReadOnly="True"/>
-                        <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding PartilendiMi}" Header="Ham Plan Hazır" IsReadOnly="True" Width="Auto"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SiparisMetre}" Header="Sipariş Metre" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiMetre}" Header="Parti Metre" Width="Auto" IsReadOnly="True">
-                            <telerik:GridViewDataColumn.AggregateFunctions>
-                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
-                            </telerik:GridViewDataColumn.AggregateFunctions>
-                        </telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding AcilmisMetre}" Header="Açılmış Metre" Width="Auto" IsReadOnly="True">
-                            <telerik:GridViewDataColumn.AggregateFunctions>
-                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
-                            </telerik:GridViewDataColumn.AggregateFunctions>
-                        </telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding MamuldenCikanBrutMetre}" Header="Mamul Brüt Metre" Width="Auto" IsReadOnly="True">
-                            <telerik:GridViewDataColumn.AggregateFunctions>
-                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
-                            </telerik:GridViewDataColumn.AggregateFunctions>
-                        </telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SevkMetre}" Header="Sevk Metre" Width="Auto" IsReadOnly="True">
-                            <telerik:GridViewDataColumn.AggregateFunctions>
-                                <telerik:SumFunction ResultFormatString="{}{0:###,##0.00}"/>
-                            </telerik:GridViewDataColumn.AggregateFunctions>
-                        </telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TerminTarihi, StringFormat='dd MMM yyyy'}" Header="Termin" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TerminYili}" Header="Termin Yılı" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TerminHaftasi}" Header="Termin Haftasi" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding BoyandiMi}" Header="Boyandı" IsReadOnly="True" Width="Auto"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Makina}" Header="Makina" Width="Auto" IsReadOnly="True"/>
-                        <telerik:GridViewDataColumn DataMemberBinding="{Binding PartiAciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True"/>
-                        </telerik:RadGridView.Columns>
-                    <telerik:RadGridView.ContextMenu>
-                        <ContextMenu>
-                            <ContextMenu.ItemsSource>
-                                <CompositeCollection>
-                                    <MenuItem Name="MIExcelBoyaProgAlinan" Header="Excel'e Aktar" Click="MIExcel_Click" Height="25" FontSize="15"/>
-                                </CompositeCollection>
-                            </ContextMenu.ItemsSource>
-                        </ContextMenu>
-                    </telerik:RadGridView.ContextMenu>
-                </telerik:RadGridView>
-            </TabItem>
-
             <TabItem Header="Renk Sıralaması" Name="TabItemSiralama">
               
             </TabItem>

@@ -309,11 +309,11 @@ namespace LKLibrary.Classes
             double processToplamFiyati = 0;
             //processToplamFiyati = musteriProsesFiyatlari.Sum(s => s.Fiyat) + sabitProsessFiyatlari.Sum(s => s.Fiyat);
             tblFiyatListeleri tipFiyati = null;
-                                                                                                                                                                                        //şükrü öçal 11.04.2016
-            List<tblFiyatListeleri> fiyatlar = db.GetGeneric<tblFiyatListeleri>(c => c.AktifMi == true && c.Tip == tipNo && c.MusteriId == musteriId && c.Yil == DateTime.Now.Year /*&& c.Ay == DateTime.Now.Month*/);
+
+            List<tblFiyatListeleri> fiyatlar = db.GetGeneric<tblFiyatListeleri>(c => c.AktifMi == true && c.Tip == tipNo && c.MusteriId == musteriId && c.Yil == DateTime.Now.Year && c.Ay == DateTime.Now.Month);
             if (fiyatlar != null && fiyatlar.Count > 0) tipFiyati = fiyatlar.OrderByDescending(o => o.Tarih).FirstOrDefault();
-                                                                                                                                                        //şükrü öçal 11.04.2016
-            fiyatlar = db.GetGeneric<tblFiyatListeleri>(c => c.AktifMi == true && c.Tip == tipNo && c.MusteriId == null && c.Yil == DateTime.Now.Year /*&& c.Ay == DateTime.Now.Month*/);
+
+            fiyatlar = db.GetGeneric<tblFiyatListeleri>(c => c.AktifMi == true && c.Tip == tipNo && c.MusteriId == null && c.Yil == DateTime.Now.Year && c.Ay == DateTime.Now.Month);
             if (fiyatlar != null && fiyatlar.Count > 0) tipFiyati = fiyatlar.OrderByDescending(o => o.Tarih).FirstOrDefault();
 
             if (tipFiyati != null) tipFiyati.Fiyat += processToplamFiyati;
