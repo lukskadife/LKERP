@@ -367,9 +367,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\RprFasonSozlesme.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiket.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketCiftBarkod.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketEng.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketEng_19Ekim.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketPersentili.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketSasmen.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketMimoza.rdlc" />
-    <EmbeddedResource Include="Reports\RprMamulEtiketEng.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketEng_ex.rdlc" />
     <EmbeddedResource Include="Reports\RprBoyaProgrami.rdlc" />
     <Content Include="Reports\RprRefakatKarti.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -378,15 +383,18 @@
     <EmbeddedResource Include="Reports\RprHamEtiket.rdlc" />
     <EmbeddedResource Include="Reports\RprHamHataHaritasi.rdlc" />
     <EmbeddedResource Include="Reports\RprInvoice.rdlc" />
-    <EmbeddedResource Include="Reports\RprMamulEtiket.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketYeni.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketYeniCiftBarkod.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiket_ex.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketAttrezzo.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketBodrum.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketHimalaya.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketMilano.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketSultani.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketVenus.rdlc" />
-    <EmbeddedResource Include="Reports\RprMamulEtiketYeni.rdlc" />
+    <EmbeddedResource Include="Reports\RprMamulEtiketYeni_ex.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulHataHaritasi.rdlc" />
+    <EmbeddedResource Include="Reports\RprOrmeMamulEtiket_ex.rdlc" />
     <EmbeddedResource Include="Reports\RprPackingList.rdlc" />
     <EmbeddedResource Include="Reports\RprProforma.rdlc" />
     <EmbeddedResource Include="Reports\RprSatinAlma.rdlc" />
@@ -394,6 +402,7 @@
     <EmbeddedResource Include="Reports\RprSevkEtiket.rdlc" />
     <EmbeddedResource Include="Reports\RprSozlesme.rdlc" />
     <EmbeddedResource Include="Reports\RprTeklifFormu.rdlc" />
+    <EmbeddedResource Include="Reports\RprYaranGumeliEtiket.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DosyaServisi\" />

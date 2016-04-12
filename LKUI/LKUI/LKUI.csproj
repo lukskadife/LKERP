@@ -166,7 +166,7 @@
       <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries\WPF40\Telerik.Windows.Scheduling.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Themes.Summer">
-      <HintPath>C:\Program Files\Telerik\RadControls for WPF Q3 2013\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Summer.dll</HintPath>
+      <HintPath>C:\Program Files\Telerik\UI for WPF Q1 2014\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Summer.dll</HintPath>
     </Reference>
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes">

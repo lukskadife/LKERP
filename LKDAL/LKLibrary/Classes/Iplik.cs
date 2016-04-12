@@ -147,7 +147,8 @@ namespace LKLibrary.Classes
 
         public static List<tblMalzemeler> IplikleriGetir()
         {
-            return new DBEvents().GetGeneric<tblMalzemeler>(c => c.AktifMi == true && c.BaglantiId == 39);
+            //return new DBEvents().GetGeneric<tblMalzemeler>(c => c.AktifMi == true && c.BaglantiId == 39);
+            return new DBEvents().GetGeneric<tblMalzemeler>(c => c.AktifMi == true && c.BaglantiId == 39).OrderBy(o => o.Adi).ToList();
         }
 
         //Gökhan 03.07.2014

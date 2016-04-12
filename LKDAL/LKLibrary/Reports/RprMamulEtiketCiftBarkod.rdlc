@@ -21,10 +21,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TipNo</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>1.9812cm</Left>
+        <Top>0.40428cm</Top>
+        <Left>2.1717cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.59513cm</Width>
+        <Width>1.78563cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -50,10 +50,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>1.9812cm</Left>
+        <Top>0.94023cm</Top>
+        <Left>2.1717cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.59513cm</Width>
+        <Width>1.78563cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -81,10 +81,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>KalitePuan</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>1.9812cm</Left>
+        <Top>2.1808cm</Top>
+        <Left>2.1717cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.59762cm</Width>
+        <Width>2.26188cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -104,7 +104,6 @@
               <TextRun>
                 <Value>=Sum(Fields!NetMetre.Value, "DS_Mamul")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -115,10 +114,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Metre</rd:DefaultName>
-        <Top>2.63969cm</Top>
-        <Left>5.09561cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.59513cm</Width>
+        <Top>3.45229cm</Top>
+        <Left>2.1717cm</Left>
+        <Height>0.50475cm</Height>
+        <Width>1.78563cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -144,10 +143,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Tur</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>5.83823cm</Left>
+        <Top>2.81728cm</Top>
+        <Left>5.40725cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.25132cm</Width>
+        <Width>2.02907cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -165,7 +164,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Type</Value>
+                <Value>Tip No</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -177,8 +176,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>0.40428cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
         <Width>1.33583cm</Width>
         <ZIndex>5</ZIndex>
@@ -186,8 +185,8 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox7">
@@ -197,7 +196,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Color</Value>
+                <Value>Renk</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -207,8 +206,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>0.94023cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
         <Width>1.33583cm</Width>
         <ZIndex>6</ZIndex>
@@ -216,8 +215,8 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox8">
@@ -237,8 +236,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>1.56316cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
         <Width>1.34232cm</Width>
         <ZIndex>7</ZIndex>
@@ -246,18 +245,18 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox9">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Gross Mt</Value>
+                <Value>Brüt</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -269,27 +268,27 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>2.81728cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.75507cm</Width>
+        <Width>1.34232cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox10">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Net Mt</Value>
+                <Value>Net</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -301,10 +300,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>3.73918cm</Left>
+        <Top>3.45229cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.18357cm</Width>
+        <Width>1.34232cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -321,7 +320,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tür :</Value>
+                <Value>Tür</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -331,10 +330,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>4.72408cm</Left>
+        <Top>2.81728cm</Top>
+        <Left>4.12433cm</Left>
         <Height>0.50475cm</Height>
-        <Width>0.89133cm</Width>
+        <Width>1.17708cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -345,6 +344,39 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="*" + First(Fields!Barkod.Value, "DS_Mamul") + "*"</Value>
+                <Style>
+                  <FontFamily>MRV Code39MA Free</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>0.30903cm</Top>
+        <Left>8.0825cm</Left>
+        <Height>4.47379cm</Height>
+        <Width>0.90663cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Top</VerticalAlign>
+          <WritingMode>Vertical</WritingMode>
+        </Style>
+      </Textbox>
       <Textbox Name="Textbox14">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -352,7 +384,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Quality</Value>
+                <Value>Kalite</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -362,17 +394,19 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>2.1808cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
         <Width>1.33583cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox15">
@@ -392,11 +426,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>2.26695cm</Left>
+        <Top>2.81728cm</Top>
+        <Left>2.1717cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.27763cm</Width>
-        <ZIndex>12</ZIndex>
+        <Width>1.78563cm</Width>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -417,7 +451,7 @@
               <TextRun>
                 <Value>=First(Fields!Barkod.Value, "DS_Mamul")</Value>
                 <Style>
-                  <FontSize>14pt</FontSize>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -427,16 +461,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>0.24553cm</Top>
-        <Left>8.96091cm</Left>
+        <Top>0.30903cm</Top>
+        <Left>9.08791cm</Left>
         <Height>4.47379cm</Height>
-        <Width>0.69554cm</Width>
-        <ZIndex>13</ZIndex>
+        <Width>0.50504cm</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
           <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
           <WritingMode>Vertical</WritingMode>
         </Style>
       </Textbox>
@@ -457,11 +495,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>LotNo</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>1.9812cm</Left>
+        <Top>1.56316cm</Top>
+        <Left>2.1717cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.59762cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>5.42337cm</Width>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -473,8 +511,42 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>KESİLDİKTEN SONRA
+İADE ALINMAZ</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.53128cm</Top>
+        <Left>7.24582cm</Left>
+        <Height>4.06104cm</Height>
+        <Width>0.74317cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Top</VerticalAlign>
+          <WritingMode>Vertical</WritingMode>
+        </Style>
+      </Textbox>
       <Textbox Name="RenkNo2">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -490,11 +562,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>3.67456cm</Left>
+        <Top>0.40428cm</Top>
+        <Left>4.02781cm</Left>
         <Height>0.50475cm</Height>
-        <Width>0.73788cm</Width>
-        <ZIndex>15</ZIndex>
+        <Width>1.59513cm</Width>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -505,7 +577,7 @@
         </Style>
       </Textbox>
       <Textbox Name="RenkNo3">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -521,11 +593,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>4.52533cm</Left>
+        <Top>0.94023cm</Top>
+        <Left>4.02087cm</Left>
         <Height>0.50475cm</Height>
-        <Width>4.26272cm</Width>
-        <ZIndex>16</ZIndex>
+        <Width>1.59513cm</Width>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -536,7 +608,7 @@
         </Style>
       </Textbox>
       <Textbox Name="RenkNo4">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -552,11 +624,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>3.67456cm</Left>
+        <Top>0.94023cm</Top>
+        <Left>5.74594cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.49471cm</Width>
-        <ZIndex>17</ZIndex>
+        <Width>1.59513cm</Width>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -580,11 +652,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Tur</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>6.74013cm</Left>
+        <Top>3.45229cm</Top>
+        <Left>4.12956cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.97738cm</Width>
-        <ZIndex>18</ZIndex>
+        <Width>3.12038cm</Width>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -611,11 +683,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>KalitePuan</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>5.83823cm</Left>
+        <Top>2.1808cm</Top>
+        <Left>5.50483cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.25132cm</Width>
-        <ZIndex>19</ZIndex>
+        <Width>1.93149cm</Width>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -640,11 +712,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>4.72408cm</Left>
+        <Top>2.1808cm</Top>
+        <Left>4.56588cm</Left>
         <Height>0.56825cm</Height>
-        <Width>0.89133cm</Width>
-        <ZIndex>20</ZIndex>
+        <Width>0.83312cm</Width>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -657,7 +729,7 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox1">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -673,11 +745,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>6.32738cm</Left>
+        <Top>0.40428cm</Top>
+        <Left>5.76758cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.46067cm</Width>
-        <ZIndex>21</ZIndex>
+        <Width>1.59102cm</Width>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -690,7 +762,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox4">
-        <CanShrink>true</CanShrink>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -699,7 +770,7 @@
                 <Value>="*" + First(Fields!Barkod.Value, "DS_Mamul") + "*"</Value>
                 <Style>
                   <FontFamily>MRV Code39MA Free</FontFamily>
-                  <FontSize>18pt</FontSize>
+                  <FontSize>15pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -707,72 +778,27 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>3.32083cm</Top>
-        <Left>0.44781cm</Left>
-        <Height>0.77258cm</Height>
-        <Width>8.05076cm</Width>
-        <ZIndex>22</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingBottom>1pt</PaddingBottom>
-          <WritingMode>Horizontal</WritingMode>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox2">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>KESİLDİKTEN SONRA İADE ALINMAZ</Value>
-                <Style>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.20277cm</Top>
-        <Left>0.44781cm</Left>
-        <Height>0.37775cm</Height>
-        <Width>7.89201cm</Width>
-        <ZIndex>23</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Top</VerticalAlign>
-        </Style>
-      </Textbox>
-      <Line Name="Line1">
-        <Top>0.25082cm</Top>
-        <Left>8.9027cm</Left>
-        <Height>4.4685cm</Height>
-        <Width>0cm</Width>
+        <Top>4.13695cm</Top>
+        <Left>0.60325cm</Left>
+        <Height>0.37571cm</Height>
+        <Width>6.56637cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
+          <WritingMode>Horizontal</WritingMode>
         </Style>
-      </Line>
+      </Textbox>
     </ReportItems>
-    <Height>4.94708cm</Height>
+    <Height>4.9839cm</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>9.94708cm</Width>
+  <Width>9.7617cm</Width>
   <Page>
     <PageHeight>5cm</PageHeight>
     <PageWidth>10cm</PageWidth>
