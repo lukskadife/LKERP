@@ -9,17 +9,52 @@ namespace LKLibrary.DbClasses
 
     [Table(Name = "tblBoyaProgrami")]
     public class tblBoyaProgrami : IDisposable
-    { 
-        [Column(Name="Id", IsDbGenerated=true, IsPrimaryKey=true)]
+    {
+        [Column(Name = "Id", IsDbGenerated = true, IsPrimaryKey = true)]
         public int Id { get; set; }
-        public int PartiId { get; set; }
-        public int BoyanacakHafta { get; set; }
+
+        [Column]
+        public int? PartiId { get; set; }
+
+        [Column]
+        public int? BoyanacakHafta { get; set; }
+
+        [Column]
         public string Aciklama { get; set; }
-        public bool Boyandi { get; set; }
-        public bool Tahsis { get; set; }
-        public bool HamKumas { get; set; }
-        public bool HamFirca { get; set; }
-        public bool Fikse { get; set; }
+
+        [Column]
+        public bool? Boyandi { get; set; }
+
+        [Column]
+        public bool? Tahsis { get; set; }
+
+        [Column]
+        public bool? HamKumas { get; set; }
+
+        [Column]
+        public bool? HamFirca { get; set; }
+
+        [Column]
+        public bool? Fikse { get; set; }
+
+        [Column]
+        public bool? Kasar { get; set; }
+
+        [Column]
+        public bool? Boya { get; set; }
+
+        [Column]
+        public bool? Recete { get; set; }
+
+        [Column]
+        public Nullable<DateTime> BoyaPrograminaAlinmaTarihi { get; set; }
+
+        [Column]
+        public bool? BoyaProgaminaAlindiMi { get; set; }
+
+        [Column]
+        public int BoyamaSayisi { get; set; }
+
 
         public void Dispose()
         {

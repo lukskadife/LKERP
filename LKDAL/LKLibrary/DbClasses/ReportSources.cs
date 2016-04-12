@@ -1962,10 +1962,10 @@ namespace LKLibrary.DbClasses
         public int Id { get; set; }
 
         [Column]
-        public DateTime Tarih { get; set; }
+        public DateTime? Tarih { get; set; }
 
         [Column]
-        public DateTime Saat { get; set; }
+        public DateTime? Saat { get; set; }
 
         [Column]
         public double Metre { get; set; }

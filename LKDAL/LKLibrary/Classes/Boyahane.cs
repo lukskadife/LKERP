@@ -132,6 +132,14 @@ namespace LKLibrary.Classes
             return boyaProgrami;
         }
 
+        public static List<vBoyaProgramiSukru> BoyaPrograminaAlinanPartileriGetir()
+        {
+            return new DBEvents().GetGeneric<vBoyaProgramiSukru>(c => c.BoyaProgramiBoyandiMi == false).OrderByDescending(o => o.TerminYili).ThenByDescending(o => o.TerminHaftasi).ToList();
+            //List<vBoyaProgramiSukru> boyaPrograminaAlinanlar = new List<vBoyaProgramiSukru>();
+            //return boyaPrograminaAlinanlar;
+        }
+
+
         #endregion
 
         public void BoyahaneProcessSec(vPartiProcessleri partiProcess)
@@ -894,6 +902,9 @@ namespace LKLibrary.Classes
                 }
                 else return db.UpdateGeneric<tblKumasRenk>(this._Renk);
             }
+
+            
+
         }
     }
 }

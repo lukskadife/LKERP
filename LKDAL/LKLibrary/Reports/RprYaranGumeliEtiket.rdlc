@@ -2,6 +2,20 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>yarangumelilogo</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.21613cm</Top>
+        <Left>0.59654cm</Left>
+        <Height>1.48942cm</Height>
+        <Width>5.84962cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
       <Textbox Name="TipNo">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -9,88 +23,25 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!TipNo.Value, "DS_Mamul")</Value>
+                <Value>=First(Fields!RefTipNo.Value, "DS_Mamul")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TipNo</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>1.9812cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.59513cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="RenkNo">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!RenkNo.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>1.9812cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.59513cm</Width>
+        <Top>1.69143cm</Top>
+        <Left>2.99191cm</Left>
+        <Height>0.5365cm</Height>
+        <Width>3.34666cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="KalitePuan">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!KaliteAdet.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>KalitePuan</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>1.9812cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>2.59762cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
@@ -104,7 +55,7 @@
               <TextRun>
                 <Value>=Sum(Fields!NetMetre.Value, "DS_Mamul")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -115,40 +66,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Metre</rd:DefaultName>
-        <Top>2.63969cm</Top>
-        <Left>5.09561cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.59513cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Tur">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=UCase(First(Fields!Tur.Value, "DS_Mamul"))</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Tur</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>5.83823cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>2.25132cm</Width>
-        <ZIndex>4</ZIndex>
+        <Top>3.5373cm</Top>
+        <Left>3.08716cm</Left>
+        <Height>0.94572cm</Height>
+        <Width>3.34666cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -165,29 +87,27 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Type</Value>
+                <Value EvaluationMode="Constant">ARTICLE</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>1.69143cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.33583cm</Width>
-        <ZIndex>5</ZIndex>
+        <Width>1.88616cm</Width>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox7">
@@ -197,27 +117,25 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Color</Value>
+                <Value EvaluationMode="Constant">COLOUR</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>2.30554cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.33583cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>1.88616cm</Width>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox8">
@@ -227,85 +145,19 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Lot</Value>
+                <Value EvaluationMode="Constant">LOT NO</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>0.44781cm</Left>
+        <Top>2.89143cm</Top>
+        <Left>0.63831cm</Left>
         <Height>0.50475cm</Height>
-        <Width>1.34232cm</Width>
-        <ZIndex>7</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox9">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Gross Mt</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>0.44781cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.75507cm</Width>
-        <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox10">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Net Mt</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>3.73918cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.18357cm</Width>
-        <ZIndex>9</ZIndex>
+        <Width>1.88616cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -314,15 +166,16 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox12">
+      <Textbox Name="Textbox10">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tür :</Value>
+                <Value EvaluationMode="Constant">NET MT</Value>
                 <Style>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -330,82 +183,51 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>4.72408cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>0.89133cm</Width>
-        <ZIndex>10</ZIndex>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>3.6643cm</Top>
+        <Left>0.59654cm</Left>
+        <Height>0.65997cm</Height>
+        <Width>2.11843cm</Width>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <VerticalAlign>Middle</VerticalAlign>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox14">
+      <Textbox Name="Textbox13">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Quality</Value>
-                <Style />
+                <Value>="*" + First(Fields!Barkod.Value, "DS_Mamul") + "*"</Value>
+                <Style>
+                  <FontFamily>MRV Code39MA Free</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>2.0538cm</Top>
-        <Left>0.44781cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.33583cm</Width>
-        <ZIndex>11</ZIndex>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>0.12088cm</Top>
+        <Left>7.34696cm</Left>
+        <Height>4.67964cm</Height>
+        <Width>1.09713cm</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox15">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Metre.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>2.26695cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.27763cm</Width>
-        <ZIndex>12</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
+          <VerticalAlign>Top</VerticalAlign>
+          <WritingMode>Vertical</WritingMode>
         </Style>
       </Textbox>
       <Textbox Name="Textbox16">
@@ -417,7 +239,7 @@
               <TextRun>
                 <Value>=First(Fields!Barkod.Value, "DS_Mamul")</Value>
                 <Style>
-                  <FontSize>14pt</FontSize>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -427,16 +249,19 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>0.24553cm</Top>
-        <Left>8.96091cm</Left>
-        <Height>4.47379cm</Height>
-        <Width>0.69554cm</Width>
-        <ZIndex>13</ZIndex>
+        <Top>0.36201cm</Top>
+        <Left>8.71573cm</Left>
+        <Height>4.18804cm</Height>
+        <Width>0.595cm</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
           <WritingMode>Vertical</WritingMode>
         </Style>
       </Textbox>
@@ -451,17 +276,15 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>LotNo</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>1.9812cm</Left>
+        <Top>2.89143cm</Top>
+        <Left>2.99191cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.59762cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>3.34666cm</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -473,233 +296,44 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="RenkNo2">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Finish.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>3.67456cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>0.73788cm</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="RenkNo3">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!TipVaryant.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.27728cm</Top>
-        <Left>4.52533cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>4.26272cm</Width>
-        <ZIndex>16</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="RenkNo4">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!RenkVaryant.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RenkNo</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>3.67456cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>2.49471cm</Width>
-        <ZIndex>17</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Tur2">
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!ParcaMetre.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Tur</rd:DefaultName>
-        <Top>2.67144cm</Top>
-        <Left>6.74013cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>1.97738cm</Width>
-        <ZIndex>18</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="KalitePuan2">
+      <Textbox Name="Textbox11">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Kg.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>KalitePuan</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>5.83823cm</Left>
-        <Height>0.50475cm</Height>
-        <Width>2.25132cm</Width>
-        <ZIndex>19</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Kg :</Value>
+                <Value>=First(Fields!RefRenkNo.Value, "DS_Mamul")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>1.46791cm</Top>
-        <Left>4.72408cm</Left>
-        <Height>0.56825cm</Height>
-        <Width>0.89133cm</Width>
-        <ZIndex>20</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox1">
-        <CanShrink>true</CanShrink>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!DesenNo.Value, "DS_Mamul")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.87673cm</Top>
-        <Left>6.32738cm</Left>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>2.33729cm</Top>
+        <Left>2.99191cm</Left>
         <Height>0.50475cm</Height>
-        <Width>2.46067cm</Width>
-        <ZIndex>21</ZIndex>
+        <Width>3.34666cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox4">
-        <CanShrink>true</CanShrink>
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="*" + First(Fields!Barkod.Value, "DS_Mamul") + "*"</Value>
+                <Value>:</Value>
                 <Style>
-                  <FontFamily>MRV Code39MA Free</FontFamily>
-                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -707,63 +341,117 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>3.32083cm</Top>
-        <Left>0.44781cm</Left>
-        <Height>0.77258cm</Height>
-        <Width>8.05076cm</Width>
-        <ZIndex>22</ZIndex>
+        <Top>1.69143cm</Top>
+        <Left>2.62501cm</Left>
+        <Height>0.5365cm</Height>
+        <Width>0.31221cm</Width>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingBottom>1pt</PaddingBottom>
-          <WritingMode>Horizontal</WritingMode>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox2">
-        <CanShrink>true</CanShrink>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>KESİLDİKTEN SONRA İADE ALINMAZ</Value>
+                <Value>:</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.20277cm</Top>
-        <Left>0.44781cm</Left>
-        <Height>0.37775cm</Height>
-        <Width>7.89201cm</Width>
-        <ZIndex>23</ZIndex>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>2.33376cm</Top>
+        <Left>2.62501cm</Left>
+        <Height>0.5365cm</Height>
+        <Width>0.31221cm</Width>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <VerticalAlign>Top</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Line Name="Line1">
-        <Top>0.25082cm</Top>
-        <Left>8.9027cm</Left>
-        <Height>4.4685cm</Height>
-        <Width>0cm</Width>
-        <ZIndex>24</ZIndex>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>2.82793cm</Top>
+        <Left>2.62501cm</Left>
+        <Height>0.5365cm</Height>
+        <Width>0.31221cm</Width>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Line>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>3.69429cm</Top>
+        <Left>2.73967cm</Left>
+        <Height>0.6cm</Height>
+        <Width>0.24871cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>4.94708cm</Height>
     <Style>
@@ -772,12 +460,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>9.94708cm</Width>
+  <Width>9.81479cm</Width>
   <Page>
     <PageHeight>5cm</PageHeight>
     <PageWidth>10cm</PageWidth>
-    <InteractiveHeight>5cm</InteractiveHeight>
-    <InteractiveWidth>10cm</InteractiveWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>0cm</TopMargin>
@@ -1070,6 +756,26 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="yarangumelilogo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/4RDwRXhpZgAATU0AKgAAAAgABAE7AAIAAAAQAAAISodpAAQAAAABAAAIWpydAAEAAAAWAAAQ0uocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWew7xrcsO8IMOWw6dhbAAABZADAAIAAAAUAAAQqJAEAAIAAAAUAAAQvJKRAAIAAAADNDQAAJKSAAIAAAADNDQAAOocAAcAAAgMAAAInAAAAAAc6gAAAAgAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIwMTU6MDY6MjYgMTE6MTY6MzkAMjAxNTowNjoyNiAxMToxNjozOQAAAF4B/ABrAHIA/AAgANYA5wBhAGwAAAD/4QsiaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+PHJkZjpSREYgeG1sbnM6cmRm
+PSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIvPjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSJ1dWlkOmZhZjViZGQ1LWJhM2QtMTFkYS1hZDMxLWQzM2Q3NTE4MmYxYiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIj48eG1wOkNyZWF0ZURhdGU+MjAxNS0wNi0yNlQxMToxNjozOS40MzU8L3htcDpDcmVhdGVEYXRlPjwvcmRmOkRlc2NyaXB0aW9uPjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSJ1dWlkOmZhZjViZGQ1LWJhM2QtMTFkYS1hZDMxLWQzM2Q3NTE4MmYxYiIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj48ZGM6Y3JlYXRvcj48cmRmOlNlcSB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPjxyZGY6bGk+xZ7DvGtyw7wgw5bDp2FsPC9yZGY6bGk+PC9yZGY6U2VxPg0KCQkJPC9kYzpjcmVhdG9yPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgPD94cGFja2V0IGVuZD0ndyc/Pv/bAEMABwUFBgUEBwYFBggHBwgKEQsKCQkKFQ8QDBEYFRoZGBUYFxseJyEbHSUdFxgiLiIlKCkrLCsaIC8zLyoyJyorKv/bAEMBBwgICgkKFAsLFCocGBwqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKv/AABEIADgA6AMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdo
+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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>f6b3adc3-bc92-4d9c-afba-55f0f8e06d8e</rd:ReportID>
 </Report>

@@ -33,7 +33,7 @@ namespace LKUI.ReportPages
 
         private void BtnRaporla_Click(object sender, RoutedEventArgs e)
         {
-            DGridReProcess.ItemsSource = Rapor.ReProcessRaporuGetir(DateIlkTarih.SelectedDate.Value.Date, DateSonTarih.SelectedDate.Value.Date).OrderByDescending(c => c.SozlesmeNo);
+            DGridReProcess.ItemsSource = Rapor.ReProcessRaporuGetir(DateIlkTarih.SelectedDate.Value.Date, DateSonTarih.SelectedDate.Value.Date).OrderByDescending(c => c.CikisTarih);
         }
 
 

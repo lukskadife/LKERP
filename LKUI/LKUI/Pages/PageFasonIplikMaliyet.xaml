@@ -66,7 +66,7 @@
                     <DataGridTemplateColumn Header="İplik Adı" MinWidth="80">
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate >
-                                <ComboBox x:Name="ComboBoxIplikGrubu" ItemsSource="{Binding ListIplikler}" SelectedIndex="0" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding IplikId,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" Background="White" />
+                                <ComboBox x:Name="ComboBoxIplikGrubu" ItemsSource="{Binding ListIplikler}" SelectedIndex="0" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue="{Binding IplikId,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Left" Background="White" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
