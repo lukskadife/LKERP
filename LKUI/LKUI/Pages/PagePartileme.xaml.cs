@@ -128,6 +128,7 @@ namespace LKUI.Pages
             }
         }
 
+        //parti düzeltme
         private void Duzelt()
         {
             if (DGridPartileme.SelectedItem == null) return;

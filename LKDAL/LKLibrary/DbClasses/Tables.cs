@@ -8,7 +8,7 @@ namespace LKLibrary.DbClasses
 {
 
     [Table(Name = "tblBoyaProgrami")]
-    public class tblBoyaProgrami : IDisposable
+    public class tblBoyaProgrami : IDisposable       
     {
         [Column(Name = "Id", IsDbGenerated = true, IsPrimaryKey = true)]
         public int Id { get; set; }

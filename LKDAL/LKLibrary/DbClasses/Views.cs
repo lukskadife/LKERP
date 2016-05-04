@@ -12,6 +12,9 @@ namespace LKLibrary.DbClasses
     [Table(Name = "vBoyaProgramiSukru")]
     public class vBoyaProgramiSukru : IDisposable
     {
+        [Column(Name = "Id", IsPrimaryKey=true)]
+        public Nullable<int> Id { get; set; }
+
         [Column]
         public Nullable<int> PartiId { get; set; }
 

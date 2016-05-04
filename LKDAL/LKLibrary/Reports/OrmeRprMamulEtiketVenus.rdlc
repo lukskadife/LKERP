@@ -740,7 +740,7 @@
   </Body>
   <Width>10cm</Width>
   <Page>
-    <PageHeight>5cm</PageHeight>
+    <PageHeight>10cm</PageHeight>
     <PageWidth>10cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
