@@ -366,6 +366,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\OrmeRprMamulEtiketVenus.rdlc" />
+    <EmbeddedResource Include="Reports\RprOrmeMamulEtiket.rdlc" />
     <EmbeddedResource Include="Reports\RprFasonSozlesme.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiket.rdlc" />
     <EmbeddedResource Include="Reports\RprMamulEtiketCiftBarkod.rdlc" />

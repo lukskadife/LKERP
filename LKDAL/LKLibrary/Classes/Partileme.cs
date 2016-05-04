@@ -125,6 +125,11 @@ namespace LKLibrary.Classes
         {
             return new DBEvents().GetGeneric<vPartiler>(c => c.Id == partiId).FirstOrDefault();
         }
+        //3 Mayıs 2015 Şükrü
+        public static vBoyaProgramiSukru BoyaProgramiGetir(int partiId)
+        {
+            return new DBEvents().GetGeneric<vBoyaProgramiSukru>(c => c.PartiId == partiId).FirstOrDefault();
+        }
 
         #endregion
 

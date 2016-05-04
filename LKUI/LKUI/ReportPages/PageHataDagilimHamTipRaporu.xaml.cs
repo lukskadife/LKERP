@@ -27,6 +27,7 @@ namespace LKUI.ReportPages
             this.dataProvider = this.Resources["DataProvider"] as LocalDataSourceProvider;
 
         }
+        //
 
         private LocalDataSourceProvider dataProvider;
 

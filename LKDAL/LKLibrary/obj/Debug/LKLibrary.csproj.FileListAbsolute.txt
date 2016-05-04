@@ -69,7 +69,7 @@ D:\Github\LKERP\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.dll
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\bin\Debug\LKLibrary.pdb
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\bin\Debug\System.Configuration.dll
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.csprojResolveAssemblyReference.cache
-D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
-D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.dll
 D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\LKLibrary.pdb
+D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.cache
+D:\Github\LKERP\LKERP\LKDAL\LKLibrary\obj\Debug\RdlCompile.compiled

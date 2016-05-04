@@ -6,6 +6,14 @@ using LKUI.Classes;
 using System.Collections.Generic;
 using System.Windows.Media;
 using System;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+//using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using LKUI.Details;
 
 namespace LKUI.Pages
 {
@@ -15,6 +23,7 @@ namespace LKUI.Pages
     public partial class PageBoyaProgrami : UserControl
     {
         DBEvents db = new DBEvents();
+        Partileme _PartiIslem { get; set; }
 
         public PageBoyaProgrami()
         {
@@ -32,12 +41,14 @@ namespace LKUI.Pages
         {
             DGridBoyaProgrami.ItemsSource = Boyahane.BoyaProgramiGetir(true);
             DGridBoyaPrograminaAlinanlar.ItemsSource = Boyahane.BoyaPrograminaAlinanPartileriGetir();
+            CmbMakina.ItemsSource = new Makina().MakinalariGetir(2);
         }
 
         private void LoadProgram()
         {
             DGridBoyaProgrami.ItemsSource = Boyahane.BoyaProgramiGetir();
             DGridBoyaPrograminaAlinanlar.ItemsSource = Boyahane.BoyaPrograminaAlinanPartileriGetir();
+            CmbMakina.ItemsSource = new Makina().MakinalariGetir(2);
         }
 
         private void BtnBoyaProgIptal_Click(object sender, RoutedEventArgs e)
@@ -166,6 +177,7 @@ namespace LKUI.Pages
                 boyaProgrami.BoyaProgaminaAlindiMi = true;
                 boyaProgrami.Boyandi = false;
                 boyaProgrami.BoyamaSayisi = 1;
+                //boyaProgrami.BoyanacakHafta = secilen.m
                 if (db.SaveGeneric<tblBoyaProgrami>(boyaProgrami) == true)
                 {
                     MessageBox.Show("Boya Planına Eklendi !", App.AlertCaption, MessageBoxButton.OK);
@@ -179,5 +191,56 @@ namespace LKUI.Pages
             }
 
         }
+
+        private void DGridBoyaPrograminaAlinanlar_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            //vBoyaProgramiSukru secilen = (sender as FrameworkElement).DataContext as vBoyaProgramiSukru;
+            vBoyaProgramiSukru secilen = DGridBoyaPrograminaAlinanlar.SelectedItem as vBoyaProgramiSukru;
+           if (secilen == null) return; 
+           // MessageBox.Show(secilen.PartiId.ToString());
+           // if (DGridPartileme.SelectedItem == null) return;
+
+            ChildPartilemeEkle.DataContext = _PartiIslem;
+            TxtTipChild.Text = secilen.TipNo;
+            TxtPartiNoChild.Text = secilen.PartiNo;
+            TxtRenkChild.Text = secilen.RenkNo;
+            CmbMakina.SelectedValue = secilen.MakinaId;
+            CmbHafta.SelectedValue = secilen.BoyanacakHafta;
+            
+            //if (string.IsNullOrEmpty(_PartiIslem.Parti.BoyaNotu)) BtnInfo.Visibility = System.Windows.Visibility.Hidden;
+            //else BtnInfo.Visibility = System.Windows.Visibility.Visible;
+            //DGridProsesler.ItemsSource = _PartiIslem.Processler;
+            //if (CmbApreKodu.ItemsSource == null) CmbApreKodu.ItemsSource = Partileme.ApreleriGetir();
+            ChildPartilemeEkle.Show();
+
+
+        }
+
+        private void btnBoyaProgramiDuzelt_Click(object sender, RoutedEventArgs e)
+        {
+            vBoyaProgramiSukru secilen = DGridBoyaPrograminaAlinanlar.SelectedItem as vBoyaProgramiSukru;
+            if (secilen == null) return;
+            vPartiler parti = Partileme.PartiGetir(Convert.ToInt32(secilen.PartiId)); //PartiGetir(secilen.PartiId); 
+            parti.MakinaId =Convert.ToInt32(CmbMakina.SelectedValue);
+            if (Partileme.PartiDuzelt(parti) == false)
+            {
+                MessageBox.Show("Hata Oluştu..!\n\nMakina değiştirilemedi.", App.AlertCaption, MessageBoxButton.OK);
+            }
+            else
+            {
+                vBoyaProgramiSukru secilenBoyaProg = Partileme.BoyaProgramiGetir((int)secilen.PartiId);
+                secilenBoyaProg.BoyanacakHafta = Convert.ToInt32(CmbHafta.SelectedValue);
+                if (db.UpdateGeneric<vBoyaProgramiSukru>(secilenBoyaProg) == true)
+                {
+                    LoadProgram();
+                    ChildPartilemeEkle.Close();
+                }
+                else
+                    MessageBox.Show("Hata Oluştu..!\n\nBoyanacak Hafta Değiştirilemedi", App.AlertCaption, MessageBoxButton.OK);
+            }
+    
+        }
+
+
     }
 }
