@@ -271,8 +271,14 @@
     <Compile Include="Pages\PageFuarProses.xaml.cs">
       <DependentUpon>PageFuarProses.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageFuarTanimlama.xaml.cs">
+      <DependentUpon>PageFuarTanimlama.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageKafesKartlari.xaml.cs">
       <DependentUpon>PageKafesKartlari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageNumuneKumasGirisi.xaml.cs">
+      <DependentUpon>PageNumuneKumasGirisi.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageOrguKumasGirisi.xaml.cs">
       <DependentUpon>PageOrguKumasGirisi.xaml</DependentUpon>
@@ -894,7 +900,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageFuarTanimlama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageKafesKartlari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageNumuneKumasGirisi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

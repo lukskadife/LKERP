@@ -139,6 +139,8 @@ namespace LKUI.Classes
                 case "PageFasonSepeti": return new PageFasonSepeti();
                 case "PageAmbarTransfer": return new PageAmbarTransfer();
                 case "PageOrmeUrunAgaci": return new PageOrmeUrunAgaci();
+                case "PageFuarTanimlama": return new PageFuarTanimlama();
+                case "PageNumuneKumasGirisi": return new PageNumuneKumasGirisi();
                 default: return null;
             }
         }

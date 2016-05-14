@@ -6,6 +6,154 @@ using LKLibrary.DbClasses;
 
 namespace LKLibrary.DbClasses
 {
+    [Table(Name = "tblNumuneTalepleri")]
+    public class tblNumuneTalepleri : IDisposable
+    {
+        [Column(Name = "Id", IsDbGenerated = true, IsPrimaryKey = true)]
+        public int Id { get; set; }
+
+        [Column]
+        public int? NumuneId { get; set; }
+
+        [Column]
+        public double? Miktar { get; set; }
+
+        [Column]
+        public int? MusteriId { get; set; }
+
+        [Column]
+        public string YeniMusteriAdi { get; set; }
+
+        [Column]
+        public int? FuarId { get; set; }
+
+        [Column] 
+        public DateTime? TalepTarihi { get; set; }
+
+        [Column]
+        public int? TalepEdenKullaniciId { get; set; }
+
+        [Column]
+        public bool? GonderildiMi { get; set; }
+
+        [Column]
+        public DateTime? GonderimTarihi { get; set; }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+    }
+
+
+
+    [Table(Name = "tblNumuneKumaslar")]
+    public class tblNumuneKumaslar : IDisposable
+    {
+        [Column(Name = "Id", IsDbGenerated = true, IsPrimaryKey = true)]
+        public int Id { get; set; }
+
+        [Column]
+        public string Barkod { get; set; }
+
+        [Column]
+        public int? TipId { get; set; }
+
+        [Column]
+        public int? MamulId { get; set; }
+
+        [Column]
+        public string Varyant { get; set; }
+
+        [Column]
+        public string RenkNo { get; set; }
+
+        [Column] //desen, baskı, plise vs.
+        public string FasonIslemKodu { get; set; }
+
+        [Column]
+        public string Koleksiyon { get; set; }
+
+        [Column]
+        public double? Miktar { get; set; }
+
+        [Column]
+        public int? BirimId { get; set; }
+
+        [Column] //450-metrelik kumas, 451-kitap, 452-Şelale, 453-Aski --tblayarlar
+        public int? TrCode { get; set; }
+
+        [Column]
+        public int? FuarId { get; set; }
+
+        [Column]
+        public string Aciklama { get; set; }
+
+        [Column]
+        public int? EkleyenKullaniciId { get; set; }
+
+        [Column]
+        public int? SonDegistirenKullaniciId { get; set; }
+
+        [Column]
+        public DateTime? EklenmeTarihi { get; set; }
+
+        [Column]
+        public string KafesNo { get; set; }
+
+        [Column]
+        public string KafesAltNo { get; set; }
+
+        [Column]
+        public string KafesSiraNo { get; set; }
+
+        [Column]
+        public string Finish { get; set; }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+    }
+
+    [Table(Name = "tblFuarlar")]
+    public class tblFuarlar : IDisposable
+    {
+        [Column(Name = "Id", IsDbGenerated = true, IsPrimaryKey = true)]
+        public int Id { get; set; }
+
+        [Column]
+        public string Kodu { get; set; }
+
+        [Column]
+        public string Adi { get; set; }
+
+        [Column]
+        public string FuarTarihleri { get; set; }
+
+        [Column]
+        public DateTime? FuarBaslangicTarihi { get; set; }
+
+        [Column]
+        public int? FuarYili { get; set; }
+
+        [Column]
+        public string HallNo { get; set; }
+
+        [Column]
+        public string StandNo { get; set; }
+
+
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+    }
+
+
 
     [Table(Name = "tblBoyaProgrami")]
     public class tblBoyaProgrami : IDisposable       
