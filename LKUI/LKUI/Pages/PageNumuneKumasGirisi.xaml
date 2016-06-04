@@ -1,0 +1,204 @@
+﻿<UserControl x:Class="LKUI.Pages.PageNumuneKumasGirisi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Loaded="UserControl_Loaded"
+             mc:Ignorable="d" xmlns:tkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+             xmlns:cnt="clr-namespace:LKUI.Controls"
+             d:DesignHeight="500" d:DesignWidth="900" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition/>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition Width="116" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Ekle" Name="BtnEkle" Margin="2" Grid.RowSpan="2" Click="BtnEkle_Click" />
+        <Button Content="Barkodlu Numune Girişi" Name="BtnBarkodluNumuneEkle" Grid.Column="1" Margin="2" Grid.RowSpan="2" Click="BtnBarkodluNumuneEkle_Click" />
+        <Button Content="Düzenle" Grid.Column="2" Margin="2" Name="BtnDüzenle" Grid.RowSpan="2" Click="BtnDüzenle_Click"/>
+        <Button Content="Sil" Grid.Column="3" Margin="2" Name="BtnSil" Grid.RowSpan="2" Click="BtnSil_Click"/>
+        <Button Content="Yenile" Grid.Column="4" Margin="2" Name="BtnYenile" Grid.RowSpan="2" Click="BtnYenile_Click"/>
+        <Label Content="Başlangıç Tarihi:" Grid.Column="6" Grid.Row="0" />
+        <Label Content="Bitiş Tarihi:" Grid.Column="6" Grid.Row="1" />
+        <DatePicker Name="DPBaslangic" Grid.Column="7" Grid.Row="0" SelectedDateChanged="DPBaslangic_SelectedDateChanged"/>
+        <DatePicker Name="DPBitis" Grid.Column="7" Grid.Row="1" SelectedDateChanged="DPBitis_SelectedDateChanged"/>
+        <telerik:RadGridView AutoGenerateColumns="False" Grid.Column="0" Grid.ColumnSpan="100" Grid.Row="2" Name="DGridNumuneKumaslar" Margin="0,0,1,0" IsReadOnly="True" telerik:StyleManager.Theme="Summer" 
+                             ShowGroupFooters="True" ShowColumnFooters="True" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" Background="#FFF0F0F0">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TrCodeAdi}" Header="Numune Türü " Width="Auto" IsReadOnly="True">
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:CountFunction Caption="Adet : " />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Barkod}" Header="Barkod" Width="100" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TipNo}" Header="Tip No" Width="100" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Varyant}" Header="Varyant" Width="70" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding RenkNo}" Header="Renk No" Width="80" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Miktar}" Header="Miktar" Width="90" Background="Aquamarine" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding BirimAdi}" Header="Birim" Width="80" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding FasonIslemKodu}" Header="Desen-Baskı Kodu" Width="100" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Koleksiyon}" Header="Koleksiyon" Width="80" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding FuarAdi}" Header="Fuar" Width="140" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding FuarYili}" Header="Fuar Yılı" Width="80" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding KafesNo}" Header="Kafes" Width="90" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding KafesAltNo}" Header="Kafes AltNo" Width="90" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding KafesSiraNo}" Header="Kafes SıraNo" Width="90" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Finish}" Header="Finish" Width="70" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Aciklama}" Header="Açıklama" Width="Auto" IsReadOnly="True" />
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.ItemsSource>
+                        <CompositeCollection>
+                            <MenuItem Header="Numune Talebi Oluştur" Name="MINumuneTalepEt" Click="MINumuneTalepEt_Click"></MenuItem>
+                        </CompositeCollection>
+                    </ContextMenu.ItemsSource>
+                </ContextMenu>
+            </telerik:RadGridView.ContextMenu>
+        </telerik:RadGridView>
+        <tkit:ChildWindow Grid.Row="0" Grid.RowSpan="100" Grid.Column="0" Grid.ColumnSpan="100" Name="ChildNumuneKumasGirisi" IsModal="True" WindowStartupLocation="Center">
+            <Grid Width="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="90" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Content="Tip No :" Grid.Row="3" />
+                <Label Content="Renk No :" Grid.Row="4" />
+                <Label Content="Miktar :" Grid.Row="5" />
+                <Label Content="Birim :" Grid.Row="6" />
+                <Label Content="Varyant" Grid.Row="7" />
+                <Label Content="Baskı - Desen :" Grid.Row="8" />
+
+                <Label Content="Numune Türü :" Grid.Row="9" />
+                <Label Content="Fuarı :" Grid.Row="10" />
+                <Label Content="Koleksiyon" Grid.Row="11" />
+                <Label Content="Kafes No :" Grid.Row="12" />
+                <Label Content="Kafes Satır No:" Grid.Row="13" />
+                <Label Content="Kafes Sıra No :" Grid.Row="14" />
+                <Label Content="Finish :" Grid.Row="15" />
+                <Label Content="Açıklama :" Grid.Row="16" />
+
+                <cnt:CntIsdCombo x:Name="CmbTip" Grid.Column="1" Grid.Row="3" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="TipId" SelectedValue="{Binding TipId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="YeniTipNo" TabIndex="0" />
+                <cnt:CntIsdTextBox x:Name="TxtRenkKodu" Grid.Row="4" Width="100" HorizontalAlignment="Left"  Grid.Column="1" Margin="0,4,0,0" Text="{Binding RenkNo}" TxtTipi="Gerekli" TabIndex="5" />
+                <cnt:CntIsdTextBox x:Name="TxtMiktar" Grid.Row="5" Grid.Column="1" Width="100" Height="25"  Margin="0,0,0,5" TxtTipi="Gerekli" Text="{Binding Miktar}" TabIndex="10" HorizontalAlignment="Left" />
+                <cnt:CntIsdCombo x:Name="CmbBirim" Grid.Column="1" Grid.Row="6" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="Id" SelectedValue="{Binding BirimId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" TabIndex="0" SelectedIndex="0" />
+                <cnt:CntIsdTextBox x:Name="TxtVaryant" Grid.Row="7" Grid.Column="1" Width="100" Height="25"  Margin="0,0,0,5" Text="{Binding Varyant}" TabIndex="15" HorizontalAlignment="Left" />
+                <cnt:CntIsdTextBox x:Name="TxtBaskiDesen" Grid.Row="8" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25"  Margin="0,0,0,5" Text="{Binding FasonIslemKodu}" TabIndex="20"/>
+                <cnt:CntIsdCombo x:Name="CmbKoleksiyon" Grid.Column="1" Grid.Row="11" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="Adi" SelectedValue="{Binding Koleksiyon, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" TabIndex="0" />
+                <cnt:CntIsdCombo x:Name="CmbNumuneTuru" Grid.Column="1" Grid.Row="9" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="Id" SelectedValue="{Binding TrCodeId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" TabIndex="0" SelectedIndex="0" />
+                <cnt:CntIsdCombo x:Name="CmbFuarAdi" Grid.Column="1" Grid.Row="10" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="Id" SelectedValue="{Binding FuarId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" TabIndex="0" />
+                <cnt:CntIsdTextBox Grid.Row="12" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtKafesNo" Margin="0,0,0,5" Text="{Binding KafesNo}" TabIndex="25" TxtTipi="Gerekli" />
+                <cnt:CntIsdTextBox Grid.Row="13" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtKafesSatirNo" Margin="0,0,0,5" Text="{Binding KafesAltNo}" TabIndex="25"  />
+                <cnt:CntIsdTextBox Grid.Row="14" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtKafesSiraNo" Margin="0,0,0,5" Text="{Binding KafesSiraNo}" TabIndex="25" />
+                <cnt:CntIsdTextBox Grid.Row="15" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtFinish" Margin="0,0,0,5" Text="{Binding Finish}" TabIndex="25" />
+                <cnt:CntIsdTextBox Grid.Row="16" Grid.Column="1" Width="250" HorizontalAlignment="Left" Height="25" x:Name="TxtAciklama" Margin="0,0,0,5" Text="{Binding Aciklama}" TabIndex="25" />
+                <Button Content="Kaydet" Grid.Column="1" Name="BtnKaydet" Margin="3,10,0,0" Grid.Row="17" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Click="BtnKaydet_Click" />
+            </Grid>
+        </tkit:ChildWindow>
+        <tkit:ChildWindow Name="ChildNumuneSevkTalepleri" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="5" IsModal="True" WindowStartupLocation="Center" Width="400">
+            <Grid Width="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="44"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Tip No :" Grid.Row="0" />
+                <Label Content="Renk No :" Grid.Row="0" Grid.Column="2" />
+                <Label Content="Miktar :" Grid.Row="1" FontWeight="Bold" />
+                <Label Content="Birim :" Grid.Row="1" Grid.Column="2" />
+                <Label Content="Müşteri :" Grid.Row="2" Grid.Column="0" />
+                <Label Content="Yeni Müşteri Mi :" Grid.Row="3" Grid.Column="0" />
+                <Label Content="Yeni Müşteri Adi:" Grid.Row="4" Grid.Column="0" />
+                <TextBlock Name="TxtChildTipNo" Grid.Row="0" Grid.Column="1" Margin="5,5,3,0" Width="100" Foreground="Red" FontSize="16" FontWeight="Bold" />
+                <TextBlock Name="TxtChildRenkNo" Grid.Row="0" Grid.Column="3" Margin="5,5,3,0" Width="100" Foreground="Blue" FontSize="16" FontWeight="Bold" />
+                <cnt:CntIsdTextBox x:Name="TxtChildTalepMiktar" Grid.Row="1" Grid.Column="1" Margin="0,0,3,0" Width="100" FontSize="16" FontWeight="Bold" TxtTipi="Sayisal" />
+                <TextBlock Name="TxtChildBirim" Grid.Row="1" Grid.Column="3" Margin="0,0,3,0" Width="100" FontSize="16" FontWeight="Bold" />
+                <cnt:CntIsdCombo x:Name="CmbMusteri" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" DisplayMemberPath="FirmaAdi" SelectedValuePath="FirmaId" SelectedValue="{Binding MusteriId, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                <CheckBox x:Name="ChBoxYeniMusteri" Grid.Row="3" Grid.Column="1" Margin="8" Checked="ChBoxYeniMusteri_Checked" Unchecked="ChBoxYeniMusteri_Unchecked"/>
+                <TextBox Name="TxtChildYeniMusteri" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,3,0" Width="280" FontSize="14" FontWeight="Bold"/>
+                <Button Content="Talebi Kaydet" Grid.Column="1" Grid.ColumnSpan="2" Name="BtnTalepKaydet" Margin="3,3,0,0" Grid.Row="6" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Click="BtnTalepKaydet_Click"/>
+            </Grid>
+        </tkit:ChildWindow>
+        <tkit:ChildWindow Grid.Row="0" Grid.RowSpan="100" Grid.Column="0" Grid.ColumnSpan="100" Name="ChildNumuneBarkodluKumasGirisi" IsModal="True" WindowStartupLocation="Center">
+            <Grid Width="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Content="Barkod :" Grid.Row="3" /> 
+               
+                <Label Content="Fuarı :" Grid.Row="4" />
+                <Label Content="Koleksiyon" Grid.Row="5" />
+                <Label Content="Kafes No :" Grid.Row="6" />
+                <Label Content="Kafes Satır No:" Grid.Row="7" />
+                <Label Content="Kafes Sıra No :" Grid.Row="8" />
+                <Label Content="Açıklama :" Grid.Row="9" />
+
+                
+                <cnt:CntIsdTextBox x:Name="TxtBarkodluChildBarkod" Grid.Row="3" Width="200" HorizontalAlignment="Left"  Grid.Column="1" Margin="0,4,0,0" Text="{Binding Barkod}" TxtTipi="Gerekli" TabIndex="0" />
+                <cnt:CntIsdCombo x:Name="CmbBarkodluKoleksiyon" Grid.Column="1" Grid.Row="4" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="Adi" SelectedValue="{Binding Koleksiyon, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" TabIndex="0" />
+                <cnt:CntIsdCombo x:Name="CmbBarkodluFuarAdi" Grid.Column="1" Grid.Row="5" Background="White" Width="150" HorizontalAlignment="Left" SelectedValuePath="Id" SelectedValue="{Binding FuarId, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Adi" TabIndex="0" />
+                <cnt:CntIsdTextBox Grid.Row="6" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtBarkodluKafesNo" Margin="0,0,0,5" Text="{Binding KafesNo}" TabIndex="25" TxtTipi="Gerekli" />
+                <cnt:CntIsdTextBox Grid.Row="7" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtBarkodluKafesSatirNo" Margin="0,0,0,5" Text="{Binding KafesAltNo}" TabIndex="25"  />
+                <cnt:CntIsdTextBox Grid.Row="8" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="25" x:Name="TxtBarkodluKafesSiraNo" Margin="0,0,0,5" Text="{Binding KafesSiraNo}" TabIndex="25" />
+                <cnt:CntIsdTextBox Grid.Row="9" Grid.Column="1" Width="250" HorizontalAlignment="Left" Height="25" x:Name="TxtBarkodluAciklama" Margin="0,0,0,5" Text="{Binding Aciklama}" TabIndex="25" />
+                <Button Content="Kaydet" Grid.Column="1" Name="BtnBarkodluKaydet" Margin="3,10,0,0" Grid.Row="17" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Click="BtnBarkodluKaydet_Click" />
+            </Grid>
+        </tkit:ChildWindow>
+    </Grid>
+</UserControl>

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LKUI.Details.DtlSiparisEkleDuzenle"
+﻿<UserControl x:Class="LKUI.Details.DtlNumuneTalepEkleDuzenle"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -26,7 +26,7 @@
             <RowDefinition Height="212*" />
             <RowDefinition Height="42*" />
         </Grid.RowDefinitions>
-        <toolkit:ChildWindow x:Name="ChildTestler" Grid.RowSpan="4" Grid.ColumnSpan="5" WindowStartupLocation="Center" IsModal="True">
+        <toolkit:ChildWindow x:Name="ChildTestler" Grid.RowSpan="4" Grid.ColumnSpan="5" WindowStartupLocation="Center" IsModal="True" Visibility="Hidden">
             <Grid Height="560" Width="530">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -194,7 +194,7 @@
                 </Grid>
             </Grid>
         </toolkit:ChildWindow>
-        <toolkit:ChildWindow Name="ChildUrunSec" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="2" Grid.ColumnSpan="3">
+        <toolkit:ChildWindow Name="ChildUrunSec" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="2" Grid.ColumnSpan="3" Visibility="Hidden">
             <Grid Height="250" Width="Auto" Background="White">
                 <Border BorderBrush="Black" BorderThickness="0,0,0,1" Padding="10,0" VerticalAlignment="Top">
                     <DockPanel Height="25.96">
@@ -222,13 +222,13 @@
                 <ColumnDefinition Width="149" />
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="1" >
-                <Label Content="Sözleşme No:" Height="35"></Label>
-                <Label Content="Tarih:" Height="35"></Label>
-                <Label Content="Son Termin Tarihi:" Height="35"></Label>
-                <Label Content="Hazırlayan:" Height="35"></Label>
+                <Label Content="Numune Talep No:" Height="35"></Label>
+                <Label Content="Yeni Müşteri Mi?:" Height="35"></Label>
+                <Label Content="Yeni Müşteri:" Height="35"></Label>
                 <Label Content="Müşteri:" Height="35"></Label>
-                <Label Content="Order No:" Height="35"/>
-                <Label Content="Sip. Veren:" Height="35"></Label>
+                <Label Content="Talep Eden :" Height="35"></Label>
+                <Label Content="Fuar:" Height="35"/>
+                
                 <Label Content="Sip. Onaylayan:" Height="35"></Label>
                 <Label Content="Belge Türü:" Height="35"></Label>
 
@@ -237,12 +237,12 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="0" >
                 <TextBox x:Name="TxtSözlesmeNo" Text="{Binding SozlesmeNo}" Height="35" IsReadOnly="True" />
-                <DatePicker x:Name="DpTarih" SelectedDate="{Binding Tarih}" Height="35" />
-                <DatePicker x:Name="DpTerminTarihi" SelectedDate="{Binding TerminTarihi, UpdateSourceTrigger=PropertyChanged}" Height="35" />
-                <cnt:CntIsdCombo x:Name="ComboBoxHazirlayan" Height="35"  DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue ="{Binding Path= OlusturanPersId,UpdateSourceTrigger=PropertyChanged}" />
+               
+                <CheckBox x:Name="CheYeniMusteri" Height="35" Padding="0,15,0,0"/>
+                <cnt:CntIsdTextBox x:Name="TxtYeniMusteri" Height="35" Text="{Binding SipVeren}"/>
                 <cnt:CntIsdCombo x:Name="ComboBoxFirma" Height="35" DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue ="{Binding Path= FirmaId, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="ComboBoxFirma_SelectionChanged"/>
-                <TextBox Name="TxtOrderNo" Text="{Binding OrderNo}" Height="35" />
-                <cnt:CntIsdTextBox x:Name="TxtSipVeren" Height="35" Text="{Binding SipVeren}"/>
+                <cnt:CntIsdCombo x:Name="ComboBoxHazirlayan" Height="35"  DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue ="{Binding Path= OlusturanPersId,UpdateSourceTrigger=PropertyChanged}" />
+                <cnt:CntIsdCombo x:Name="ComboBoxFuar" Height="35"  DisplayMemberPath="Adi" SelectedValuePath="Id" SelectedValue ="{Binding Path= FuarId,UpdateSourceTrigger=PropertyChanged}" />
                 <cnt:CntIsdTextBox x:Name="TxtSipOnaylayan" Height="35" Text="{Binding SipOnaylayan}"/>
                 <ComboBox x:Name="ComboBoxBelgeTuru" Height="35" Text="{Binding BelgeTuru}">
                     <ComboBoxItem Content="Sözleşme"/>
@@ -284,26 +284,10 @@
         </Grid>        
         
         <StackPanel Grid.Row="1" Grid.Column="4">
-            <Label Content="Boyahaneye:" Height="35" />
-            <Label Content="Dokumaya:" Height="35" />
-            <Label Content="Sevkiyata:" Height="35" />
-            <Label Content="Planlamaya:" Height="35" />
-            <Label Content="İç Ticarete:" Height="35" />
-            <Label Content="Dış Ticarete:" Height="35" />
-            <Label Content="Muhasebeye:" Height="35" />
-            <Label Content="Numuneye:" Height="35" />
-            <Label Content="Termine:" Height="35" />
+            <Label Content="Ektra Açıklama:" Height="35" />
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="5" Name="StackNot" >
-            <cnt:CntIsdTextBox x:Name="TxtBoyaNotu" Height="35" Text="{Binding Path=BoyaNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtDokumaNotu" Height="35" Text="{Binding Path=DokumaNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtSevkiyatNotu" Height="35" Text="{Binding Path=SevkiyatNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtPlanlamaNotu" Height="35" Text="{Binding Path=PlanlamaNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtİcTicaretNotu" Height="35" Text="{Binding Path=IcTicaretNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtDisTicaretNotu" Height="35" Text="{Binding Path=DisTicaretNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtMuhasebeNotu" Height="35" Text="{Binding Path=MuhasebeNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtNumuneNotu" Height="35" Text="{Binding Path=NumuneNotu}" TextWrapping="Wrap" />
-            <cnt:CntIsdTextBox x:Name="TxtTerminNotu" Height="35" Text="{Binding Path=TerminNotu}" TextWrapping="Wrap" />
+            <cnt:CntIsdTextBox x:Name="TxtBoyaNotu" Height="111" Text="{Binding Path=BoyaNotu}" TextWrapping="Wrap" />
         </StackPanel>
         <Border Grid.ColumnSpan="8" Grid.Row="2" >
             <DataGrid x:Name="DataGridSiparisDetay" IsReadOnly="True" MinHeight="100" AutoGenerateColumns="False" SelectionChanged="DataGridSiparisDetay_SelectionChanged">
@@ -552,7 +536,7 @@
         <Button Content="Yazdır" Grid.Column="6" Grid.Row="3" Height="24" Width="80"  Name="BtnYazdir" Click="BtnYazdir_Click"/>
         <Button Content="Kaydet" Grid.Column="7" Grid.Row="3" Height="24" Name="BtnKaydet" Click="BtnKaydet_Click" />
         <Button Content="Satır Ekle" Grid.Column="0" Grid.Row="3" Height="25" HorizontalAlignment="Left" Name="BtnSatirEkle" Click="BtnSatirEkle_Click" VerticalAlignment="Top" Width="75" />
-        <toolkit:ChildWindow x:Name="ChildStokDetay" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="100" Grid.ColumnSpan="100">
+      <!--  <toolkit:ChildWindow x:Name="ChildStokDetay" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="100" Grid.ColumnSpan="100" Visibility="Hidden">
             <Grid>
                 <TabControl>
                     <TabItem Header="Stok">
@@ -587,7 +571,7 @@
                                     </telerik:GridViewDataColumn.CellTemplate>
                                 </telerik:GridViewDataColumn>
                             </telerik:RadGridView.Columns>
-                        </telerik:RadGridView>
+                        </telerik:RadGridView>-->
                         <!--<DataGrid Name="DGridStokDetay" MinHeight="150" MinWidth="300" Grid.Row="0" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Barkod Müşterisi" Width="Auto" IsReadOnly="True" Binding="{Binding MusteriAdi}" />
@@ -606,7 +590,7 @@
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>-->
-                    </TabItem>
+                    <!--</TabItem>
                     <TabItem Header="Rezerveler" Visibility="Hidden">
                         <DataGrid Name="DGridRezerveler" MinHeight="150" MinWidth="300" Grid.Row="0" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -630,16 +614,7 @@
                     </TabItem>
                 </TabControl>
             </Grid>
-        </toolkit:ChildWindow>
-        <toolkit:ChildWindow x:Name="ChildFinishSec" IsModal="True" WindowStartupLocation="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="100" Grid.RowSpan="100">
-            <Grid Width="auto" MinWidth="250" Height="400">
-                <telerik:RadGridView AutoGenerateColumns="False"  Name="DGridFinishSec" Margin="0,1,0,0" MouseDoubleClick="DGridFinishSec_MouseDoubleClick"
-                             IsReadOnly="False" ShowGroupPanel="False" telerik:StyleManager.Theme="Summer"  Grid.Row="0" Background="#FFF0F0F0">
-                    <telerik:RadGridView.Columns>                        
-                        <telerik:GridViewDataColumn Header="Finish" Width="Auto" IsReadOnly="True" DataMemberBinding="{Binding FinishAdi}"/>                                            
-                    </telerik:RadGridView.Columns>                    
-                </telerik:RadGridView>
-            </Grid>
-        </toolkit:ChildWindow>
+        </toolkit:ChildWindow>-->
+        
     </Grid>
 </UserControl>

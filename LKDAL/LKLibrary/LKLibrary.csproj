@@ -67,6 +67,7 @@
     <Compile Include="Classes\Boyahane.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\ExtensionMethods.cs" />
+    <Compile Include="Classes\Fuar.cs" />
     <Compile Include="Classes\FuarKumas.cs" />
     <Compile Include="Classes\HamKumas.cs" />
     <Compile Include="Classes\Iade.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Classes\MalzemeTalep.cs" />
     <Compile Include="Classes\Mamul.cs" />
     <Compile Include="Classes\Menu.cs" />
+    <Compile Include="Classes\Numune.cs" />
     <Compile Include="Classes\OrmeTezgahHaberlesme.cs" />
     <Compile Include="Classes\PackList.cs" />
     <Compile Include="Classes\Partileme.cs" />
