@@ -43,7 +43,7 @@ namespace LKLibrary.Classes
 
         public static List<vMamulKumaslar> MamulleriGetir(DateTime ilkTarih, DateTime sonTarih)
         {
-            return new DBEvents().GetGeneric<vMamulKumaslar>(c => ilkTarih <= c.Tarih && c.Tarih <= sonTarih && (c.Durum == "Mamul" || c.Durum == "ReUretim" || c.Durum == "Fason" || c.Durum == "Kartela"));
+            return new DBEvents().GetGeneric<vMamulKumaslar>(c => ilkTarih <= c.Tarih && c.Tarih <= sonTarih && (c.Durum == "Mamul" || c.Durum == "ReUretim" || c.Durum == "Fason"));
         }
 
         public static List<tblPersoneller> KalitecileriGetir()

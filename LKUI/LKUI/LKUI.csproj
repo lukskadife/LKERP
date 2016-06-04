@@ -202,9 +202,6 @@
       <DependentUpon>CntImageViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CntIsdCombo.cs" />
-    <Compile Include="Details\DtlNumuneTalepEkleDuzenle.xaml.cs">
-      <DependentUpon>DtlNumuneTalepEkleDuzenle.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Details\DtlBekle.xaml.cs">
       <DependentUpon>DtlBekle.xaml</DependentUpon>
     </Compile>
@@ -247,9 +244,6 @@
     <Compile Include="Details\DtlPlanGanttChartSiparis.xaml.cs">
       <DependentUpon>DtlPlanGanttChartSiparis.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageNumuneTalepleri.xaml.cs">
-      <DependentUpon>PageNumuneTalepleri.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PageAmbarTransfer.xaml.cs">
       <DependentUpon>PageAmbarTransfer.xaml</DependentUpon>
     </Compile>
@@ -277,14 +271,8 @@
     <Compile Include="Pages\PageFuarProses.xaml.cs">
       <DependentUpon>PageFuarProses.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageFuarTanimlama.xaml.cs">
-      <DependentUpon>PageFuarTanimlama.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PageKafesKartlari.xaml.cs">
       <DependentUpon>PageKafesKartlari.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageNumuneKumasGirisi.xaml.cs">
-      <DependentUpon>PageNumuneKumasGirisi.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageOrguKumasGirisi.xaml.cs">
       <DependentUpon>PageOrguKumasGirisi.xaml</DependentUpon>
@@ -782,10 +770,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Details\DtlNumuneTalepEkleDuzenle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Details\DtlAciklama.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -874,10 +858,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageNumuneTalepleri.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\PageAmbarTransfer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -914,15 +894,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageFuarTanimlama.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\PageKafesKartlari.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageNumuneKumasGirisi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

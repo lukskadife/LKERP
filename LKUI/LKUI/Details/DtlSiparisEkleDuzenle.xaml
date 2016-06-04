@@ -552,7 +552,7 @@
         <Button Content="Yazdır" Grid.Column="6" Grid.Row="3" Height="24" Width="80"  Name="BtnYazdir" Click="BtnYazdir_Click"/>
         <Button Content="Kaydet" Grid.Column="7" Grid.Row="3" Height="24" Name="BtnKaydet" Click="BtnKaydet_Click" />
         <Button Content="Satır Ekle" Grid.Column="0" Grid.Row="3" Height="25" HorizontalAlignment="Left" Name="BtnSatirEkle" Click="BtnSatirEkle_Click" VerticalAlignment="Top" Width="75" />
-        <toolkit:ChildWindow x:Name="ChildStokDetay" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="100" Grid.ColumnSpan="100">
+        <toolkit:ChildWindow x:Name="ChildStokDetay" IsModal="True" WindowStartupLocation="Center" Grid.RowSpan="100" Grid.ColumnSpan="100" >
             <Grid>
                 <TabControl>
                     <TabItem Header="Stok">

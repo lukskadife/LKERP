@@ -257,13 +257,13 @@ namespace LKUI.Pages
             if (DGridSevkBelge.SelectedItem == null) return;
 
                 Logo lg = new Logo();                
-                //lg.MamulKumasIrsaliyeAktar(_Islem.SevkBelge);
+                lg.MamulKumasIrsaliyeAktar(_Islem.SevkBelge);
                 //lg.IplikIrsaliyeAktar(1405);
                 //lg.TekKatIplikSarfFisi();
                 //lg.AtkiIplikSarfFisi();
                 //lg.CozguIplikSarfFisi();
                 //lg.CiftKatIplikUretimdenGirisFisi();
-                lg.BoyaSarfFisi();
+                //lg.BoyaSarfFisi();
                 MessageBox.Show("Irsaliye aktarıldı. Lütfen kontrol ediniz!");      
         }
     }
